@@ -32,7 +32,7 @@ public:
 
 class Solution {
 public:
-    // // 前中后序遍历：递归法
+    // 前中后序遍历：递归法
     // void traversal(TreeNode *cur, vector<int>& vec) {
     //     if (cur == NULL) {
     //         return;
@@ -47,7 +47,7 @@ public:
     //     return res;
     // }
 
-    // // 前序遍历：迭代法
+    // 前序遍历：迭代法
     // vector<int> preorderTraversal(TreeNode* root) {
     //     stack<TreeNode*> st;
     //     vector<int> res = {};
@@ -71,7 +71,7 @@ public:
     //     return res;
     // }
 
-    // // 后序遍历：迭代法。与前序遍历对应。
+    // 后序遍历：迭代法。与前序遍历对应。
     // vector<int> postorderTraversal(TreeNode* root) {
     //     stack<TreeNode*> st;
     //     vector<int> res = {};
@@ -98,7 +98,7 @@ public:
     //     return res;
     // }
 
-    // // 中序遍历：迭代法 （理解）
+    // 中序遍历：迭代法 （理解）
     // vector<int> inorderTraversal(TreeNode* root) {
     //     vector<int> res = {};
     //     if (root == nullptr) {
@@ -120,7 +120,7 @@ public:
     //     return res;
     // }
 
-    // // 前中后序遍历：标记迭代法
+    // 前中后序遍历：标记迭代法
     // vector<int> inorderTraversal(TreeNode* root) {
     //     vector<int> res = {};
     //     stack<TreeNode*> st;
@@ -154,7 +154,7 @@ public:
     //     return res;
     // }
 
-    // // 102. 二叉树的层序遍历  ||  107. 二叉树的层序遍历 II（大数组翻转一下就行了）
+    // 102. 二叉树的层序遍历  ||  107. 二叉树的层序遍历 II（大数组翻转一下就行了）
     // vector<vector<int>> levelOrder(TreeNode* root) {
     //     queue<TreeNode*> q;
     //     vector<vector<int> > res = {};
@@ -188,7 +188,7 @@ public:
     //     return res;
     // }
 
-    // // 199. 二叉树的右视图
+    // 199. 二叉树的右视图
     // vector<int> rightSideView(TreeNode* root) {
     //     queue<TreeNode*> q;
     //     vector<int> res = {};
@@ -217,7 +217,7 @@ public:
     //     return res;
     // }
 
-    // // 637. 二叉树的层平均值
+    // 637. 二叉树的层平均值
     // vector<double> averageOfLevels(TreeNode* root) {
     //     queue<TreeNode*> q;
     //     vector<double> res = {};
@@ -253,36 +253,36 @@ public:
     //     }
     //     return res;
     // }
-    vector<vector<int>> levelOrder(Node* root) {
-        queue<Node*> q;
-        vector<vector<int> > res = {};
-        vector<int> vec = {};
-        if (root == nullptr) {
-            return res;
-        }
-        q.push(root);
-        q.push(nullptr);
-        Node* cur;
-        while (!q.empty()) {
-            cur = q.front();
-            q.pop();
-            if (cur == nullptr) {
-                vec = {};
-            } else {
-                vec.push_back(cur->val);
-                if (cur->children.size()) {    // 如果有孩子的话
-                    for (Node* tmp : cur->children) {
-                        q.push(tmp);
-                    }
-                }
-                if (q.front() == nullptr) {
-                    q.push(nullptr);
-                    res.push_back(vec);
-                }
-            }
-        }
-        return res;
-    }
+    // vector<vector<int>> levelOrder(Node* root) {
+    //     queue<Node*> q;
+    //     vector<vector<int> > res = {};
+    //     vector<int> vec = {};
+    //     if (root == nullptr) {
+    //         return res;
+    //     }
+    //     q.push(root);
+    //     q.push(nullptr);
+    //     Node* cur;
+    //     while (!q.empty()) {
+    //         cur = q.front();
+    //         q.pop();
+    //         if (cur == nullptr) {
+    //             vec = {};
+    //         } else {
+    //             vec.push_back(cur->val);
+    //             if (cur->children.size()) {    // 如果有孩子的话
+    //                 for (Node* tmp : cur->children) {
+    //                     q.push(tmp);
+    //                 }
+    //             }
+    //             if (q.front() == nullptr) {
+    //                 q.push(nullptr);
+    //                 res.push_back(vec);
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {

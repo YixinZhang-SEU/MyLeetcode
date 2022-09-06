@@ -5,7 +5,7 @@
 #include<unordered_map>
 using namespace std;
 
-// // 232. 用栈实现队列
+// 232. 用栈实现队列
 // class MyQueue {
 // public:
 //     stack<int> sIn, sOut;
@@ -43,7 +43,7 @@ using namespace std;
 //     }
 // };
 
-// // 225. 用队列实现栈
+// 225. 用队列实现栈
 // class MyStack {
 //     queue<int> q1, q2;
 // public:
@@ -85,7 +85,7 @@ using namespace std;
 
 class Solution {
 private:
-    // // 单调递减队列
+    // 单调递减队列
     // class MyQueue {
     // public:
     //     deque<int> q;
@@ -116,7 +116,7 @@ public:
             return lhs.second > rhs.second;
         }
     };
-    // // 20. 有效的括号
+    // 20. 有效的括号
     // bool isValid(string s) {
     //     if (s.size() == 0) {
     //         return true;
@@ -166,7 +166,7 @@ public:
     //     return st.empty();
     // }
 
-    // // 1047. 删除字符串中的所有相邻重复项
+    // 1047. 删除字符串中的所有相邻重复项
     // string removeDuplicates(string s) {
     //     stack<char> st;
     //     for (int i = 0; i < s.size(); i++) {
@@ -193,7 +193,7 @@ public:
     //     return res;
     // }
 
-    // // 150. 逆波兰表达式求值
+    // 150. 逆波兰表达式求值
     // int evalRPN(vector<string>& tokens) {
     //     stack<string> st;
     //     int op1, op2, tmp;
@@ -233,7 +233,7 @@ public:
     //     return atoi(st.top().c_str());
     // }
 
-    // // 239. 滑动窗口最大值（单调队列，一刷有参考）
+    // 239. 滑动窗口最大值（单调队列，一刷有参考）
     // vector<int> maxSlidingWindow(vector<int>& nums, int k) {
     //     MyQueue q;
     //     vector<int> res;
@@ -250,32 +250,31 @@ public:
     // }
 
     // 347. 前 K个高频元素 （优先级队列，一刷有参考）
-    vector<int> topKFrequent(vector<int>& nums, int k) {
-        unordered_map<int, int> map;
-        for (int i = 0; i < nums.size(); i++) {
-            map[nums[i]]++;
-        }
-        // 定义一个大小为k的小顶堆
-        priority_queue<pair<int, int>, vector<pair<int, int> >, mycomparision > pri_que;
-
-        for (unordered_map<int, int>::iterator it = map.begin(); it != map.end(); it++) {
-            pri_que.push(*it);
-            if(pri_que.size() > k) {    // 如果小顶堆多于k个元素，就弹出最小的顶
-                pri_que.pop();
-            }
-        }
-        vector<int> res(k);
-        for (int i = k-1; i >= 0; i--) {
-            res[i] = pri_que.top().first;
-            pri_que.pop();
-        }
-        return res;
-    }
+    // vector<int> topKFrequent(vector<int>& nums, int k) {
+    //     unordered_map<int, int> map;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         map[nums[i]]++;
+    //     }
+    //     // 定义一个大小为k的小顶堆
+    //     priority_queue<pair<int, int>, vector<pair<int, int> >, mycomparision > pri_que;
+    //     for (unordered_map<int, int>::iterator it = map.begin(); it != map.end(); it++) {
+    //         pri_que.push(*it);
+    //         if(pri_que.size() > k) {    // 如果小顶堆多于k个元素，就弹出最小的顶
+    //             pri_que.pop();
+    //         }
+    //     }
+    //     vector<int> res(k);
+    //     for (int i = k-1; i >= 0; i--) {
+    //         res[i] = pri_que.top().first;
+    //         pri_que.pop();
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
     Solution solution;
-    // // 232. 用栈实现队列
+    // 232. 用栈实现队列
     // int x1 = 1, x2 = 2;
     // MyQueue* obj = new MyQueue();
     // obj->push(x1);
@@ -285,7 +284,7 @@ int main() {
     // bool param_4 = obj->empty();
     // cout<<param_2<<" "<<param_3<<" "<<param_4;
 
-    // // 225. 用队列实现栈
+    // 225. 用队列实现栈
     // MyStack* obj = new MyStack();
     // int x1 = 1, x2 = 2;
     // obj->push(x1);
@@ -295,20 +294,20 @@ int main() {
     // bool param_4 = obj->empty();
     // cout<<param_2<<" "<<param_3<<" "<<param_4;
 
-    // // 20. 有效的括号
+    // 20. 有效的括号
     // bool res = solution.isValid("([{}])))");
     // cout<<res;
 
-    // // 1047. 删除字符串中的所有相邻重复项
+    // 1047. 删除字符串中的所有相邻重复项
     // string res = solution.removeDuplicates("abbaca");
     // cout<<res;
 
-    // // 150. 逆波兰表达式求值
+    // 150. 逆波兰表达式求值
     // vector<string> tokens = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
     // int res = solution.evalRPN(tokens);
     // cout<<res;
 
-    // // 239. 滑动窗口最大值
+    // 239. 滑动窗口最大值
     // vector<int> nums = {1,3,-1,-3,5,3,6,7};
     // vector<int> res = solution.maxSlidingWindow(nums, 3);
     // for (int i = 0; i < res.size(); i++) {
@@ -316,10 +315,10 @@ int main() {
     // }
 
     // 347. 前 K个高频元素
-    vector<int> nums = {1,1,1,2,2,3};
-    int k = 2;
-    vector<int> res = solution.topKFrequent(nums, k);
-    for (int i = 0; i < k; i++) {
-        cout<<res[i]<<" ";
-    }
+    // vector<int> nums = {1,1,1,2,2,3};
+    // int k = 2;
+    // vector<int> res = solution.topKFrequent(nums, k);
+    // for (int i = 0; i < k; i++) {
+    //     cout<<res[i]<<" ";
+    // }
 }

@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    // // 704.二分查找
+    // 704.二分查找
     // int search(vector<int>& nums, int target) {
     //     int left = 0, right = nums.size(), middle;      //[left, right)左闭右开
     //     while (left < right) {
@@ -21,7 +21,7 @@ public:
     //     return -1;
     // }
 
-    // // 27.移除元素
+    // 27.移除元素
     // int removeElement(vector<int>& nums, int val) {
     //     if (nums.size() == 0){
     //         return 0;
@@ -47,7 +47,7 @@ public:
     //     return left;
     // }
 
-    // // 977.有序数组的平方
+    // 977.有序数组的平方
     // vector<int> sortedSquares(vector<int>& nums) {
     //     vector<int> res(nums.size(), 0);
     //     // vector<int>::iterator it = res.begin();
@@ -68,7 +68,7 @@ public:
     //     return res;
     // }
 
-    // // 209.长度最小的子数组
+    // 209.长度最小的子数组
     // int minSubArrayLen(int target, vector<int>& nums) {
     //     if (nums.size() == 1) {
     //         if (nums[0] < target) {
@@ -98,7 +98,7 @@ public:
     //     } return 0;
     // }
 
-    // // 59.螺旋矩阵
+    // 59.螺旋矩阵
     // /*
     // 本题代码更简洁写法：四个for循环和其中的if条件完全可以合并起来，
     // 不需要存储左右边界值，因为这题方向是固定的，while()判定是否此方向下一个点已被赋值，
@@ -153,18 +153,18 @@ public:
 int main() {
     Solution solution;
 
-    // // 704.二分查找
+    // 704.二分查找
     // vector<int> nums = {-1, 0, 3, 5, 9, 12};
     // cout<<solution.search(nums, 2)<<endl;
 
-    // // 27.移除元素
+    // 27.移除元素
     // vector<int> nums = {2,2};
     // cout<<solution.removeElement(nums, 1)<<endl;
     // for (int i = 0; i < nums.size(); i++) {
     //     cout<<nums[i]<<", ";
     // }
     
-    // // 977.有序数组的平方
+    // 977.有序数组的平方
     // vector<int> nums = {-4, -1, 0, 3, 10};
     // vector<int> res = solution.sortedSquares(nums);
     // for (int i = 0; i <= nums.size() - 1; i++) {
@@ -172,11 +172,11 @@ int main() {
     // }
     // return 0;
 
-    // // 209.长度最小的子数组
+    // 209.长度最小的子数组
     // vector<int> nums = {1,2,3,4,5};
     // cout<<solution.minSubArrayLen(11, nums)<<endl;
 
-    // // 59.螺旋矩阵
+    // 59.螺旋矩阵
     // int n = 18;
     // vector<vector<int> > res = solution.generateMatrix(n);
     // for (int i = 0; i < n; i++) {

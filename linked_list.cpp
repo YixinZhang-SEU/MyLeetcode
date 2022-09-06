@@ -14,7 +14,7 @@ struct ListNode {
 
 class Solution {
 public:
-    // // 203.移除链表元素
+    // 203.移除链表元素
     // ListNode* removeElements(ListNode* head, int val) {
     //     // 设置一个虚拟头结点
     //     ListNode* dummyhead = new ListNode(0);
@@ -34,7 +34,7 @@ public:
     //     return head;
     // }
 
-    // // 206.反转链表
+    // 206.反转链表
     // ListNode* reverseList(ListNode* head) {
     //     ListNode *tmp, *cur = head, *pre = NULL;
     //     while (cur) {
@@ -46,7 +46,7 @@ public:
     //     return pre;
     // }
 
-    // // 24.两两交换链表中的结点
+    // 24.两两交换链表中的结点
     // ListNode* swapPairs(ListNode* head) {
     //      ListNode *dummyhead = new ListNode(0);
     //      dummyhead->next = head;
@@ -62,7 +62,7 @@ public:
     //      return dummyhead->next;
     // }
 
-    // // 19.删除链表的倒数第N个结点
+    // 19.删除链表的倒数第N个结点
     // ListNode* removeNthFromEnd(ListNode* head, int n) {
     //     ListNode *dummyhead = new ListNode(0), *cur, *tmp;
     //     dummyhead->next = head;
@@ -84,7 +84,7 @@ public:
     //     return dummyhead->next;
     // }
 
-    // // 面试题 02.07.链表相交
+    // 面试题 02.07.链表相交
     // ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
     //     int sizeA = 0, sizeB = 0, temp;
     //     ListNode *curA, *curB, *tmp;
@@ -123,7 +123,7 @@ public:
     //     return NULL;
     // }
 
-    // // 142.环形链表 II (一刷有参考)
+    // 142.环形链表 II (一刷有参考)
     // ListNode *detectCycle(ListNode *head) {
     //     ListNode *fast = head, *slow = head;
     //     while (fast != NULL && fast->next != NULL) {
@@ -144,7 +144,7 @@ public:
 };
 
 
-// // 707.设计链表 (一刷有参考)
+// 707.设计链表 (一刷有参考)
 // class MyLinkedList {
 // public:
 //     // 定义结构体
@@ -228,7 +228,7 @@ public:
 int main() {
     Solution solution;
 
-    // // 203.移除链表元素
+    // 203.移除链表元素
     // vector<int> vec = {7,7,7,7};
     // ListNode* head = new ListNode(vec[vec.size()-1]);
     // for (int i = vec.size()-2; i >= 0; i--) {
@@ -242,7 +242,7 @@ int main() {
     //     cur = cur->next;
     // }
 
-    // // 707.设计链表
+    // 707.设计链表
     // MyLinkedList* obj = new MyLinkedList();
     // obj->addAtHead(1);
     // obj->addAtTail(3);
@@ -252,7 +252,7 @@ int main() {
     // int res2 = obj->get(1);            //返回3
     // cout<<res1<<" "<<res2;
 
-    // // 24.两两交换链表中的结点 / 19.删除链表的倒数第N个结点
+    // 24.两两交换链表中的结点 / 19.删除链表的倒数第N个结点
     // vector<int> vec = {};
     // ListNode* head;
     // if (vec.size() == 0) {
