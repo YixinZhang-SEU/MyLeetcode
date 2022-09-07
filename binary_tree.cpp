@@ -16,19 +16,36 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// N叉树定义
+// class Node {
+// public:
+//     int val;
+//     vector<Node*> children;
+//     Node() {}
+//     Node(int _val) {
+//         val = _val;
+//     }
+//     Node(int _val, vector<Node*> _children) {
+//         val = _val;
+//         children = _children;
+//     }
+// };
+
 class Node {
 public:
     int val;
-    vector<Node*> children;
-    Node() {}
-    Node(int _val) {
-        val = _val;
-    }
-    Node(int _val, vector<Node*> _children) {
-        val = _val;
-        children = _children;
-    }
+    Node* left;
+    Node* right;
+    Node* next;
+
+    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
 };
+
 
 class Solution {
 public:
@@ -253,6 +270,8 @@ public:
     //     }
     //     return res;
     // }
+
+    // 429. N叉树的层序遍历
     // vector<vector<int>> levelOrder(Node* root) {
     //     queue<Node*> q;
     //     vector<vector<int> > res = {};
@@ -282,6 +301,73 @@ public:
     //         }
     //     }
     //     return res;
+    // }
+
+    // 515. 在每个树行中找最大值
+    // vector<int> largestValues(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     vector<int> res = {};
+    //     int max;
+    //     TreeNode* cur;
+    //     if (root == nullptr) {
+    //         return res;
+    //     }
+    //     q.push(root);
+    //     q.push(nullptr);
+    //     max = root->val;
+    //     while (!q.empty()) {
+    //         cur = q.front();
+    //         q.pop();
+    //         if (cur == nullptr) {
+    //             if (!q.empty() && q.front() != nullptr) {
+    //                 max = q.front()->val;
+    //             }
+    //         } else {
+    //             if (cur->val > max) {
+    //                 max = cur->val;
+    //             }
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             }
+    //             if (q.front() == nullptr) {
+    //                 q.push(nullptr);
+    //                 res.push_back(max);
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 116. 填充每个节点的下一个右侧节点指针
+    // Node* connect(Node* root) {
+    //     queue<Node*> q;
+    //     Node* cur;
+    //     if (root != nullptr) {
+    //         q.push(root);
+    //         q.push(nullptr);
+    //         while (!q.empty()) {
+    //             cur = q.front();
+    //             q.pop();
+    //             if (cur != nullptr) {
+    //                 if (cur->left) {
+    //                     q.push(cur->left);
+    //                 }
+    //                 if (cur->right) {
+    //                     q.push(cur->right);
+    //                 }
+    //                 if (q.front() == nullptr) {
+    //                     q.push(nullptr);
+    //                     cur->next = nullptr;
+    //                 } else {
+    //                     cur->next = q.front();
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return root;
     // }
 };
 
