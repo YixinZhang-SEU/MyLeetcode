@@ -341,7 +341,7 @@ public:
     //     return res;
     // }
 
-    // 116. 填充每个节点的下一个右侧节点指针
+    // 116. 填充每个节点的下一个右侧节点指针  || 117. 填充每个节点的下一个右侧节点指针 II
     // Node* connect(Node* root) {
     //     queue<Node*> q;
     //     Node* cur;
@@ -369,6 +369,64 @@ public:
     //     }
     //     return root;
     // }
+
+    // 104. 二叉树的最大深度
+    // int maxDepth(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     int depth = 0;
+    //     TreeNode* cur;
+    //     if (root == nullptr) {
+    //         return depth;
+    //     }
+    //     q.push(root);
+    //     q.push(nullptr);
+    //     while (!q.empty()) {
+    //         cur = q.front();
+    //         q.pop();
+    //         if (cur != nullptr) {
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             }
+    //             if (q.front() == nullptr) {
+    //                 q.push(nullptr);
+    //                 depth++;
+    //             }
+    //         }
+    //     }
+    //     return depth;
+    // }
+
+    // 111. 二叉树的最小深度
+    int minDepth(TreeNode* root) {
+        queue<TreeNode*> q;
+        int depth = 0;
+        TreeNode* cur;
+        if (root == nullptr) {
+            return depth;
+        }
+        q.push(root);
+        q.push(nullptr);
+        while (!q.empty()) {
+            cur = q.front();
+            q.pop();
+            if (cur != nullptr) {
+                if (cur->left) {
+                    q.push(cur->left);
+                }
+                if (cur->right) {
+                    q.push(cur->right);
+                }
+                if (q.front() == nullptr) {
+                    q.push(nullptr);
+                    depth++;
+                }
+            }
+        }
+        return depth;
+    }
 };
 
 int main() {
