@@ -400,32 +400,60 @@ public:
     // }
 
     // 111. 二叉树的最小深度
-    int minDepth(TreeNode* root) {
-        queue<TreeNode*> q;
-        int depth = 0;
-        TreeNode* cur;
+    // int minDepth(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     int depth = 0;
+    //     TreeNode* cur;
+    //     if (root == nullptr) {
+    //         return depth;
+    //     }
+    //     q.push(root);
+    //     q.push(nullptr);
+    //     depth = 1;
+    //     while (!q.empty()) {
+    //         cur = q.front();
+    //         q.pop();
+    //         if (cur != nullptr) {
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             } 
+    //             if (!cur->left && !cur->right) {
+    //                 return depth;
+    //             }
+    //             if (q.front() == nullptr) {
+    //                 q.push(nullptr);
+    //                 depth++;
+    //             }
+    //         }
+    //     }
+    //     return depth;
+    // }
+
+    // 226. 翻转二叉树
+    TreeNode* invertTree(TreeNode* root) {
         if (root == nullptr) {
-            return depth;
+            return root;
         }
-        q.push(root);
-        q.push(nullptr);
-        while (!q.empty()) {
-            cur = q.front();
-            q.pop();
-            if (cur != nullptr) {
-                if (cur->left) {
-                    q.push(cur->left);
-                }
-                if (cur->right) {
-                    q.push(cur->right);
-                }
-                if (q.front() == nullptr) {
-                    q.push(nullptr);
-                    depth++;
-                }
-            }
+        TreeNode* tmp;
+        if (!root->left) {
+            root->left = nullptr;
         }
-        return depth;
+        if (!root->right) {
+            root->right = nullptr;
+        }
+        tmp = root->left;
+        root->left = root->right;
+        root->right = tmp;
+        if (root->left != nullptr) {
+            invertTree(root->left);
+        }
+        if (root->right != nullptr) {
+            invertTree(root->right);
+        }
+        return root;
     }
 };
 
