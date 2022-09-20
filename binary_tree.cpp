@@ -457,44 +457,44 @@ public:
     // }
 
     // 101. 对称二叉树
-    bool isSymmetric(TreeNode* root) {
-        queue<TreeNode*> q;
-        vector<int> vec1, vec2;
-        TreeNode* cur;
-        if (root == nullptr) {
-            return true;
-        }
-        q.push(root);
-        q.push(nullptr);
-        while (!q.empty()) {
-            cur = q.front();
-            q.pop();
-            if (cur != nullptr) {
-                if (cur->left) {
-                    q.push(cur->left);
-                    vec1.push_back(cur->left->val);
-                } else {
-                    vec1.push_back(999);
-                }
-                if (cur->right) {
-                    q.push(cur->right);
-                    vec1.push_back(cur->right->val);
-                } else {
-                    vec1.push_back(999);
-                }
-                if (q.front() == nullptr) {
-                    q.push(nullptr);
-                    vec2 = vec1;
-                    reverse(vec1.begin(), vec1.end());
-                    if (vec2 != vec1) {
-                        return false; 
-                    }
-                    vec1 = {};
-                }
-            }
-        }
-        return true;
-    }
+    // bool isSymmetric(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     vector<int> vec1, vec2;
+    //     TreeNode* cur;
+    //     if (root == nullptr) {
+    //         return true;
+    //     }
+    //     q.push(root);
+    //     q.push(nullptr);
+    //     while (!q.empty()) {
+    //         cur = q.front();
+    //         q.pop();
+    //         if (cur != nullptr) {
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //                 vec1.push_back(cur->left->val);
+    //             } else {
+    //                 vec1.push_back(999);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //                 vec1.push_back(cur->right->val);
+    //             } else {
+    //                 vec1.push_back(999);
+    //             }
+    //             if (q.front() == nullptr) {
+    //                 q.push(nullptr);
+    //                 vec2 = vec1;
+    //                 reverse(vec1.begin(), vec1.end());
+    //                 if (vec2 != vec1) {
+    //                     return false; 
+    //                 }
+    //                 vec1 = {};
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
