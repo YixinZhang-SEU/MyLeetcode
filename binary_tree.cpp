@@ -433,27 +433,67 @@ public:
     // }
 
     // 226. 翻转二叉树
-    TreeNode* invertTree(TreeNode* root) {
+    // TreeNode* invertTree(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return root;
+    //     }
+    //     TreeNode* tmp;
+    //     if (!root->left) {
+    //         root->left = nullptr;
+    //     }
+    //     if (!root->right) {
+    //         root->right = nullptr;
+    //     }
+    //     tmp = root->left;
+    //     root->left = root->right;
+    //     root->right = tmp;
+    //     if (root->left != nullptr) {
+    //         invertTree(root->left);
+    //     }
+    //     if (root->right != nullptr) {
+    //         invertTree(root->right);
+    //     }
+    //     return root;
+    // }
+
+    // 101. 对称二叉树
+    bool isSymmetric(TreeNode* root) {
+        queue<TreeNode*> q;
+        vector<int> vec1, vec2;
+        TreeNode* cur;
         if (root == nullptr) {
-            return root;
+            return true;
         }
-        TreeNode* tmp;
-        if (!root->left) {
-            root->left = nullptr;
+        q.push(root);
+        q.push(nullptr);
+        while (!q.empty()) {
+            cur = q.front();
+            q.pop();
+            if (cur != nullptr) {
+                if (cur->left) {
+                    q.push(cur->left);
+                    vec1.push_back(cur->left->val);
+                } else {
+                    vec1.push_back(999);
+                }
+                if (cur->right) {
+                    q.push(cur->right);
+                    vec1.push_back(cur->right->val);
+                } else {
+                    vec1.push_back(999);
+                }
+                if (q.front() == nullptr) {
+                    q.push(nullptr);
+                    vec2 = vec1;
+                    reverse(vec1.begin(), vec1.end());
+                    if (vec2 != vec1) {
+                        return false; 
+                    }
+                    vec1 = {};
+                }
+            }
         }
-        if (!root->right) {
-            root->right = nullptr;
-        }
-        tmp = root->left;
-        root->left = root->right;
-        root->right = tmp;
-        if (root->left != nullptr) {
-            invertTree(root->left);
-        }
-        if (root->right != nullptr) {
-            invertTree(root->right);
-        }
-        return root;
+        return true;
     }
 };
 
