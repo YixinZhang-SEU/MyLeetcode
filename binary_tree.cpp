@@ -371,6 +371,7 @@ public:
     // }
 
     // 104. 二叉树的最大深度
+    // // 法一：层序遍历（迭代）法
     // int maxDepth(TreeNode* root) {
     //     queue<TreeNode*> q;
     //     int depth = 0;
@@ -397,6 +398,16 @@ public:
     //         }
     //     }
     //     return depth;
+    // }
+    //
+    // // 法二：后序遍历（递归）法
+    // int maxDepth(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     int dp1 = maxDepth(root->left);
+    //     int dp2 = maxDepth(root->right);
+    //     return (1 + max(dp1, dp2));
     // }
 
     // 111. 二叉树的最小深度
@@ -431,6 +442,22 @@ public:
     //     }
     //     return depth;
     // }
+    // 
+    // // 法二
+    // int minDepth(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     int dp1 = minDepth(root->left);
+    //     int dp2 = minDepth(root->right);
+    //     if (dp1 == 0 && dp2 != 0) {
+    //         return (1 + dp2);
+    //     }
+    //     if (dp1 != 0 && dp2 == 0) {
+    //         return (1 + dp1);
+    //     }
+    //     return (1 + min(dp1, dp2));
+    // }
 
     // 226. 翻转二叉树
     // TreeNode* invertTree(TreeNode* root) {
@@ -457,6 +484,7 @@ public:
     // }
 
     // 101. 对称二叉树
+    // // 法一：迭代
     // bool isSymmetric(TreeNode* root) {
     //     queue<TreeNode*> q;
     //     vector<int> vec1, vec2;
@@ -494,6 +522,21 @@ public:
     //         }
     //     }
     //     return true;
+    // }
+    //
+    // // 法二：递归
+    // bool isSymmetric(TreeNode* root) {
+    //     return isSym(root->left, root->right);
+    // }
+    //
+    // bool isSym(TreeNode* left, TreeNode* right) {
+    //     if (left == nullptr && right == nullptr) {
+    //         return true;
+    //     }
+    //     if (left == nullptr || right == nullptr || left->val != right->val) {
+    //         return false;
+    //     }
+    //     return (isSym(left->right, right->left) && isSym(left->left, right->right));
     // }
 };
 
