@@ -538,6 +538,63 @@ public:
     //     }
     //     return (isSym(left->right, right->left) && isSym(left->left, right->right));
     // }
+
+    // 222. 完全二叉树的节点个数
+    // //  法一：递归
+    // int countNodes(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     return (1 + countNodes(root->left) + countNodes(root->right));
+    // }
+    //
+    // // 法二：遍历
+    // int countNodes(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     TreeNode* cur;
+    //     int count = 0;
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     q.push(root);
+    //     while(!q.empty()) {
+    //         int size = q.size();
+    //         for (int i = 0; i < size; i++) {
+    //             cur = q.front();
+    //             q.pop();
+    //             count++;
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             }
+    //         }
+    //     }
+    //     return count;
+    // }
+
+    // 110. 平衡二叉树
+    // bool isBalanced(TreeNode* root) {
+    //     if (height(root) >= 0) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    //
+    // int height(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     int lh = height(root->left);
+    //     int rh = height(root->right);
+    //     if (lh >= 0 && rh >= 0 && abs(lh-rh)<=1) {
+    //         return (1 + max(lh, rh));
+    //     } else {
+    //         return -1;
+    //     }
+    // }
 };
 
 int main() {
