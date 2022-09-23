@@ -595,6 +595,62 @@ public:
     //         return -1;
     //     }
     // }
+
+    // 257. 二叉树的所有路径 （一刷有参考）
+    // // 法一：递归回溯法
+    // vector<string> binaryTreePaths(TreeNode* root) {
+    //     vector<string> res = {};
+    //     binaryTreePaths(root, res, "");
+    //     return res;
+    // }
+    // void binaryTreePaths(TreeNode* node, vector<string>& res, string path) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     path += to_string(node->val);
+    //     if(node->left == nullptr && node->right == nullptr) {
+    //         res.push_back(path);
+    //         return;
+    //     }
+    //     if (node->left) {
+    //         binaryTreePaths(node->left, res, path + "->");
+    //     }
+    //     if (node->right) {
+    //         binaryTreePaths(node->right, res, path + "->");
+    //     }
+    // }
+    //
+    // // 法二：迭代（前序遍历迭代法，加一个存路径的stack，与结点stack同步）
+    // vector<string> binaryTreePaths(TreeNode* root) {
+    //     stack<string> paths;
+    //     stack<TreeNode*> nodes;
+    //     vector<string> res = {};
+    //     string path;
+    //     TreeNode* node;
+    //     if (root == nullptr) {
+    //         return res;
+    //     }
+    //     nodes.push(root);
+    //     paths.push(to_string(root->val));
+    //     while (!nodes.empty()) {
+    //         node = nodes.top();
+    //         nodes.pop();
+    //         path = paths.top();
+    //         paths.pop();
+    //         if (node->right) {
+    //             nodes.push(node->right);
+    //             paths.push(path + "->" + to_string(node->right->val));
+    //         }
+    //         if (node->left) {
+    //             nodes.push(node->left);
+    //             paths.push(path + "->" + to_string(node->left->val));
+    //         }
+    //         if (node->left == nullptr && node->right == nullptr) {
+    //             res.push_back(path);
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
