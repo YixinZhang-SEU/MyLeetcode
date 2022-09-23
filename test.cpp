@@ -16,6 +16,6 @@ int main() {
     if (vec1 == vec2) {
         cout<<"1";
     } else {
-        cout<<"2";
+        cout<<"3";
     }
 }
