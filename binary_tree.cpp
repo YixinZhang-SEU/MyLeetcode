@@ -651,9 +651,36 @@ public:
     //     }
     //     return res;
     // }
+
+    // 404. 左叶子之和
+    // int sumOfLeftLeaves(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     int sum = 0;
+    //     if (root == nullptr) {
+    //         return 0;
+    //     }
+    //     q.push(root);
+    //     while (!q.empty()) {
+    //         int size = q.size();
+    //         for (int i = 0; i < size; i++) {
+    //             TreeNode* cur = q.front();
+    //             q.pop();
+    //             if (cur->left) {
+    //                 if (cur->left->left == nullptr && cur->left->right == nullptr) {
+    //                     sum += cur->left->val;
+    //                 } else {
+    //                     q.push(cur->left);
+    //                 }
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             }
+    //         }
+    //     }
+    //     return sum;
+    // }
 };
 
 int main() {
     Solution solution;
-    // 今年是 2022年啊！！我的git commit一直记录的是21xxxx
 }
