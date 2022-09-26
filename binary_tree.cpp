@@ -679,6 +679,85 @@ public:
     //     }
     //     return sum;
     // }
+
+    // 513. 找树左下角的值
+    // int findBottomLeftValue(TreeNode* root) {
+    //     queue<TreeNode*> q;
+    //     q.push(root);
+    //     int res = root->val;
+    //     while (!q.empty()) {
+    //         int size = q.size();
+    //         for (int i = 0; i < size; i++) {
+    //             TreeNode* cur = q.front();
+    //             q.pop();
+    //             if (cur->left) {
+    //                 q.push(cur->left);
+    //             }
+    //             if (cur->right) {
+    //                 q.push(cur->right);
+    //             }
+    //         }
+    //         if (!q.empty()) {
+    //             res = q.front()->val;
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 112. 路径总和
+    // bool hasPathSum(TreeNode* root, int targetSum) {
+    //     vector<int> res = {};
+    //     pathSum(root, res, 0);
+    //     for (int i = 0; i < res.size(); i++) {
+    //         if (res[i] == targetSum) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+    // void pathSum(TreeNode* node, vector<int>& res, int sum) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     sum += node->val;
+    //     if (node->left == nullptr && node->right == nullptr) {
+    //         res.push_back(sum);
+    //     }
+    //     if (node->left) {
+    //         pathSum(node->left, res, sum);
+    //     }
+    //     if (node->right) {
+    //         pathSum(node->right, res, sum);
+    //     }
+    // }
+
+    // 113. 路径总和 II
+    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+        vector<vector<int> > res;
+        vector<int> path;
+        pathSum(root, res, path, targetSum);
+        return res;
+    }
+    void pathSum(TreeNode* node, vector<vector<int> >& res, vector<int>& path, int count) {
+        if (node == nullptr) {
+            return;
+        }
+        count -= node->val;
+        if (count < 0) {
+            return;
+        }
+        path.push_back(node->val);
+        if (node->left == nullptr && node->right == nullptr && count == 0) {
+            res.push_back(path);
+            return;
+        }
+        if (node->left) {
+            pathSum(node->left, res, path, count);
+        }
+        if (node->right) {
+            pathSum(node->right, res, path, count);
+        }
+    }
 };
 
 int main() {
