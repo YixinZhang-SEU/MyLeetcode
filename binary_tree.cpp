@@ -3,6 +3,7 @@
 #include<stack>
 #include<algorithm>
 #include<queue>
+#include<unordered_map>
 
 using namespace std;
 
@@ -732,32 +733,157 @@ public:
     // }
 
     // 113. 路径总和 II
-    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
-        vector<vector<int> > res;
-        vector<int> path;
-        pathSum(root, res, path, targetSum);
-        return res;
-    }
-    void pathSum(TreeNode* node, vector<vector<int> >& res, vector<int>& path, int count) {
-        if (node == nullptr) {
-            return;
-        }
-        count -= node->val;
-        if (count < 0) {
-            return;
-        }
-        path.push_back(node->val);
-        if (node->left == nullptr && node->right == nullptr && count == 0) {
-            res.push_back(path);
-            return;
-        }
-        if (node->left) {
-            pathSum(node->left, res, path, count);
-        }
-        if (node->right) {
-            pathSum(node->right, res, path, count);
-        }
-    }
+    // vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+    //     vector<vector<int> > res;
+    //     vector<int> path;
+    //     pathSum(root, res, path, targetSum);
+    //     return res;
+    // }
+    // void pathSum(TreeNode* node, vector<vector<int> >& res, vector<int> path, int count) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     count -= node->val;
+    //     path.push_back(node->val);
+    //     if (node->left == nullptr && node->right == nullptr && count == 0) {
+    //         res.push_back(path);
+    //         return;
+    //     }
+    //     if (node->left) {
+    //         pathSum(node->left, res, path, count);
+    //     }
+    //     if (node->right) {
+    //         pathSum(node->right, res, path, count);
+    //     }
+    // }
+
+    // 106. 从中序与后序遍历序列构造二叉树
+    // TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+    //     if (inorder.size() == 0) {
+    //         return nullptr;
+    //     }
+    //     return build(inorder, postorder);
+    // }
+    // TreeNode* build(vector<int>& inorder, vector<int>& postorder) {
+    //     if (inorder.size() == 0) {
+    //         return nullptr;
+    //     }
+    //     int v = postorder[postorder.size()-1];
+    //     TreeNode* root = new TreeNode(v);       // 根节点
+    //     // 可能只有一个节点：
+    //     if (postorder.size() == 1) {
+    //         return root;
+    //     }
+    //     vector<int> left_in, right_in, left_post, right_post;
+    //     // left_in
+    //     int idx;
+    //     for (idx = 0; idx < inorder.size(); idx++) {
+    //         if (inorder[idx] != v) {
+    //             left_in.push_back(inorder[idx]);
+    //         }
+    //         else {
+    //             break;
+    //         }
+    //     }
+    //     //right_in
+    //     for (int i = idx+1; i < inorder.size(); i++) {
+    //         right_in.push_back(inorder[i]);
+    //     }
+    //     //left_post
+    //     int idx2;
+    //     for (idx2 = 0; idx2 < left_in.size(); idx2++) {
+    //         left_post.push_back(postorder[idx2]);
+    //     }
+    //     // right_post
+    //     for (int i = idx2; i < postorder.size()-1; i++) {
+    //         right_post.push_back(postorder[i]);
+    //     }
+    //     root->left = build(left_in, left_post);
+    //     root->right = build(right_in, right_post);
+    //     return root;
+    // }
+
+    // 105. 从前序与中序遍历序列构造二叉树
+    // unordered_map<int, int> map;
+    // TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+    //     if (preorder.size() == 0) {
+    //         return nullptr;
+    //     }
+    //     for (int i = 0; i < preorder.size(); i++) {
+    //         map[inorder[i]] = i;     // 减少查找下标时间
+    //     }
+    //     return build(preorder, inorder, 0, preorder.size()-1, 0, inorder.size()-1);
+    // }
+    // TreeNode* build(vector<int>& preorder, vector<int>& inorder, int pre_begin, int pre_end, int in_begin, int in_end) {
+    //     if (in_begin > in_end) {
+    //         return nullptr;
+    //     }
+    //     int rootV = preorder[pre_begin];
+    //     TreeNode* root = new TreeNode(rootV);
+    //     if (in_begin == in_end) {
+    //         return root;
+    //     }
+    //     int idx = map[rootV];
+    //     // 左
+    //     int left_in_begin = in_begin;
+    //     int left_in_end = idx-1;
+    //     int left_pre_begin = pre_begin+1;
+    //     int left_pre_end = left_pre_begin+left_in_end-left_in_begin;
+    //     root->left = build(preorder, inorder, left_pre_begin, left_pre_end, left_in_begin, left_in_end);
+    //     // 右
+    //     int right_in_begin = idx+1;
+    //     int right_in_end = in_end;
+    //     int right_pre_begin = left_pre_end+1;
+    //     int right_pre_end = pre_end;
+    //     root->right = build(preorder, inorder, right_pre_begin, right_pre_end, right_in_begin, right_in_end);
+    //
+    //     return root;
+    // }
+
+    // 654. 最大二叉树
+    // unordered_map<int, int> map;
+    // TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
+    //     if (nums.size() == 0) {
+    //         return nullptr;
+    //     }
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         map[nums[i]] = i;
+    //     }
+    //     return buildMax(nums, 0, nums.size());
+    // }
+    // TreeNode* buildMax(vector<int>& nums, int begin, int end) {
+    //     if (begin >= end) {
+    //         return nullptr;
+    //     }
+    //     int rootV = *max_element(nums.begin() + begin, nums.begin() + end);
+    //     TreeNode* root = new TreeNode(rootV);
+    //     if (end - begin == 1) {
+    //         return root;
+    //     }
+    //     int idx = map[rootV];
+    //     int left_begin = begin;
+    //     int left_end = idx;
+    //     int right_begin = idx + 1;
+    //     int right_end = end;
+    //     root->left = buildMax(nums, left_begin, left_end);
+    //     root->right = buildMax(nums, right_begin, right_end);
+    //
+    //     return root;
+    // }
+
+    // 617. 合并二叉树
+    // TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
+    //     if (root1 == nullptr) {
+    //         return root2;
+    //     }
+    //     if (root2 == nullptr) {
+    //         return root1;
+    //     }
+    //     root1->val += root2->val;
+    //     root1->left = mergeTrees(root1->left, root2->left);
+    //     root1->right = mergeTrees(root1->right, root2->right);
+    //     return root1;
+    // }
 };
 
 int main() {
