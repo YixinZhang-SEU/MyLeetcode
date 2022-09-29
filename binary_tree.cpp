@@ -884,6 +884,73 @@ public:
     //     root1->right = mergeTrees(root1->right, root2->right);
     //     return root1;
     // }
+
+    // 700. 二叉搜索树中的搜索
+    // TreeNode* searchBST(TreeNode* root, int val) {
+    //     if (root == nullptr) {
+    //         return nullptr;
+    //     }
+    //     int rootV = root->val;
+    //     if (val == rootV) {
+    //         return root;
+    //     } else if (val > rootV) {
+    //         return searchBST(root->right, val);
+    //     } else {
+    //         return searchBST(root->left, val);
+    //     }
+    // }
+    // // 普通二叉树适用：
+    // // TreeNode* searchBST(TreeNode* root, int val) {
+    // //     if(root == NULL)
+    // //         return NULL;
+    // //     if(root->val == val)
+    // //         return root;
+    // //     TreeNode *node_left=searchBST(root->left,val);
+    // //     TreeNode *node_right=searchBST(root->right,val);
+    // //     if(node_left!=NULL)
+    // //         return node_left;
+    // //     if(node_right!=NULL)
+    // //         return node_right;
+    // //     return NULL;
+    // // }
+
+    // 98. 验证二叉搜索树
+    // // 中序遍历是有序的就是有效的二叉搜索树
+    // bool isValidBST(TreeNode* root) {
+    //     vector<int> vec = {};
+    //     traversal(root, vec);
+    //     for (int i = 0; i < vec.size()-1; i++) {
+    //         if (vec[i] > vec[i+1]) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // // 得到中序遍历结果
+    // void traversal(TreeNode* node, vector<int>& vec) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     traversal(node->left, vec);
+    //     vec.push_back(node->val);
+    //     traversal(node->right, vec);
+    //     return;
+    // }
+    //
+    // // 参考别人的：
+    // long int last = LONG_MIN;
+    // bool isValidBST(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return true;
+    //     }
+    //     if (isValidBST(root->left)) {
+    //         if (last < root->val) {
+    //             last = root->val;
+    //             return isValidBST(root->right);
+    //         }
+    //     }
+    //     return false;
+    // }
 };
 
 int main() {
