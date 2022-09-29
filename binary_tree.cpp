@@ -951,6 +951,23 @@ public:
     //     }
     //     return false;
     // }
+
+    // 530. 二叉搜索树的最小绝对差
+    int res = INT_MAX;
+    TreeNode* pre;
+    int getMinimumDifference(TreeNode* root) {
+
+    }
+    void traversal(TreeNode* node) {
+        if (node == nullptr) {
+            return;
+        }
+        traversal(node->left);
+        if (pre != nullptr) {
+            res = min(res, abs(pre->val - node->val));
+        }
+        traversal(node->right);
+    }
 };
 
 int main() {
