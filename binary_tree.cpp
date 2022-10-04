@@ -953,22 +953,60 @@ public:
     // }
 
     // 530. 二叉搜索树的最小绝对差(一刷有参考)
-    int res = INT_MAX;
-    TreeNode* pre;
-    int getMinimumDifference(TreeNode* root) {
-        traversal(root);
-        return res;
-    }
-    void traversal(TreeNode* node) {
-        if (node == nullptr) {
-            return;
-        }
-        traversal(node->left);
-        if (pre != nullptr) {
-            res = min(res, abs(pre->val - node->val));
-        }
-        pre = node;
-        traversal(node->right);
+    // int res = INT_MAX;
+    // TreeNode* pre;
+    // int getMinimumDifference(TreeNode* root) {
+    //     traversal(root);
+    //     return res;
+    // }
+    // void traversal(TreeNode* node) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     traversal(node->left);
+    //     if (pre != nullptr) {
+    //         res = min(res, abs(pre->val - node->val));
+    //     }
+    //     pre = node;
+    //     traversal(node->right);
+    // }
+
+    // 501. 二叉搜索树中的众数
+    // // 这是普遍适用代码
+    // unordered_map<int, int> map;
+    // vector<int> findMode(TreeNode* root) {
+    //     vector<int> res = {};
+    //     traversal(root);
+    //     int count = 0;
+    //     unordered_map<int,int>::iterator iter;
+    //     vector<pair<int, int>> vec(map.begin(), map.end());
+    //     sort(vec.begin(), vec.end(), cmp); // 给频率排个序
+    //     res.push_back(vec[0].first);
+    //     for (int i = 1; i < vec.size(); i++) {
+    //         // 取最高的放到result数组中
+    //         if (vec[i].second == vec[0].second) {
+    //             res.push_back(vec[i].first);
+    //         }
+    //         else break;
+    //     }
+    //     return res;
+    // }
+    // bool static cmp (const pair<int, int>& a, const pair<int, int>& b) {
+    //     return a.second > b.second;
+    // }
+    // void traversal(TreeNode* node) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     map[node->val]++;
+    //     traversal(node->left);
+    //     traversal(node->right);
+    // }
+
+    // 236. 二叉树的最近公共祖先（一刷有参考）
+    // 需要自底向上地查找，即回溯，后序遍历即为回溯
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        
     }
 };
 
