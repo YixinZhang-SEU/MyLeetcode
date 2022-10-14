@@ -20,6 +20,20 @@ public:
     //     }
     //     return res;
     // }
+
+    // 376. 摆动序列
+    // int wiggleMaxLength(vector<int>& nums) {
+    //     int count = 1;
+    //     int pre = 0, cur = 0;
+    //     for (int i = 0; i < nums.size() - 1; i++) {
+    //         cur = nums[i+1] - nums[i];
+    //         if ((cur > 0 && pre <= 0) || (cur < 0 && pre >= 0)) {
+    //             count++;
+    //             pre = cur;
+    //         }
+    //     }
+    //     return count;
+    // }
 };
 
 int main() {
@@ -29,5 +43,10 @@ int main() {
     // vector<int> g = {1, 2};
     // vector<int> s = {1, 2, 3};
     // int res = solution.findContentChildren(g, s);
+    // cout<<res;
+
+    // 376. 摆动序列
+    // vector<int> nums = {1,2,3,4,5,6,7,8,9};
+    // int res = solution.wiggleMaxLength(nums);
     // cout<<res;
 }
