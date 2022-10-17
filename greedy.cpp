@@ -34,6 +34,34 @@ public:
     //     }
     //     return count;
     // }
+
+    // 53. 最大子数组和
+    // int maxSubArray(vector<int>& nums) {
+    //     int max = INT_MIN, sum = 0;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         sum += nums[i];
+    //         if (sum > max) {
+    //             max = sum;
+    //         }
+    //         if (sum < 0) {
+    //             sum = 0;
+    //         }
+    //     }
+    //     return max;
+    // }
+
+    // 122. 买卖股票的最佳时机 II
+    // int maxProfit(vector<int>& prices) {
+    //     int res = 0;
+    //     int diff;
+    //     for (int i = 0; i < prices.size()-1; i++) {
+    //         diff = prices[i+1] - prices[i];
+    //         if (diff > 0) {
+    //             res += diff;
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
@@ -49,4 +77,13 @@ int main() {
     // vector<int> nums = {1,2,3,4,5,6,7,8,9};
     // int res = solution.wiggleMaxLength(nums);
     // cout<<res;
+
+    // 53. 最大子数组和
+    // vector<int> vec = {-1};
+    // int res = solution.maxSubArray(vec);
+    // cout<<res;
+
+    // 122. 买卖股票的最佳时机 II
+    // vector<int> vec = {7,6,4,3,1};
+    // cout<<solution.maxProfit(vec);
 }
