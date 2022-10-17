@@ -62,6 +62,24 @@ public:
     //     }
     //     return res;
     // }
+
+    // 55. 跳跃游戏
+    // bool canJump(vector<int>& nums) {
+    //     int idx = 0;
+    //     for (int i = 0; i <= idx; i++) {
+    //         idx = max(i + nums[i], idx);
+    //         if (idx >= nums.size() - 1) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // 45. 跳跃游戏 II
+    int jump(vector<int>& nums) {
+        int idx = 0;
+        int res = 0;
+        
 };
 
 int main() {
