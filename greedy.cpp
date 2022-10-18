@@ -5,6 +5,9 @@
 using namespace std;
 
 class Solution {
+    static  bool cmp(int a, int b) {
+        return abs(a) > abs(b);
+    }
 public:
     // 455. 分发饼干
     // int findContentChildren(vector<int>& g, vector<int>& s) {
@@ -76,10 +79,42 @@ public:
     // }
 
     // 45. 跳跃游戏 II
-    int jump(vector<int>& nums) {
-        int idx = 0;
-        int res = 0;
-        
+    // int jump(vector<int>& nums) {
+    //     int res = 0;
+    //     int cur = 0, next = 0;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         next = max(nums[i] + i, next);
+    //         if (i == cur) {
+    //             if (cur < nums.size()-1) {
+    //                 res++;
+    //                 cur = next;
+    //                 if (next >= nums.size()) {
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }    
+
+    // 1005. K 次取反后最大化的数组和
+    int largestSumAfterKNegations(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end(), cmp);
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] < 0 && k > 0) {
+                nums[i] = nums[i]*(-1);
+                k--;
+            }
+        }
+        if (k%2) {
+            nums[nums.size()-1] = nums[nums.size()-1]*(-1);
+        }
+        int sum = 0;
+        for (int a : nums) {
+            sum += a;
+        }
+        return sum;
+    }
 };
 
 int main() {
@@ -104,4 +139,13 @@ int main() {
     // 122. 买卖股票的最佳时机 II
     // vector<int> vec = {7,6,4,3,1};
     // cout<<solution.maxProfit(vec);
+
+    // 45. 跳跃游戏 II
+    // vector<int> vec = {2,3,0,1,4};
+    // int res = solution.jump(vec);
+    // cout<<res;
+
+    // 1005. K 次取反后最大化的数组和
+    vector<int> nums = {2,-3,-1,5,-4};
+    cout<<solution.largestSumAfterKNegations(nums, 2);
 }
