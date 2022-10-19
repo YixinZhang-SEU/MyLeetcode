@@ -98,22 +98,41 @@ public:
     // }    
 
     // 1005. K 次取反后最大化的数组和
-    int largestSumAfterKNegations(vector<int>& nums, int k) {
-        sort(nums.begin(), nums.end(), cmp);
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] < 0 && k > 0) {
-                nums[i] = nums[i]*(-1);
-                k--;
+    // int largestSumAfterKNegations(vector<int>& nums, int k) {
+    //     sort(nums.begin(), nums.end(), cmp);
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         if (nums[i] < 0 && k > 0) {
+    //             nums[i] = nums[i]*(-1);
+    //             k--;
+    //         }
+    //     }
+    //     if (k%2) {
+    //         nums[nums.size()-1] = nums[nums.size()-1]*(-1);
+    //     }
+    //     int sum = 0;
+    //     for (int a : nums) {
+    //         sum += a;
+    //     }
+    //     return sum;
+    // }
+
+    // 134. 加油站
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int sum = 0;
+        int total = 0;
+        int idx = 0;
+        for (int i = 0; i < gas.size(); i++) {
+            sum += gas[i] - cost[i];
+            total += gas[i] - cost[i];
+            if (sum < 0) {
+                idx = i+1;
+                sum = 0;
             }
         }
-        if (k%2) {
-            nums[nums.size()-1] = nums[nums.size()-1]*(-1);
+        if (total < 0) {
+            return -1;
         }
-        int sum = 0;
-        for (int a : nums) {
-            sum += a;
-        }
-        return sum;
+        return idx;
     }
 };
 
@@ -146,6 +165,11 @@ int main() {
     // cout<<res;
 
     // 1005. K 次取反后最大化的数组和
-    vector<int> nums = {2,-3,-1,5,-4};
-    cout<<solution.largestSumAfterKNegations(nums, 2);
+    // vector<int> nums = {2,-3,-1,5,-4};
+    // cout<<solution.largestSumAfterKNegations(nums, 2);
+
+    // 134. 加油站
+    vector<int> gas = {2,3,4};
+    vector<int> cost = {3,4,3};
+    cout<<solution.canCompleteCircuit(gas, cost);
 }
