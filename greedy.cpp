@@ -5,9 +5,9 @@
 using namespace std;
 
 class Solution {
-    static  bool cmp(int a, int b) {
-        return abs(a) > abs(b);
-    }
+    // static  bool cmp(int a, int b) {
+    //     return abs(a) > abs(b);
+    // }
 public:
     // 455. 分发饼干
     // int findContentChildren(vector<int>& g, vector<int>& s) {
@@ -117,23 +117,73 @@ public:
     // }
 
     // 134. 加油站
-    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-        int sum = 0;
-        int total = 0;
-        int idx = 0;
-        for (int i = 0; i < gas.size(); i++) {
-            sum += gas[i] - cost[i];
-            total += gas[i] - cost[i];
-            if (sum < 0) {
-                idx = i+1;
-                sum = 0;
-            }
-        }
-        if (total < 0) {
-            return -1;
-        }
-        return idx;
-    }
+    // int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+    //     int sum = 0;
+    //     int total = 0;
+    //     int idx = 0;
+    //     for (int i = 0; i < gas.size(); i++) {
+    //         sum += gas[i] - cost[i];
+    //         total += gas[i] - cost[i];
+    //         if (sum < 0) {
+    //             idx = i+1;
+    //             sum = 0;
+    //         }
+    //     }
+    //     if (total < 0) {
+    //         return -1;
+    //     }
+    //     return idx;
+    // }
+
+    // 135. 分发糖果
+    // int candy(vector<int>& ratings) {
+    //     if (ratings.size() == 1) {
+    //         return 1;
+    //     }
+    //     vector<int> gets(ratings.size(), 1);
+    //     for (int i = 0; i < ratings.size()-1; i++) {
+    //         if (ratings[i+1] > ratings[i]) {
+    //             gets[i+1] = gets[i] + 1;
+    //         }
+    //     }
+    //     for (int i = ratings.size()-1; i > 0; i--) {
+    //         if (ratings[i-1] > ratings[i] && gets[i-1] <= gets[i]) {
+    //             gets[i-1] = gets[i] + 1;
+    //         }
+    //     }
+    //     int sum = 0;
+    //     for (int g : gets) {
+    //         sum += g;
+    //     }
+    //     return sum;
+    // }
+
+    // 860. 柠檬水找零
+    // bool lemonadeChange(vector<int>& bills) {
+    //     int five = 0, ten = 0;
+    //     for (int i = 0; i < bills.size(); i++) {
+    //         if (bills[i] == 5) {
+    //             five++;
+    //         } else if (bills[i] == 10) {
+    //             five--;
+    //             if (five < 0) {
+    //                 return false;
+    //             }
+    //             ten++;
+    //         } else {
+    //             if (ten > 0) {
+    //                 ten--;
+    //                 five--;
+    //             } else {
+    //                 five -= 3;
+    //             }
+    //             if (five < 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
@@ -169,7 +219,15 @@ int main() {
     // cout<<solution.largestSumAfterKNegations(nums, 2);
 
     // 134. 加油站
-    vector<int> gas = {2,3,4};
-    vector<int> cost = {3,4,3};
-    cout<<solution.canCompleteCircuit(gas, cost);
+    // vector<int> gas = {2,3,4};
+    // vector<int> cost = {3,4,3};
+    // cout<<solution.canCompleteCircuit(gas, cost);
+
+    // 135. 分发糖果
+    // vector<int> ratings = {1,3,4,5,2};
+    // cout<<solution.candy(ratings);
+
+    // 860. 柠檬水找零
+    // vector<int> bills = {5,5,10,10,20};
+    // cout<<solution.lemonadeChange(bills);
 }
