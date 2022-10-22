@@ -8,6 +8,13 @@ class Solution {
     // static  bool cmp(int a, int b) {
     //     return abs(a) > abs(b);
     // }
+    static bool cmp(const vector<int>& a, const vector<int>& b) {
+        if (a[0] == b[0]) {
+            return a[1] < b[1];
+        } else {
+            return a[0] > b[0];
+        }
+    }
 public:
     // 455. 分发饼干
     // int findContentChildren(vector<int>& g, vector<int>& s) {
@@ -184,6 +191,18 @@ public:
     //     }
     //     return true;
     // }
+
+    // 406. 根据身高重建队列 (一刷有参考：别忘了vector有insert功能！！！)
+    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+        sort(people.begin(), people.end(), cmp);
+        vector<vector<int> > res;
+        int idx;
+        for (int i = 0; i < people.size(); i++) {
+            idx = people[i][1];
+            res.insert(res.begin()+idx, people[i]);
+        }
+        return res;
+    }
 };
 
 int main() {
@@ -230,4 +249,14 @@ int main() {
     // 860. 柠檬水找零
     // vector<int> bills = {5,5,10,10,20};
     // cout<<solution.lemonadeChange(bills);
+
+    // 406. 根据身高重建队列
+    vector<vector<int> > people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+    vector<vector<int> > res = solution.reconstructQueue(people);
+    for (int i = 0; i < res.size(); i++) {
+        for (int j = 0; j < 2; j++) {
+            cout<<res[i][j]<<" ";
+        }
+        cout<<endl;
+    }
 }
