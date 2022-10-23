@@ -10,11 +10,7 @@ class Solution {
     //     return abs(a) > abs(b);
     // }
     static bool cmp(const vector<int>& a, const vector<int>& b) {
-        if (a[0] == b[0]) {
-            return a[1] < b[1];
-        } else {
-            return a[0] > b[0];
-        }
+        return a[1] < b[1];
     }
 public:
     // 455. 分发饼干
@@ -221,6 +217,19 @@ public:
     //     return vector<vector<int> >(que.begin(), que.end());
     // }
 
+    // 452. 用最少数量的箭引爆气球
+    // int findMinArrowShots(vector<vector<int>>& points) {
+    //     sort(points.begin(), points.end(), cmp);
+    //     int count = 1;
+    //     int tail = points[0][1];
+    //     for (int i = 1; i < points.size(); i++) {
+    //         if (points[i][0] > tail) {
+    //             count++;
+    //             tail = points[i][1];
+    //         }
+    //     }
+    //     return count;
+    // }
 };
 
 int main() {
