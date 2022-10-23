@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<list>
 
 using namespace std;
 
@@ -192,17 +193,34 @@ public:
     //     return true;
     // }
 
-    // 406. 根据身高重建队列 (一刷有参考：别忘了vector有insert功能！！！)
-    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
-        sort(people.begin(), people.end(), cmp);
-        vector<vector<int> > res;
-        int idx;
-        for (int i = 0; i < people.size(); i++) {
-            idx = people[i][1];
-            res.insert(res.begin()+idx, people[i]);
-        }
-        return res;
-    }
+    // 406. 根据身高重建队列 (一刷有参考：别忘了vector有insert功能！！！)(但是list插入效率更高！！！)
+    // vector的insert是非常费时的，因为底层用的是数组。提高效率的方式是讲vector改为list，list底层用链表实现
+    // vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+    //     sort(people.begin(), people.end(), cmp);
+    //     vector<vector<int> > res;
+    //     int idx;
+    //     for (int i = 0; i < people.size(); i++) {
+    //         idx = people[i][1];
+    //         res.insert(res.begin()+idx, people[i]);
+    //     }
+    //     return res;
+    // }
+    //
+    // vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+    //     sort(people.begin(), people.end(), cmp);
+    //     list<vector<int> > que;
+    //     int idx;
+    //     for (int i = 0; i < people.size(); i++) {
+    //         idx = people[i][1];
+    //         list<vector<int> >::iterator it = que.begin();
+    //         while (idx--) {
+    //             it++;
+    //         }
+    //         que.insert(it, people[i]);
+    //     }
+    //     return vector<vector<int> >(que.begin(), que.end());
+    // }
+
 };
 
 int main() {
@@ -251,12 +269,12 @@ int main() {
     // cout<<solution.lemonadeChange(bills);
 
     // 406. 根据身高重建队列
-    vector<vector<int> > people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
-    vector<vector<int> > res = solution.reconstructQueue(people);
-    for (int i = 0; i < res.size(); i++) {
-        for (int j = 0; j < 2; j++) {
-            cout<<res[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    // vector<vector<int> > people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+    // vector<vector<int> > res = solution.reconstructQueue(people);
+    // for (int i = 0; i < res.size(); i++) {
+    //     for (int j = 0; j < 2; j++) {
+    //         cout<<res[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
 }

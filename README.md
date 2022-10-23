@@ -172,3 +172,16 @@ cout<<setprecision(n)<<255;
 16、morris遍历二叉树
 https://zhuanlan.zhihu.com/p/101321696
 https://blog.csdn.net/weixin_44337241/article/details/123868744
+
+17、vector底层是用数组实现，insert效率低。改进：list，底层是链表实现。
+```c++
+list<vector<int> > que;
+int idx = 10;
+std::list<vector<int> >::iterator it = que.begin();
+while(idx--) {
+    it++;
+}
+que.inser(it, value);
+
+vector<vector<int> > res = vector<vector<int> >(que.begin(), que.end());
+```
