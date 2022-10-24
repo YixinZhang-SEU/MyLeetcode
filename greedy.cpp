@@ -2,6 +2,8 @@
 #include<vector>
 #include<algorithm>
 #include<list>
+#include<string>
+#include<iomanip>
 
 using namespace std;
 
@@ -10,6 +12,9 @@ class Solution {
     //     return abs(a) > abs(b);
     // }
     static bool cmp(const vector<int>& a, const vector<int>& b) {
+        if (a[1] == b[1]) {
+            return a[0] < b[0];
+        }
         return a[1] < b[1];
     }
 public:
@@ -230,6 +235,43 @@ public:
     //     }
     //     return count;
     // }
+
+    // 435. 无重叠区间
+    // int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+    //     sort(intervals.begin(), intervals.end(), cmp);
+    //     int count = 1;
+    //     int tail = intervals[0][1];
+    //     for (int i = 1; i < intervals.size(); i++) {
+    //         if (intervals[i][0] >= tail) {
+    //             count++;
+    //             tail = intervals[i][1];
+    //         }
+    //     }
+    //     return intervals.size()-count;
+    // }
+
+    // 763. 划分字母区间
+    // vector<int> partitionLabels(string s) {
+    //     vector<int> res;
+    //     int each[26] = {0};
+    //     for (int i = 0; i < s.length(); i++) {
+    //         each[s[i]-'a'] = i;
+    //     }
+    //     int head = 0, tail = each[s[0]-'a'];
+    //     int now;
+    //     for (int i = 0; i < s.length(); i++) {
+    //         now = each[s[i]-'a'];
+    //         if (now > tail) {
+    //             tail = now;
+    //         } 
+    //         if (i == tail) {
+    //             res.push_back(tail-head+1);
+    //             head = i+1;
+    //         }
+    //     }
+    //     return res;
+    // }
+
 };
 
 int main() {
@@ -285,5 +327,12 @@ int main() {
     //         cout<<res[i][j]<<" ";
     //     }
     //     cout<<endl;
+    // }
+
+    // 763. 划分字母区间
+    // string s = "caedbdedda";
+    // vector<int> res = solution.partitionLabels(s);
+    // for (int i = 0; i < res.size(); i++) {
+    //     cout<<res[i]<<" ";
     // }
 }
