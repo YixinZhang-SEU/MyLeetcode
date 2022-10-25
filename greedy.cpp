@@ -289,6 +289,33 @@ public:
     //     res.push_back({head, tail});
     //     return res;
     // }
+
+    // 738. 单调递增的数字
+    // int monotoneIncreasingDigits(int n) {
+    //     int num = n;
+    //     vector<int> nums;
+    //     while(num) {
+    //         nums.push_back(num%10);
+    //         num /= 10;
+    //     }
+    //     reverse(nums.begin(), nums.end());
+    //     int idx;
+    //     for (int i = nums.size()-1; i > 0; i--) {
+    //         if (nums[i-1] > nums[i]) {
+    //             nums[i] = 9;
+    //             nums[i-1]--;
+    //             idx = i-1;
+    //         }
+    //     }
+    //     for (int i = idx+1; i < nums.size(); i++) {
+    //         nums[i] = 9;
+    //     }
+    //     int res = 0;
+    //     for (int num : nums) {
+    //         res = res*10 + num;
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
