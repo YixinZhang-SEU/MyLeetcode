@@ -12,10 +12,10 @@ class Solution {
     //     return abs(a) > abs(b);
     // }
     static bool cmp(const vector<int>& a, const vector<int>& b) {
-        if (a[1] == b[1]) {
-            return a[0] < b[0];
+        if (a[0] == b[0]) {
+            return a[1] < b[1];
         }
-        return a[1] < b[1];
+        return a[0] < b[0];
     }
 public:
     // 455. 分发饼干
@@ -272,6 +272,23 @@ public:
     //     return res;
     // }
 
+    // 56. 合并区间
+    // vector<vector<int>> merge(vector<vector<int>>& intervals) {
+    //     sort(intervals.begin(), intervals.end(), cmp);
+    //     vector<vector<int> > res;
+    //     int head = intervals[0][0], tail = intervals[0][1];
+    //     for (int i = 1; i < intervals.size(); i++) {
+    //         if (intervals[i][0] <= tail) {
+    //             tail = max(intervals[i][1], tail);
+    //         } else {
+    //             res.push_back({head, tail});
+    //             head = intervals[i][0];
+    //             tail = intervals[i][1];
+    //         }
+    //     }
+    //     res.push_back({head, tail});
+    //     return res;
+    // }
 };
 
 int main() {
