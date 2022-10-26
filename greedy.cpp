@@ -316,6 +316,22 @@ public:
     //     }
     //     return res;
     // }
+
+    // 714. 买卖股票的最佳时机含手续费 
+    int maxProfit(vector<int>& prices, int fee) {
+        int res = 0;
+        int buy = prices[0] + fee;
+        for (int i = 0; i < prices.size(); i++) {
+            if (prices[i] + fee < buy) {
+                buy = prices[i] + fee;
+            }
+            if (prices[i] > buy) {
+                res += prices[i] - buy;
+                buy = prices[i];
+            }
+        }
+        return res;
+    }
 };
 
 int main() {
