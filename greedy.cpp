@@ -7,7 +7,19 @@
 
 using namespace std;
 
+ // Definition for a binary tree node.
+ struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ };
+ 
+
 class Solution {
+private:
     // static  bool cmp(int a, int b) {
     //     return abs(a) > abs(b);
     // }
@@ -17,6 +29,19 @@ class Solution {
         }
         return a[0] < b[0];
     }
+
+    // int count = 0;
+    // int traversal(TreeNode* cur) {
+    //     if (cur == nullptr) {
+    //         return 1;
+    //     }
+    //     int left = traversal(cur->left);
+    //     int right = traversal(cur->right);
+    //     if (left == 1 && right == 1) {
+    //         return 0;
+    //     } else if ()
+    // }
+
 public:
     // 455. 分发饼干
     // int findContentChildren(vector<int>& g, vector<int>& s) {
@@ -318,20 +343,48 @@ public:
     // }
 
     // 714. 买卖股票的最佳时机含手续费 
-    int maxProfit(vector<int>& prices, int fee) {
-        int res = 0;
-        int buy = prices[0] + fee;
-        for (int i = 0; i < prices.size(); i++) {
-            if (prices[i] + fee < buy) {
-                buy = prices[i] + fee;
-            }
-            if (prices[i] > buy) {
-                res += prices[i] - buy;
-                buy = prices[i];
-            }
-        }
-        return res;
-    }
+    // int maxProfit(vector<int>& prices, int fee) {
+    //     int res = 0;
+    //     int buy = prices[0] + fee;
+    //     for (int i = 0; i < prices.size(); i++) {
+    //         if (prices[i] + fee < buy) {
+    //             buy = prices[i] + fee;
+    //         }
+    //         if (prices[i] > buy) {
+    //             res += prices[i] - buy;
+    //             buy = prices[i];
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 968. 监控二叉树
+    //0: 无覆盖；1：被覆盖；2：有摄像头
+    // int count = 0;
+    //
+    // int traversal(TreeNode* cur) {
+    //     if (cur == nullptr) {
+    //         return 1;
+    //     }
+    //     int left = traversal(cur->left);
+    //     int right = traversal(cur->right);
+    //     if (left == 1 && right == 1) {
+    //         return 0;
+    //     } else if (left == 0 || right == 0) {
+    //         count++;
+    //         return 2;
+    //     }
+    //     else {
+    //         return 1;
+    //     }
+    // }
+    //
+    // int minCameraCover(TreeNode* root) {
+    //     if (traversal(root) == 0) {
+    //         count++;
+    //     }
+    //     return count;
+    // }
 };
 
 int main() {
