@@ -44,10 +44,27 @@ public:
     //     }
     //     return dp[n];
     // }
+
+    // 746. 使用最小花费爬楼梯
+    // int minCostClimbingStairs(vector<int>& cost) {
+    //     int size = cost.size();
+    //     cost.push_back(0);
+    //     vector<int> dp(cost.size()+1);
+    //     dp[0] = cost[0];
+    //     dp[1] = cost[1];
+    //     for (int i = 2; i <= size; i++) {
+    //         dp[i] = min(dp[i-1], dp[i-2]) + cost[i];
+    //     }
+    //     return dp[size];
+    // }
 };
 
 int main() {
     Solution solution;
     // 509. 斐波那契数
     // cout<<solution.fib(5);
+
+    // 746. 使用最小花费爬楼梯
+    // vector<int> cost = {1,100,1,1,1,100,1,1,100,1};
+    // cout<<solution.minCostClimbingStairs(cost);
 }
