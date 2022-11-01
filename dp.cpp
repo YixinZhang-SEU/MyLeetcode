@@ -108,6 +108,31 @@ public:
     //     }
     //     return dp[m-1][n-1];
     // }
+
+    // 343. 整数拆分
+    // int integerBreak(int n) {
+    //     vector<int>dp(n+1, 0);
+    //     dp[1] = 1;
+    //     for (int i = 2; i <= n; i++) {
+    //         for (int j = 1; j <= i/2; j++) {
+    //             dp[i] = max(dp[i], j*max(i-j, dp[i-j]));
+    //         }
+    //     }
+    //     return dp[n];
+    // }
+
+    // 96. 不同的二叉搜索树
+    // int numTrees(int n) {
+    //     vector<int>dp (n+1, 0);
+    //     dp[0] = 1;
+    //     dp[1] = 1;
+    //     for (int i = 2; i <= n; i++) {
+    //         for (int j = 1; j <= i; j++) {
+    //             dp[i] += (dp[j-1] * dp[i-j]);
+    //         }
+    //     }
+    //     return dp[n];
+    // }
 };
 
 int main() {
@@ -122,4 +147,10 @@ int main() {
     // 63. 不同路径 II
     // vector<vector<int> > obs = {{0,1},{0,0}};
     // cout<<solution.uniquePathsWithObstacles(obs);
+
+    // 343. 整数拆分
+    // cout<<solution.integerBreak(10);
+
+    // 96. 不同的二叉搜索树
+    // cout<<solution.numTrees(3);
 }
