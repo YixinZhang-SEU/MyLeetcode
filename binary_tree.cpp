@@ -1006,7 +1006,18 @@ public:
     // 236. 二叉树的最近公共祖先（一刷有参考）
     // 需要自底向上地查找，即回溯，后序遍历即为回溯
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        
+        if (root == p || root == q || root == nullptr) {
+            return root;
+        }
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        if (left != nullptr && right != nullptr) {
+            return root;
+        }
+        if (left == nullptr) {
+            return right;
+        }
+        return left;
     }
 };
 
