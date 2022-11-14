@@ -1005,19 +1005,68 @@ public:
 
     // 236. 二叉树的最近公共祖先（一刷有参考）
     // 需要自底向上地查找，即回溯，后序遍历即为回溯
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if (root == p || root == q || root == nullptr) {
-            return root;
+    // TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    //     if (root == p || root == q || root == nullptr) {
+    //         return root;
+    //     }
+    //     TreeNode* left = lowestCommonAncestor(root->left, p, q);
+    //     TreeNode* right = lowestCommonAncestor(root->right, p, q);
+    //     if (left != nullptr && right != nullptr) {
+    //         return root;
+    //     }
+    //     if (left == nullptr) {
+    //         return right;
+    //     }
+    //     return left;
+    // }
+
+    // 235. 二叉搜索树的最近公共祖先 (重写)
+    // TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    //     if (root == NULL) return root;
+    //                                                     // 中
+    //     if (root->val > p->val && root->val > q->val) {   // 左
+    //         TreeNode* left = lowestCommonAncestor(root->left, p, q);
+    //         if (left != NULL) {
+    //             return left;
+    //         }
+    //     }
+    // 
+    //     if (root->val < p->val && root->val < q->val) {   // 右
+    //         TreeNode* right = lowestCommonAncestor(root->right, p, q);
+    //         if (right != NULL) {
+    //             return right;
+    //         }
+    //     }
+    //     return root;
+    // }
+
+    // 701. 二叉搜索树中的插入操作
+    TreeNode* insertIntoBST(TreeNode* root, int val) {
+        if (root == nullptr) {
+            TreeNode* node = new TreeNode(val);
+            return node;
         }
-        TreeNode* left = lowestCommonAncestor(root->left, p, q);
-        TreeNode* right = lowestCommonAncestor(root->right, p, q);
-        if (left != nullptr && right != nullptr) {
-            return root;
+        insert_val(root, val);
+        return root;
+    }
+
+    void insert_val(TreeNode* root, int val) {
+        if (root->val < val) {
+            if (root->right == nullptr) {
+                TreeNode* node = new TreeNode(val);
+                root->right = node;
+            } else {
+                insert_val(root->right, val);
+            }
         }
-        if (left == nullptr) {
-            return right;
+        if (root->val > val) {
+            if (root->left == nullptr) {
+                TreeNode* node = new TreeNode(val);
+                root->left = node;
+            } else {
+                insert_val(root->left, val);
+            }
         }
-        return left;
     }
 };
 
