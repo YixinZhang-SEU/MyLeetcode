@@ -1041,33 +1041,72 @@ public:
     // }
 
     // 701. 二叉搜索树中的插入操作
-    TreeNode* insertIntoBST(TreeNode* root, int val) {
-        if (root == nullptr) {
-            TreeNode* node = new TreeNode(val);
-            return node;
-        }
-        insert_val(root, val);
-        return root;
-    }
+    // TreeNode* insertIntoBST(TreeNode* root, int val) {
+    //     if (root == nullptr) {
+    //         TreeNode* node = new TreeNode(val);
+    //         return node;
+    //     }
+    //     insert_val(root, val);
+    //     return root;
+    // }
+    //
+    // void insert_val(TreeNode* root, int val) {
+    //     if (root->val < val) {
+    //         if (root->right == nullptr) {
+    //             TreeNode* node = new TreeNode(val);
+    //             root->right = node;
+    //         } else {
+    //             insert_val(root->right, val);
+    //         }
+    //     }
+    //     if (root->val > val) {
+    //         if (root->left == nullptr) {
+    //             TreeNode* node = new TreeNode(val);
+    //             root->left = node;
+    //         } else {
+    //             insert_val(root->left, val);
+    //         }
+    //     }
+    // }
 
-    void insert_val(TreeNode* root, int val) {
-        if (root->val < val) {
-            if (root->right == nullptr) {
-                TreeNode* node = new TreeNode(val);
-                root->right = node;
-            } else {
-                insert_val(root->right, val);
-            }
-        }
-        if (root->val > val) {
-            if (root->left == nullptr) {
-                TreeNode* node = new TreeNode(val);
-                root->left = node;
-            } else {
-                insert_val(root->left, val);
-            }
-        }
-    }
+    // 450. 删除二叉搜索树中的节点
+    // // 注意释放内存
+    // TreeNode* deleteNode(TreeNode* root, int key) {
+    //     if (root == nullptr) {
+    //         return root;
+    //     }
+    //     if (root->val == key) {
+    //         if (root->left == nullptr && root->right == nullptr) {
+    //             delete root;
+    //             return nullptr;
+    //         } else if (root->left == nullptr) {
+    //             TreeNode* node = root->right;
+    //             delete root;
+    //             return node;
+    //         } else if (root->right == nullptr) {
+    //             TreeNode* node = root->left;
+    //             delete root;
+    //             return node;
+    //         } else {
+    //             TreeNode* cur = root->right;
+    //             while (cur->left) {
+    //                 cur = cur->left;
+    //             }
+    //             cur->left = root->left;
+    //             TreeNode* tmp = root;
+    //             root = root->right;
+    //             delete tmp;
+    //             return root;
+    //         }
+    //     }
+    //     if (root->val > key) {
+    //         root->left = deleteNode(root->left, key);
+    //     }
+    //     if (root->val < key) {
+    //         root->right = deleteNode(root->right, key);
+    //     }
+    //     return root;
+    // }
 };
 
 int main() {
