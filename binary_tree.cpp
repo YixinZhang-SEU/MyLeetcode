@@ -1107,6 +1107,22 @@ public:
     //     }
     //     return root;
     // }
+
+    // 669. 修剪二叉搜索树
+    // TreeNode* trimBST(TreeNode* root, int low, int high) {
+    //     if (root == nullptr) {
+    //         return root;
+    //     }
+    //     if (root->val < low) {  // 小于左极限，只需要关注它右子树的节点
+    //         return trimBST(root->right, low, high);
+    //     }
+    //     if (root->val > high) {  // 大于右极限，只需要关注它左子树的节点
+    //         return trimBST(root->left, low, high);
+    //     }
+    //     root->left = trimBST(root->left, low, high);
+    //     root->right = trimBST(root->right, low, high);
+    //     return root;
+    // }
 };
 
 int main() {
