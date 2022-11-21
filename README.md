@@ -185,3 +185,6 @@ que.inser(it, value);
 
 vector<vector<int> > res = vector<vector<int> >(que.begin(), que.end());
 ```
+
+18、递归转迭代通用方法
+https://leetcode.cn/circle/article/fOudRh/
