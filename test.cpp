@@ -24,7 +24,11 @@ int main() {
     // int max = *max_element(vec.begin(), vec.end());
     // cout<<max;
 
-    queue<int> q = {};
-    q.push(1);
-    cout<<q.size();
+    // queue<int> q = {};
+    // q.push(1);
+    // cout<<q.size();
+    string a = "a";
+    string b = "b";
+    string ab = a+b;
+    cout<<ab[0]<<" "<<ab[1];
 }
