@@ -78,6 +78,30 @@ public:
     //         tmp.erase(tmp.end()-1);
     //     }
     // }
+
+    // 39. 组合总和
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    //     backtracing(candidates, target, 0, 0);
+    //     return res;
+    // }
+    // void backtracing(vector<int>& candidates, int target, int idx, int sum) {
+    //     if (sum > target) {
+    //         return;
+    //     }
+    //     if (sum == target) {
+    //         res.push_back(tmp);
+    //         return;
+    //     }
+    //     for (int i = idx; i < candidates.size(); i++) {
+    //         sum += candidates[i];
+    //         tmp.push_back(candidates[i]);
+    //         backtracing(candidates, target, i, sum);
+    //         sum -= candidates[i];
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -107,5 +131,15 @@ int main() {
     // vector<string> res = solution.letterCombinations(digits);
     // for (string s : res) {
     //     cout<<s<<" ";
+    // }
+
+    // 39. 组合总和
+    // vector<int> candidates = {2};
+    // vector<vector<int> > res = solution.combinationSum(candidates, 1);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
     // }
 }
