@@ -188,3 +188,10 @@ vector<vector<int> > res = vector<vector<int> >(que.begin(), que.end());
 
 18、递归转迭代通用方法
 https://leetcode.cn/circle/article/fOudRh/
+
+19、可以用回溯法解决的问题
+• 组合问题：N个数里面按一定规则找出k个数的集合
+• 切割问题：一个字符串按一定规则有几种切割方式
+• 子集问题：一个N个数的集合里有多少符合条件的子集
+• 排列问题：N个数按一定规则全排列，有几种排列方式
+• 棋盘问题：N皇后，解数独等等

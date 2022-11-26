@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<stdlib.h>
+#include<algorithm>
 
 using namespace std;
 
@@ -102,6 +103,34 @@ public:
     //         tmp.pop_back();
     //     }
     // }
+
+    // 40. 组合总和 II
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+    //     sort(candidates.begin(), candidates.end());
+    //     backtracing(candidates, target, 0, 0);
+    //     return res;
+    // }
+    // void backtracing(vector<int>& candidates, int target, int idx, int sum) {
+    //     if (sum > target) {
+    //         return;
+    //     }
+    //     if (sum == target) {
+    //         res.push_back(tmp);
+    //         return;
+    //     }
+    //     for (int i = idx; i < candidates.size(); i++) {
+    //         if (i > idx && candidates[i] == candidates[i-1]) {
+    //             continue;
+    //         }
+    //         sum += candidates[i];
+    //         tmp.push_back(candidates[i]);
+    //         backtracing(candidates, target, i+1, sum);
+    //         sum -= candidates[i];
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -136,6 +165,16 @@ int main() {
     // 39. 组合总和
     // vector<int> candidates = {2};
     // vector<vector<int> > res = solution.combinationSum(candidates, 1);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    // 40. 组合总和 II
+    // vector<int> candidates = {10,1,2,7,6,1,5};
+    // vector<vector<int> > res = solution.combinationSum2(candidates, 8);
     // for (vector<int> a : res) {
     //     for (int b : a) {
     //         cout<<b<<" ";
