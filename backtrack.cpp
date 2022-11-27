@@ -131,6 +131,48 @@ public:
     //         tmp.pop_back();
     //     }
     // }
+
+    // 131. 分割回文串
+    // vector<vector<bool> > is_palindrome;      // is_palindrome[i][j]表示字符串s从i到j闭区间切片是否回文
+    // vector<vector<string> > res;
+    // vector<string> tmp;
+    // vector<vector<string>> partition(string s) {
+    //     computePalindrome(s);
+    //     backtracing(s, 0);
+    //     return res;
+    // }
+    // // 计算回文
+    // void computePalindrome(string s) {
+    //     is_palindrome.resize(s.size(), vector<bool>(s.size(), false));
+    //     for (int i = s.size()-1; i >= 0; i--) {
+    //         for (int j = i; j < s.size(); j++) {
+    //             if (i == j) {
+    //                 is_palindrome[i][j] = true;
+    //             } else if (j-i == 1) {
+    //                 is_palindrome[i][j] = (s[i] == s[j]);
+    //             } else {
+    //                 is_palindrome[i][j] = (s[i] == s[j])&&is_palindrome[i+1][j-1];
+    //             }
+    //         }
+    //     }
+    //     return;
+    // }
+    // // 回溯
+    // void backtracing(string s, int idx) {
+    //     if (idx >= s.size()) {
+    //         res.push_back(tmp);
+    //         return;
+    //     }
+    //     for (int i = idx; i < s.size(); i++) {
+    //         if (is_palindrome[idx][i]) {
+    //             tmp.push_back(s.substr(idx, i-idx+1));
+    //         } else {
+    //             continue;
+    //         }
+    //         backtracing(s, i+1);
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -177,6 +219,16 @@ int main() {
     // vector<vector<int> > res = solution.combinationSum2(candidates, 8);
     // for (vector<int> a : res) {
     //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    // 131. 分割回文串
+    // string s = "aaba";
+    // vector<vector<string> > res = solution.partition(s);
+    // for (vector<string> a : res) {
+    //     for (string b : a) {
     //         cout<<b<<" ";
     //     }
     //     cout<<endl;
