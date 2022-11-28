@@ -2,6 +2,7 @@
 #include<vector>
 #include<stdlib.h>
 #include<algorithm>
+#include<string>
 
 using namespace std;
 
@@ -173,6 +174,54 @@ public:
     //         tmp.pop_back();
     //     }
     // }
+
+    // 93. 复原 IP 地址
+    // vector<string> res;
+    // vector<string> restoreIpAddresses(string s) {
+    //     backtracing(s, 0, 0);
+    //     return res;
+    // }
+    // void backtracing(string s, int idx, int count) {
+    //     if (idx > s.size()) {
+    //         return;
+    //     }
+    //     if (count == 3) {
+    //         if (isValid(s, idx, s.size()-1)) {
+    //             res.push_back(s);
+    //         }
+    //         return;
+    //     }
+    //     for (int i = idx; i < s.size(); i++) {
+    //         if (isValid(s, idx, i)) {
+    //             s.insert(s.begin()+i+1, '.');
+    //             count++;
+    //             backtracing(s, i+2, count);
+    //             count--;
+    //             s.erase(s.begin()+i+1);
+    //         } else {
+    //             break;
+    //         }
+    //     }
+    // }
+    // bool isValid(string s, int st, int ed) {
+    //     if (st > ed) {
+    //         return false;
+    //     }
+    //     if (s[st] == '0' && st!=ed) {
+    //         return false;
+    //     }
+    //     int num = 0;
+    //     for (int i = st; i <= ed; i++) {
+    //         if (s[i] > '9' || s[i] < '0') {
+    //             return false;
+    //         }
+    //         num = num*10 + s[i]-'0';
+    //         if (num > 255) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 }
 ;
 
@@ -232,5 +281,12 @@ int main() {
     //         cout<<b<<" ";
     //     }
     //     cout<<endl;
+    // }
+
+    // 93. 复原 IP 地址
+    // string s = "25525511135";
+    // vector<string> res = solution.restoreIpAddresses(s);
+    // for (string s : res) {
+    //     cout<<s<<endl;
     // }
 }
