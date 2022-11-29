@@ -222,6 +222,28 @@ public:
     //     }
     //     return true;
     // }
+
+    // 78. 子集
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> subsets(vector<int>& nums) {
+    //     res.clear();
+    //     tmp.clear();
+    //     res.push_back(tmp);
+    //     backtracing(nums, 0);
+    //     return res;
+    // }
+    // void backtracing(vector<int> nums, int idx) {
+    //     if (idx >= nums.size()) {
+    //         return;
+    //     }
+    //     for (int i = idx; i < nums.size(); i++) {
+    //         tmp.push_back(nums[i]);
+    //         res.push_back(tmp);
+    //         backtracing(nums, i+1);
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -288,5 +310,15 @@ int main() {
     // vector<string> res = solution.restoreIpAddresses(s);
     // for (string s : res) {
     //     cout<<s<<endl;
+    // }
+
+    // 78. 子集
+    // vector<int> nums = {0};
+    // vector<vector<int> > res = solution.subsets(nums);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
     // }
 }
