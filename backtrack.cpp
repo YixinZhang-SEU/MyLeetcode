@@ -244,6 +244,29 @@ public:
     //         tmp.pop_back();
     //     }
     // }
+
+    // 90. 子集 II
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+    //     res.clear();
+    //     tmp.clear();
+    //     res.push_back(tmp);
+    //     sort(nums.begin(), nums.end());
+    //     backtracing(nums, 0);
+    //     return res;
+    // }
+    // void backtracing(vector<int> nums, int idx) {
+    //     for (int i = idx; i < nums.size(); i++) {
+    //         if (i > idx && nums[i] == nums[i-1]) {
+    //             continue;
+    //         }
+    //         tmp.push_back(nums[i]);
+    //         res.push_back(tmp);
+    //         backtracing(nums, i+1);
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -315,6 +338,16 @@ int main() {
     // 78. 子集
     // vector<int> nums = {0};
     // vector<vector<int> > res = solution.subsets(nums);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    // 90. 子集 II
+    // vector<int> nums = {1,2,2};
+    // vector<vector<int> > res = solution.subsetsWithDup(nums);
     // for (vector<int> a : res) {
     //     for (int b : a) {
     //         cout<<b<<" ";
