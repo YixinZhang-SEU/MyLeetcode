@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<algorithm>
 #include<string>
+#include<unordered_set>
 
 using namespace std;
 
@@ -267,6 +268,36 @@ public:
     //         tmp.pop_back();
     //     }
     // }
+
+    // 491. 递增子序列
+    // // 去重
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> findSubsequences(vector<int>& nums) {
+    //     tmp.clear();
+    //     res.clear();
+    //     backtracing(nums, 0);
+    //     return res;
+    // }
+    // void backtracing(vector<int> nums, int idx) {
+    //     unordered_set<int> uset;
+    //     for (int i = idx; i < nums.size(); i++) {
+    //         if (uset.find(nums[i]) != uset.end()) {
+    //             continue;
+    //         }
+    //         if (tmp.size() == 0 || nums[i] >= tmp[tmp.size()-1]) {
+    //             tmp.push_back(nums[i]);
+    //         } else {
+    //             continue;
+    //         }
+    //         if (tmp.size() >= 2) {
+    //             res.push_back(tmp);
+    //         }
+    //         uset.insert(nums[i]);
+    //         backtracing(nums, i+1);
+    //         tmp.pop_back();
+    //     }
+    // }
 }
 ;
 
@@ -354,4 +385,15 @@ int main() {
     //     }
     //     cout<<endl;
     // }
+
+    // 491. 递增子序列
+    // vector<int> nums = {1,2,3,1,1};
+    // vector<vector<int> > res = solution.findSubsequences(nums);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
+    // }
 }
+
