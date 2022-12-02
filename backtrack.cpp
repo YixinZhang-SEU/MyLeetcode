@@ -13,7 +13,7 @@ public:
     // vector<vector<int> > res;
     // vector<int> tmp;
     // vector<vector<int> > combine(int n, int k) {
-    //     backtracking(n, k, 1);
+    //     ckcktracking(n, k, 1);
     //     return res;
     // }
     // void backtracking(int n, int k, int st_idx) {
@@ -32,10 +32,10 @@ public:
     // vector<vector<int> > res;
     // vector<int> tmp;
     // vector<vector<int>> combinationSum3(int k, int n) {
-    //     backtracing(n, k, 1, 0);
+    //     backtracking(n, k, 1, 0);
     //     return res;
     // }
-    // void backtracing(int n, int k, int st_idx, int sum) {
+    // void backtracking(int n, int k, int st_idx, int sum) {
     //     for (int i = st_idx; i <= 9-(k-tmp.size())+1; i++) {
     //         if (sum > n) {
     //             return;
@@ -48,7 +48,7 @@ public:
     //         }
     //         sum += i;
     //         tmp.push_back(i);
-    //         backtracing(n, k, i+1, sum);
+    //         backtracking(n, k, i+1, sum);
     //         tmp.pop_back();
     //         sum -= i;    
     //     }
@@ -66,18 +66,18 @@ public:
     //         return res;
     //     }
     //     int idx = 0;
-    //     backtracing(length, idx, digits);
+    //     backtracking(length, idx, digits);
     //     return res;
     // }
     //
-    // void backtracing(int length, int idx, string digits) {
+    // void backtracking(int length, int idx, string digits) {
     //     if (tmp.length() == length) {
     //         res.push_back(tmp);
     //         return;
     //     }
     //     for(string s : alphas[(int)digits[idx]-48]) {
     //         tmp += s;
-    //         backtracing(length, idx+1, digits);
+    //         backtracking(length, idx+1, digits);
     //         tmp.erase(tmp.end()-1);
     //     }
     // }
@@ -86,10 +86,10 @@ public:
     // vector<vector<int> > res;
     // vector<int> tmp;
     // vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-    //     backtracing(candidates, target, 0, 0);
+    //     backtracking(candidates, target, 0, 0);
     //     return res;
     // }
-    // void backtracing(vector<int>& candidates, int target, int idx, int sum) {
+    // void backtracking(vector<int>& candidates, int target, int idx, int sum) {
     //     if (sum > target) {
     //         return;
     //     }
@@ -100,7 +100,7 @@ public:
     //     for (int i = idx; i < candidates.size(); i++) {
     //         sum += candidates[i];
     //         tmp.push_back(candidates[i]);
-    //         backtracing(candidates, target, i, sum);
+    //         backtracking(candidates, target, i, sum);
     //         sum -= candidates[i];
     //         tmp.pop_back();
     //     }
@@ -111,10 +111,10 @@ public:
     // vector<int> tmp;
     // vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
     //     sort(candidates.begin(), candidates.end());
-    //     backtracing(candidates, target, 0, 0);
+    //     backtracking(candidates, target, 0, 0);
     //     return res;
     // }
-    // void backtracing(vector<int>& candidates, int target, int idx, int sum) {
+    // void backtracking(vector<int>& candidates, int target, int idx, int sum) {
     //     if (sum > target) {
     //         return;
     //     }
@@ -128,7 +128,7 @@ public:
     //         }
     //         sum += candidates[i];
     //         tmp.push_back(candidates[i]);
-    //         backtracing(candidates, target, i+1, sum);
+    //         backtracking(candidates, target, i+1, sum);
     //         sum -= candidates[i];
     //         tmp.pop_back();
     //     }
@@ -140,7 +140,7 @@ public:
     // vector<string> tmp;
     // vector<vector<string>> partition(string s) {
     //     computePalindrome(s);
-    //     backtracing(s, 0);
+    //     backtracking(s, 0);
     //     return res;
     // }
     // // 计算回文
@@ -160,7 +160,7 @@ public:
     //     return;
     // }
     // // 回溯
-    // void backtracing(string s, int idx) {
+    // void backtracking(string s, int idx) {
     //     if (idx >= s.size()) {
     //         res.push_back(tmp);
     //         return;
@@ -171,7 +171,7 @@ public:
     //         } else {
     //             continue;
     //         }
-    //         backtracing(s, i+1);
+    //         backtracking(s, i+1);
     //         tmp.pop_back();
     //     }
     // }
@@ -179,10 +179,10 @@ public:
     // 93. 复原 IP 地址
     // vector<string> res;
     // vector<string> restoreIpAddresses(string s) {
-    //     backtracing(s, 0, 0);
+    //     backtracking(s, 0, 0);
     //     return res;
     // }
-    // void backtracing(string s, int idx, int count) {
+    // void backtracking(string s, int idx, int count) {
     //     if (idx > s.size()) {
     //         return;
     //     }
@@ -196,7 +196,7 @@ public:
     //         if (isValid(s, idx, i)) {
     //             s.insert(s.begin()+i+1, '.');
     //             count++;
-    //             backtracing(s, i+2, count);
+    //             backtracking(s, i+2, count);
     //             count--;
     //             s.erase(s.begin()+i+1);
     //         } else {
@@ -231,17 +231,17 @@ public:
     //     res.clear();
     //     tmp.clear();
     //     res.push_back(tmp);
-    //     backtracing(nums, 0);
+    //     backtracking(nums, 0);
     //     return res;
     // }
-    // void backtracing(vector<int> nums, int idx) {
+    // void backtracking(vector<int> nums, int idx) {
     //     if (idx >= nums.size()) {
     //         return;
     //     }
     //     for (int i = idx; i < nums.size(); i++) {
     //         tmp.push_back(nums[i]);
     //         res.push_back(tmp);
-    //         backtracing(nums, i+1);
+    //         backtracking(nums, i+1);
     //         tmp.pop_back();
     //     }
     // }
@@ -254,17 +254,17 @@ public:
     //     tmp.clear();
     //     res.push_back(tmp);
     //     sort(nums.begin(), nums.end());
-    //     backtracing(nums, 0);
+    //     backtracking(nums, 0);
     //     return res;
     // }
-    // void backtracing(vector<int> nums, int idx) {
+    // void backtracking(vector<int> nums, int idx) {
     //     for (int i = idx; i < nums.size(); i++) {
     //         if (i > idx && nums[i] == nums[i-1]) {
     //             continue;
     //         }
     //         tmp.push_back(nums[i]);
     //         res.push_back(tmp);
-    //         backtracing(nums, i+1);
+    //         backtracking(nums, i+1);
     //         tmp.pop_back();
     //     }
     // }
@@ -276,10 +276,10 @@ public:
     // vector<vector<int>> findSubsequences(vector<int>& nums) {
     //     tmp.clear();
     //     res.clear();
-    //     backtracing(nums, 0);
+    //     backtracking(nums, 0);
     //     return res;
     // }
-    // void backtracing(vector<int> nums, int idx) {
+    // void backtracking(vector<int> nums, int idx) {
     //     unordered_set<int> uset;
     //     for (int i = idx; i < nums.size(); i++) {
     //         if (uset.find(nums[i]) != uset.end()) {
@@ -294,8 +294,33 @@ public:
     //             res.push_back(tmp);
     //         }
     //         uset.insert(nums[i]);
-    //         backtracing(nums, i+1);
+    //         backtracking(nums, i+1);
     //         tmp.pop_back();
+    //     }
+    // }
+
+    // 46. 全排列
+    // vector<vector<int> > res;
+    // vector<int> tmp;
+    // vector<vector<int>> permute(vector<int>& nums) {
+    //     vector<int> flag(nums.size(), 0);
+    //     backtracking(nums, flag);
+    //     return res;
+    // }
+    // void backtracking(vector<int> nums, vector<int> flag) {
+    //     if (tmp.size() == nums.size()) {
+    //         res.push_back(tmp);
+    //         return;
+    //     }
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         if (flag[i]) {
+    //             continue;
+    //         }
+    //         flag[i] = 1;
+    //         tmp.push_back(nums[i]);
+    //         backtracking(nums, flag);
+    //         tmp.pop_back();
+    //         flag[i] = 0;
     //     }
     // }
 }
@@ -389,6 +414,16 @@ int main() {
     // 491. 递增子序列
     // vector<int> nums = {1,2,3,1,1};
     // vector<vector<int> > res = solution.findSubsequences(nums);
+    // for (vector<int> a : res) {
+    //     for (int b : a) {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    // 46. 全排列
+    // vector<int> nums = {1,2,3};
+    // vector<vector<int> > res = solution.permute(nums);
     // for (vector<int> a : res) {
     //     for (int b : a) {
     //         cout<<b<<" ";
