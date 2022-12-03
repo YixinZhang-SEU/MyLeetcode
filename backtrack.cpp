@@ -323,6 +323,34 @@ public:
     //         flag[i] = 0;
     //     }
     // }
+
+    // 47. 全排列 II
+    vector<vector<int> > res;
+    vector<int> tmp;
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<int> flag(nums.size(), 0);
+        backtracking(nums, flag);
+        return res;
+    }
+    void backtracking(vector<int> nums, vector<int> flag) {
+        if (tmp.size() == nums.size()) {
+            res.push_back(tmp);
+            return;
+        }
+        for (int i = 0; i < nums.size(); i++) {
+            if (i > 0 && nums[i] == nums[i-1] && flag[i-1] == 0) {
+                continue;
+            }
+            if (!flag[i]) {
+                flag[i] = 1;
+                tmp.push_back(nums[i]);
+                backtracking(nums, flag);
+                tmp.pop_back();
+                flag[i] = 0;
+            }
+        }
+    }
 }
 ;
 
@@ -430,5 +458,15 @@ int main() {
     //     }
     //     cout<<endl;
     // }
+
+    // 47. 全排列 II
+    vector<int> nums = {1,1, 2};
+    vector<vector<int> > res = solution.permuteUnique(nums);
+    for (vector<int> a : res) {
+        for (int b : a) {
+            cout<<b<<" ";
+        }
+        cout<<endl;
+    }
 }
 
