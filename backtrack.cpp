@@ -351,6 +351,25 @@ public:
     //         }
     //     }
     // }
+
+    // 494. 目标和
+    // 超时了！！！！！！
+    // int count = 0;
+    // int findTargetSumWays(vector<int>& nums, int target) {
+    //     backtracking(nums, target, 0, 0);
+    //     return count;
+    // }
+    // void backtracking(vector<int> nums, int target, int idx, int sum) {
+    //     if (idx == nums.size() && sum == target) {
+    //         count++;
+    //         return;
+    //     }
+    //     if (idx > nums.size()) {
+    //         return;
+    //     }
+    //     backtracking(nums, target, idx+1, sum+nums[idx]);
+    //     backtracking(nums, target, idx+1, sum-nums[idx]);
+    // }
 }
 ;
 
@@ -468,5 +487,10 @@ int main() {
     //     }
     //     cout<<endl;
     // }
+
+    // 494. 目标和
+    vector<int> nums = {1,1,1,1,1};
+    int target = 3;
+    cout<<solution.findTargetSumWays(nums, target);
 }
 

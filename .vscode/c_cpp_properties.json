@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT",
+            "intelliSenseMode": "${default}",
+            "compilerPath": "D:\\ImportantSoftwares\\MinGW\\mingw64\\bin\\gcc.exe"
+        },
+        {
+            "name": "Win32-debug",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceFolder}/**"
+                ]
+            },
+            "defines": [
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "compilerArgs": [
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

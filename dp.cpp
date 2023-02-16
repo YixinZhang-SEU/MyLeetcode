@@ -158,21 +158,128 @@ public:
     // }
 
     // 1049. 最后一块石头的重量 II (转化成背包问题有难度，一刷有参考)
-    int lastStoneWeightII(vector<int>& stones) {
-        int sum = 0;
-        for (int stone : stones) {
-            sum += stone;
-        }
-        int target = sum/2;
-        vector<int> dp(sum+1, 0);
-        dp[0] = 0;
-        for (int i = 0; i < stones.size(); i++) {
-            for (int j = target; j >= stones[i]; j--) {
-                dp[j] = max(dp[j], dp[j-stones[i]] + stones[i]);
-            }
-        }
-        return sum- dp[target]*2;
-    }
+    // int lastStoneWeightII(vector<int>& stones) {
+    //     int sum = 0;
+    //     for (int stone : stones) {
+    //         sum += stone;
+    //     }
+    //     int target = sum/2;
+    //     vector<int> dp(sum+1, 0);
+    //     dp[0] = 0;
+    //     for (int i = 0; i < stones.size(); i++) {
+    //         for (int j = target; j >= stones[i]; j--) {
+    //             dp[j] = max(dp[j], dp[j-stones[i]] + stones[i]);
+    //         }
+    //     }
+    //     return sum- dp[target]*2;
+    // }
+
+    // 494. 目标和
+    // int findTargetSumWays(vector<int>& nums, int target) {
+    //     int sum = 0;
+    //     for (int a : nums) {
+    //         sum += a;
+    //     }
+    //     if (abs(target) > sum || (target+sum)%2) {
+    //         return 0;
+    //     }
+    //     int bag = (target+sum)/2;
+    //     vector<int> dp(bag+1, 0);
+    //     dp[0] = 1;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         for (int j = bag; j >= nums[i]; j--) {
+    //             dp[j] += dp[j- nums[i]];
+    //         }
+    //     }
+    //     return dp[bag];
+    // }
+
+    // 474. 一和零
+    // int findMaxForm(vector<string>& strs, int m, int n) {
+    //     // 得到0,1个数的数组
+    //     vector<int> zero = {}, one = {};
+    //     for (string s : strs) {
+    //         int z = 0, o = 0;
+    //         for (char a : s) {
+    //             if(a == '0') {
+    //                 z++;
+    //             } else {
+    //                 o++;
+    //             }
+    //         }
+    //         zero.push_back(z);
+    //         one.push_back(o);
+    //     }
+    //     // 二维背包
+    //     vector<vector<int> > dp(m+1, vector<int> (n+1, 0));
+    //     for (int i = 0; i < strs.size(); i++) {
+    //         for (int j = m; j >= zero[i]; j--) {
+    //             for (int k = n; k >= one[i]; k--) {
+    //                 dp[j][k] = max(dp[j][k], dp[j-zero[i]][k-one[i]]+1);
+    //             }
+    //         }
+    //     }
+    //     return dp[m][n];
+    // }
+
+    // 518. 零钱兑换 II
+    // int change(int amount, vector<int>& coins) {
+    //     vector<int> dp(amount+1, 0);
+    //     dp[0] = 1;
+    //     for (int i = 0; i < coins.size(); i++) {
+    //         for (int j = coins[i]; j <= amount; j++) {
+    //             dp[j] += dp[j-coins[i]];
+    //         }
+    //     }
+    //     return dp[amount];
+    // }
+
+    // 377. 组合总和 Ⅳ
+    // int combinationSum4(vector<int>& nums, int target) {
+    //     vector<int> dp(target+1, 0);
+    //     dp[0] = 1;
+    //     // 先遍历包的容量，再遍历物品
+    //     for (int i = 0; i <= target; i++) {
+    //         for (int j = 0; j < nums.size(); j++) {
+    //             if (i - nums[j] >= 0) {
+    //                 dp[i] += dp[i-nums[j]];
+    //             }
+    //         }
+    //     }
+    //     return dp[target];
+    // }
+
+    // 322. 零钱兑换
+    // int coinChange(vector<int>& coins, int amount) {
+    //     if (amount == 0) {
+    //         return 0;
+    //     }
+    //     vector<int> dp(amount+1, INT_MAX);
+    //     dp[0] = 0;
+    //     for (int i = 0; i < coins.size(); i++) {
+    //         for (int j = coins[i]; j <= amount; j++) {
+    //             if (dp[j-coins[i]] != INT_MAX) {
+    //                 dp[j] = min(dp[j], dp[j-coins[i]]+1);
+    //             }
+    //         }
+    //     }
+    //     if (dp[amount] == INT_MAX) {
+    //         return -1;
+    //     }
+    //     return dp[amount];
+    // }
+
+    // 279. 完全平方数
+    // int numSquares(int n) {
+    //     vector<int> dp(n+1, INT_MAX);
+    //     dp[0] = 0;
+    //     for (int i = 1; i*i < n; i++) {
+    //         for (int j = i*i; j <= n; j++) {
+    //             dp[j] = min(dp[j], dp[j-i*i]+1);
+    //         }
+    //     }
+    //     return dp[n];
+    // }
 };
 
 int main() {
@@ -197,4 +304,28 @@ int main() {
     // 416. 分割等和子集
     // vector<int> nums = {1,2,3,5};
     // cout<<solution.canPartition(nums);
+
+    // 474. 一和零
+    // vector<string> strs = {"10","0001","111001","1","0"};
+    // int m = 5, n =3;
+    // cout<<solution.findMaxForm(strs, m, n);
+
+    // 518. 零钱兑换 II
+    // vector<int> coins = {1, 2, 5};
+    // int amount = 5;
+    // cout<<solution.change(amount, coins);
+
+    // 377. 组合总和 Ⅳ
+    // vector<int> nums = {1,2,3};
+    // int target = 4;
+    // cout<<solution.combinationSum4(nums, target);
+
+    // 322. 零钱兑换
+    // vector<int> coins = {1};
+    // int amount = 0;
+    // cout<<solution.coinChange(coins, amount);
+
+    // 279. 完全平方数
+    // int n = 1;
+    // cout<<solution.numSquares(n);
 }
