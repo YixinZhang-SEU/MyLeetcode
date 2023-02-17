@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<string>
+#include<unordered_set>
 
 using namespace std;
 
@@ -280,6 +282,22 @@ public:
     //     }
     //     return dp[n];
     // }
+
+    // 139. 单词拆分
+    // bool wordBreak(string s, vector<string>& wordDict) {
+    //     unordered_set<string> wordset(wordDict.begin(), wordDict.end());
+    //     vector<bool> dp(s.size()+1, false);
+    //     dp[0] = true;
+    //     // 这里顺序很重要，因此要先遍历背包，再遍历物品
+    //     for (int i = 1; i <= s.size(); i++) {
+    //         for (int j = 0; j < i; j++) {
+    //             if (wordset.find(s.substr(j, i-j)) != wordset.end() && dp[j]) {
+    //                 dp[i] = true;
+    //             }
+    //         }
+    //     }
+    //     return dp[s.size()];
+    // }
 };
 
 int main() {
@@ -328,4 +346,9 @@ int main() {
     // 279. 完全平方数
     // int n = 1;
     // cout<<solution.numSquares(n);
+
+    // 139. 单词拆分
+    // vector<string> dict = {"cats", "dog", "sand", "and", "cat"};
+    // string s = "catsandog";
+    // cout<<solution.wordBreak(s, dict);
 }
