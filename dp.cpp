@@ -298,6 +298,42 @@ public:
     //     }
     //     return dp[s.size()];
     // }
+
+    // 198. 打家劫舍
+    // int rob(vector<int>& nums) {
+    //     vector<int> dp(nums.size(), 0);
+    //     dp[0] = nums[0];
+    //     if (nums.size() == 1) {
+    //         return dp[0];
+    //     }
+    //     dp[1] = max(nums[0], nums[1]);
+    //     for (int i = 2; i < nums.size(); i++) {
+    //         dp[i] = max(dp[i-1], dp[i-2]+nums[i]);
+    //     }
+    //     return dp[nums.size()-1];
+    // }
+
+    // 213. 打家劫舍 II
+    // int rob(vector<int>& nums) {
+    //     if (nums.size() == 1) {
+    //         return (nums[0]);
+    //     }
+    //     int res1 = robDP(nums, 0, nums.size()-2);
+    //     int res2 = robDP(nums, 1, nums.size()-1);
+    //     return max(res1, res2);
+    // }
+    // int robDP(vector<int>& nums, int start, int end) {
+    //     if (start == end) {
+    //         return nums[start];
+    //     }
+    //     vector<int> dp(nums.size(), 0);
+    //     dp[start] = nums[start];
+    //     dp[start+1] = max(dp[start], nums[start+1]);
+    //     for (int i = start+2; i <= end; i++) {
+    //         dp[i] = max(dp[i-1], dp[i-2]+nums[i]);
+    //     }
+    //     return dp[end];
+    // }
 };
 
 int main() {
@@ -351,4 +387,12 @@ int main() {
     // vector<string> dict = {"cats", "dog", "sand", "and", "cat"};
     // string s = "catsandog";
     // cout<<solution.wordBreak(s, dict);
+
+    // 198. 打家劫舍
+    // vector<int> nums = {2,7,9,3,1};
+    // cout<<solution.rob(nums);
+
+    // 213. 打家劫舍 II
+    // vector<int> nums = {2,1,1,2};
+    // cout<<solution.rob(nums);
 }
