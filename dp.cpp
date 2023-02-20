@@ -5,6 +5,15 @@
 
 using namespace std;
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
 class Solution {
 public:
     // 509. 斐波那契数
@@ -334,7 +343,81 @@ public:
     //     }
     //     return dp[end];
     // }
-};
+
+    // 337. 打家劫舍 III （树形dp）（一刷参考）
+    // int rob(TreeNode* root) {
+    //     vector<int> dp = robDP(root);
+    //     return max(dp[0], dp[1]);
+    // }
+    // vector<int> robDP(TreeNode* node) {
+    //     if (node == nullptr) {
+    //         return {0, 0};
+    //     }
+    //     vector<int> left = robDP(node->left);
+    //     vector<int> right = robDP(node->right);
+    //     int l = max(left[0], left[1]) + max(right[0], right[1]);
+    //     int r = node->val + left[0] +right[0];
+    //     return {l, r};
+    // }
+
+    // 121. 买卖股票的最佳时机
+    // 法一：贪心
+    // int maxProfit(vector<int>& prices) {
+    //     int profit = 0;
+    //     int min = prices[0];
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         if (prices[i] < min) {
+    //             min = prices[i];
+    //         }
+    //         else {
+    //             profit = max(profit, prices[i]-min);
+    //         }
+    //     }
+    //     return profit;
+    // }
+    // 法二：动态规划（有参考）
+    // int maxProfit(vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(2, 0));
+    //     dp[0][0] = -prices[0];
+    //     dp[0][1] = 0;
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][0] = max(dp[i-1][0], -prices[i]);
+    //         dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i]);
+    //     }
+    //     return dp[prices.size()-1][1];
+    // }
+
+    // 122. 买卖股票的最佳时机 II
+    // 法一：贪心（做过了）
+    // 法二：动态规划（二维数组）
+    // int maxProfit(vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(2, 0));
+    //     dp[0][0] = -prices[0];
+    //     dp[0][1] = 0;
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][0] = max(dp[i-1][0], dp[i-1][1]-prices[i]);
+    //         dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i]);
+    //     }
+    //     return dp[prices.size()-1][1];
+    // }
+    // 法三：动态规划（一维滚动数组）
+    // int maxProfit(vector<int>& prices) {
+    //     vector<vector<int> > dp(2, vector<int>(2, 0));
+    //     dp[0][0] = -prices[0];
+    //     dp[0][1] = 0;
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i%2][0] = max(dp[(i-1)%2][0], dp[(i-1)%2][1]-prices[i]);
+    //         dp[i%2][1] = max(dp[(i-1)%2][1], dp[(i-1)%2][0] + prices[i]);
+    //     }
+    //     return dp[(prices.size()-1)%2][1];
+    // }
+
+    // 123. 买卖股票的最佳时机 III
+    int maxProfit(vector<int>& prices) {
+        
+    }
+}
+;
 
 int main() {
     Solution solution;
@@ -395,4 +478,12 @@ int main() {
     // 213. 打家劫舍 II
     // vector<int> nums = {2,1,1,2};
     // cout<<solution.rob(nums);
+
+    // 121. 买卖股票的最佳时机
+    // vector<int> prices = {7,1,5,3,6,4};
+    // cout<<solution.maxProfit(prices);
+
+    // 122. 买卖股票的最佳时机 II
+    // vector<int> prices = {7,1,5,3,6,4};
+    // cout<<solution.maxProfit(prices);
 }
