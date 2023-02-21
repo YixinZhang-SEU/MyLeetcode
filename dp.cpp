@@ -413,9 +413,23 @@ public:
     // }
 
     // 123. 买卖股票的最佳时机 III
-    int maxProfit(vector<int>& prices) {
-        
-    }
+    // int maxProfit(vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(5, 0));
+    //     dp[0][1] = -prices[0];
+    //     dp[0][3] = -prices[0];
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][1] = max(dp[i-1][1], -prices[i]);
+    //         dp[i][2] = max(dp[i-1][2], dp[i-1][1] + prices[i]);
+    //         dp[i][3] = max(dp[i-1][3], dp[i-1][2] - prices[i]);
+    //         dp[i][4] = max(dp[i-1][4], dp[i-1][3] + prices[i]);
+    //     }
+    //     return dp[prices.size()-1][4];
+    // }
+
+    // 188. 买卖股票的最佳时机 IV [不会不会不会不会不会不会不会不会不会]
+    // int maxProfit(int k, vector<int>& prices) {
+    // 
+    // }
 }
 ;
 
@@ -485,5 +499,9 @@ int main() {
 
     // 122. 买卖股票的最佳时机 II
     // vector<int> prices = {7,1,5,3,6,4};
+    // cout<<solution.maxProfit(prices);
+
+    // 123. 买卖股票的最佳时机 III
+    // vector<int> prices = {2,1,2,0,1};
     // cout<<solution.maxProfit(prices);
 }
