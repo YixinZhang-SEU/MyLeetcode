@@ -426,9 +426,64 @@ public:
     //     return dp[prices.size()-1][4];
     // }
 
-    // 188. 买卖股票的最佳时机 IV [不会不会不会不会不会不会不会不会不会]
+    // 188. 买卖股票的最佳时机 IV [会了会了会了会了会了会了]
     // int maxProfit(int k, vector<int>& prices) {
-    // 
+    //     int res;
+    //     if (k >= prices.size()/2) {
+    //         res = maxProfit2(prices);
+    //     } else {
+    //         res = maxProfit3(k, prices);
+    //     }
+    //     return res;
+    // }
+    // int maxProfit2(vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(2, 0));
+    //     dp[0][0] = -prices[0];
+    //     dp[0][1] = 0;
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][0] = max(dp[i-1][0], dp[i-1][1]-prices[i]);
+    //         dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i]);
+    //     }
+    //     return dp[prices.size()-1][1];
+    // }
+    // int maxProfit3(int k, vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(k*2+1, 0));
+    //     for (int i = 1; i <= k; i++) {
+    //         dp[0][i*2-1] = -prices[0];
+    //     }
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         for (int j = 1; j <= k; j++) {
+    //             dp[i][j*2-1] = max(dp[i-1][j*2-1], dp[i-1][j*2-2]-prices[i]);
+    //             dp[i][j*2] = max(dp[i-1][j*2], dp[i-1][j*2-1] + prices[i]);
+    //         }
+    //     }
+    //     return dp[prices.size()-1][k*2];
+    // }
+
+    // 309. 最佳买卖股票时机含冷冻期
+    // int maxProfit(vector<int>& prices) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(4, 0));
+    //     dp[0][0] = -prices[0];
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][0] = max(dp[i-1][0], max(dp[i-1][1]-prices[i], dp[i-1][3]-prices[i]));
+    //         dp[i][1] = max(dp[i-1][3], dp[i-1][1]);
+    //         dp[i][2] = dp[i-1][0] + prices[i];
+    //         dp[i][3] = dp[i-1][2];
+    //     }
+    //     // 注意不能只取不拥有的状态(即状态2)
+    //     int len = prices.size();
+    //     return max(dp[len-1][1], max(dp[len-1][2], dp[len-1][3]));
+    // }
+
+    // 714. 买卖股票的最佳时机含手续费
+    // int maxProfit(vector<int>& prices, int fee) {
+    //     vector<vector<int> > dp(prices.size(), vector<int>(2, 0));
+    //     dp[0][0] = -prices[0];
+    //     for (int i = 1; i < prices.size(); i++) {
+    //         dp[i][0] = max(dp[i-1][0], dp[i-1][1]-prices[i]);
+    //         dp[i][1] = max(dp[i-1][1], dp[i-1][0]+prices[i]-fee);
+    //     }
+    //     return dp[prices.size()-1][1];
     // }
 }
 ;
@@ -504,4 +559,9 @@ int main() {
     // 123. 买卖股票的最佳时机 III
     // vector<int> prices = {2,1,2,0,1};
     // cout<<solution.maxProfit(prices);
+
+    // 188. 买卖股票的最佳时机 IV
+    // vector<int> prices = {6,1,6,4,3,0,2};
+    // int k = 1;
+    // cout<<solution.maxProfit(k, prices);
 }
