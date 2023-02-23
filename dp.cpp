@@ -485,6 +485,53 @@ public:
     //     }
     //     return dp[prices.size()-1][1];
     // }
+
+    // 300. 最长递增子序列
+    // int lengthOfLIS(vector<int>& nums) {
+    //     vector<int> dp(nums.size(), 1);
+    //     int res = 1;
+    //     for (int i = 1; i < nums.size(); i++) {
+    //         for (int j = 0; j < i; j++) {
+    //             if (nums[i] > nums[j] ) {
+    //                 dp[i] = max(dp[i], dp[j] + 1);
+    //             }
+    //             if (res < dp[i]) {
+    //                 res = dp[i];
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 674. 最长连续递增序列
+    // int findLengthOfLCIS(vector<int>& nums) {
+    //     // 动态规划
+    //     // int res = 1;
+    //     // vector<int> dp(nums.size(), 1);
+    //     // for (int i = 1; i < nums.size(); i++) {
+    //     //     if (nums[i] > nums[i-1]) {
+    //     //         dp[i] = dp[i-1]+1;
+    //     //     }
+    //     //     res = max(res, dp[i]);
+    //     // }
+    //     // return res;
+    //     // 直接遍历
+    //     int count = 1, res = 1;
+    //     for (int i = 1; i < nums.size(); i++) {
+    //         if (nums[i] > nums[i-1]) {
+    //             count++;
+    //         } else {
+    //             count = 1;
+    //         }
+    //         res = max(res, count);
+    //     }
+    //     return res;
+    // }
+
+    // 718. 最长重复子数组
+    int findLength(vector<int>& nums1, vector<int>& nums2) {
+        
+    }
 }
 ;
 
@@ -564,4 +611,8 @@ int main() {
     // vector<int> prices = {6,1,6,4,3,0,2};
     // int k = 1;
     // cout<<solution.maxProfit(k, prices);
+
+    // 300. 最长递增子序列
+    // vector<int> nums = {1,3,6,7,9,4,10,5,6};
+    // cout<<solution.lengthOfLIS(nums);
 }
