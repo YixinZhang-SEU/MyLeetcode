@@ -529,9 +529,80 @@ public:
     // }
 
     // 718. 最长重复子数组
-    int findLength(vector<int>& nums1, vector<int>& nums2) {
-        
-    }
+    // int findLength(vector<int>& nums1, vector<int>& nums2) {
+    //     int res = 0;
+    //     vector<vector <int> > dp(nums1.size(), vector<int>(nums2.size(), 0));
+    //     for (int i = 0; i < nums2.size(); i++) {
+    //         if (nums1[0] == nums2[i]) {
+    //             dp[0][i] = 1;
+    //             res = 1;
+    //         }
+    //     }
+    //     for (int i = 0; i < nums1.size(); i++) {
+    //         if (nums2[0] == nums1[i]) {
+    //             dp[i][0] = 1;
+    //             res = 1;
+    //         }
+    //     }
+    //     for (int i = 1; i < nums1.size(); i++) {
+    //         for (int j = 1; j < nums2.size(); j++) {
+    //             if (nums1[i] == nums2[j]) {
+    //                 dp[i][j] = dp[i-1][j-1] + 1;
+    //             }
+    //             res = max(res, dp[i][j]);
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 1143. 最长公共子序列
+    // int longestCommonSubsequence(string text1, string text2) {
+    //     vector<vector<int> > dp(text1.size(), vector<int>(text2.size()));
+    //     // 初始化
+    //     dp[0][0] = (text1[0] == text2[0]);
+    //     for (int i = 1; i < text2.size(); i++) {
+    //         if (text2[i] == text1[0]) {
+    //             dp[0][i] = 1;
+    //         } else {
+    //             dp[0][i] = dp[0][i-1];
+    //         }
+    //     }
+    //     for (int i = 1; i < text1.size(); i++) {
+    //         if (text1[i] == text2[0]) {
+    //             dp[i][0] = 1;
+    //         } else {
+    //             dp[i][0] = dp[i-1][0];
+    //         }
+    //     }
+    //     // dp
+    //     for (int i = 1; i < text1.size(); i++) {
+    //         for (int j = 1; j < text2.size(); j++) {
+    //             if (text1[i] == text2[j]) {
+    //                 dp[i][j] = dp[i-1][j-1] + 1;
+    //             } else {
+    //                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+    //     return dp[text1.size()-1][text2.size()-1];
+    // }
+
+    // 1035. 不相交的线
+    // int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+    //     vector<vector<int> > dp(nums1.size() + 1, vector<int>(nums2.size() + 1, 0));
+    //     // size+1 的话就不用写那么多初始化
+    //     // dp
+    //     for (int i = 1; i <= nums1.size(); i++) {
+    //         for (int j = 1; j <= nums2.size(); j++) {
+    //             if (nums1[i-1] == nums2[j-1]) {
+    //                 dp[i][j] = dp[i-1][j-1] + 1;
+    //             } else {
+    //                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+    //     return dp[nums1.size()][nums2.size()];
+    // }
 }
 ;
 

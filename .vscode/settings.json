@@ -64,6 +64,10 @@
     "files.associations": {
         "demosdk.h": "c",
         "ohos_init.h": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }
