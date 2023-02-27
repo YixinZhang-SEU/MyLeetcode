@@ -617,6 +617,79 @@ public:
     //     }
     //     return res;
     // }
+
+    // 392. 判断子序列
+    // bool isSubsequence(string s, string t) {
+    //     if (s.size() == 0) {
+    //         return true;
+    //     }
+    //     if (t.size() == 0 && s.size() != 0) {
+    //         return false;
+    //     }
+    //     int idx = 0;
+    //     for (int i = 0; i < t.size(); i++) {
+    //         if (t[i] == s[idx]) {
+    //             idx++;
+    //         }
+    //     }
+    //     if (idx == s.size()) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
+    // 115. 不同的子序列（参考题解）
+    // int numDistinct(string s, string t) {
+    //     // 32位会溢出
+    //     // 这题如果不用unsigned long long的话，可以在中间算到超过32位时跳过，因为肯定是不满足题意，下一轮用不到的数据
+    //     vector<vector<uint64_t> > dp(s.size()+1, vector<uint64_t>(t.size()+1, 0));
+    //     for (int i = 0; i <= s.size(); i++) {
+    //         dp[i][0] = 1;
+    //     }
+    //     for (int i = 1; i <= s.size(); i++) {
+    //         for (int j = 1; j <= t.size(); j++) {
+    //             if (s[i-1] == t[j-1]) {
+    //                 dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
+    //             } else {
+    //                 dp[i][j] = dp[i-1][j];
+    //             }
+    //         }
+    //     }
+    //     return dp[s.size()][t.size()];
+    // }
+
+    // 583. 两个字符串的删除操作
+    // int minDistance(string word1, string word2) {
+    //     int len1 = word1.size(), len2 = word2.size();
+    //     vector<vector<int> > dp(len1, vector<int>(len2));
+    //     // 初始化
+    //     dp[0][0] = (word1[0] == word2[0]);
+    //     for (int i = 1; i < len2; i++) {
+    //         if (word2[i] == word1[0]) {
+    //             dp[0][i] = 1;
+    //         } else {
+    //             dp[0][i] = dp[0][i-1];
+    //         }
+    //     }
+    //     for (int i = 1; i < len1; i++) {
+    //         if (word1[i] == word2[0]) {
+    //             dp[i][0] = 1;
+    //         } else {
+    //             dp[i][0] = dp[i-1][0];
+    //         }
+    //     }
+    //     // dp
+    //     for (int i = 1; i < len1; i++) {
+    //         for (int j = 1; j < len2; j++) {
+    //             if (word1[i] == word2[j]) {
+    //                 dp[i][j] = dp[i-1][j-1] + 1;
+    //             } else {
+    //                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+    //     return len1 + len2 - dp[len1-1][len2-1]*2;
+    // }
 }
 ;
 
@@ -700,4 +773,14 @@ int main() {
     // 300. 最长递增子序列
     // vector<int> nums = {1,3,6,7,9,4,10,5,6};
     // cout<<solution.lengthOfLIS(nums);
+
+    // 392. 判断子序列
+    // string s = "abc";
+    // string t = "ahbgdc";
+    // cout<<solution.isSubsequence(s, t);
+
+    // 115. 不同的子序列（参考题解）
+    // string s = "xslledayhxhadmctrliaxqpokyezcfhzaskeykchkmhpyjipxtsuljkwkovmvelvwxzwieeuqnjozrfwmzsylcwvsthnxujvrkszqwtglewkycikdaiocglwzukwovsghkhyidevhbgffoqkpabthmqihcfxxzdejletqjoxmwftlxfcxgxgvpperwbqvhxgsbbkmphyomtbjzdjhcrcsggleiczpbfjcgtpycpmrjnckslrwduqlccqmgrdhxolfjafmsrfdghnatexyanldrdpxvvgujsztuffoymrfteholgonuaqndinadtumnuhkboyzaqguwqijwxxszngextfcozpetyownmyneehdwqmtpjloztswmzzdzqhuoxrblppqvyvsqhnhryvqsqogpnlqfulurexdtovqpqkfxxnqykgscxaskmksivoazlducanrqxynxlgvwonalpsyddqmaemcrrwvrjmjjnygyebwtqxehrclwsxzylbqexnxjcgspeynlbmetlkacnnbhmaizbadynajpibepbuacggxrqavfnwpcwxbzxfymhjcslghmajrirqzjqxpgtgisfjreqrqabssobbadmtmdknmakdigjqyqcruujlwmfoagrckdwyiglviyyrekjealvvigiesnvuumxgsveadrxlpwetioxibtdjblowblqvzpbrmhupyrdophjxvhgzclidzybajuxllacyhyphssvhcffxonysahvzhzbttyeeyiefhunbokiqrpqfcoxdxvefugapeevdoakxwzykmhbdytjbhigffkmbqmqxsoaiomgmmgwapzdosorcxxhejvgajyzdmzlcntqbapbpofdjtulstuzdrffafedufqwsknumcxbschdybosxkrabyfdejgyozwillcxpcaiehlelczioskqtptzaczobvyojdlyflilvwqgyrqmjaeepydrcchfyftjighntqzoo";
+    // string t = "rwmimatmhydhbujebqehjprrwfkoebcxxqfktayaaeheys";
+    // cout<<solution.numDistinct(s, t);
 }
