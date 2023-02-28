@@ -489,8 +489,8 @@ int main() {
     // }
 
     // 494. 目标和
-    vector<int> nums = {1,1,1,1,1};
-    int target = 3;
-    cout<<solution.findTargetSumWays(nums, target);
+    // vector<int> nums = {1,1,1,1,1};
+    // int target = 3;
+    // cout<<solution.findTargetSumWays(nums, target);
 }
 

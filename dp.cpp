@@ -712,6 +712,44 @@ public:
     //     }
     //     return dp[len1][len2];
     // }
+
+    // 647. 回文子串
+    // int countSubstrings(string s) {
+        // 法一：dp
+        // int count = 0;
+        // vector<vector<int> > dp(s.size(), vector<int>(s.size()));
+        // for (int i = s.size()-1; i >= 0; i--) {
+        //     for (int j = i; j < s.size(); j++) {
+        //         if (i == j) {
+        //             dp[i][j] = 1;
+        //         } else {
+        //             if (j - i == 1) {
+        //                 dp[i][j] = (s[i] == s[j]);
+        //             } else {
+        //                 dp[i][j] = (dp[i+1][j-1] && (s[i] == s[j]));
+        //             }
+        //         }
+        //         if (dp[i][j] == 1) {
+        //             count++;
+        //         }
+        //     }
+        // }
+        // return count;
+        //
+        // 法二：中心扩展法（有参考）
+        // 分为中心只有一个数（奇数扩展）和中心有两个数（偶数扩展）
+    //     int count = 0;
+    //     for (int i = 0; i < s.size(); i++) {
+    //         for (int j = 0; j <= 1; j++) {
+    //             int l = i;
+    //             int r = i+j;
+    //             while(l >= 0 && r < s.size() && s[l--] == s[r++]) {
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     return count;
+    // }
 }
 ;
 
@@ -810,4 +848,8 @@ int main() {
     // string word1 = "";
     // string word2 = "a";
     // cout<<solution.minDistance(word1, word2);
+
+    // 647. 回文子串
+    // string s = "fdsklf";
+    // cout<<solution.countSubstrings(s);
 }

@@ -205,12 +205,14 @@ https://leetcode.cn/circle/article/fOudRh/
 
 21、01背包一维写法
 dp[j]表示容量为j的背包可放入物品最大价值
+'''
 for(int i = 0; i < weight.size(); i++) { // 遍历物品
     for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
         dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
 
     }
 }
+'''
 要倒序的原因：保证每个物品只被放进去一次
 只能先遍历物品后遍历背包的原因：如果遍历背包容量放在上一层，那么每个dp[j]就只会放入一个物品，即：背包里只放入了一个物品。
 
