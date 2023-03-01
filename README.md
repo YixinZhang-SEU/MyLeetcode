@@ -92,6 +92,8 @@ iter->first || iter->second;
     用于重定义string长度
     `s.resize(s.size() + n)`
 
+`s.substr(l, r)` 提取s字符串从l到r的片段
+
 10、KMP算法
 ![image-20220812145356571](README.assets/image-20220812145356571.png)
 

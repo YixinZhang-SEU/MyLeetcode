@@ -750,6 +750,54 @@ public:
     //     }
     //     return count;
     // }
+
+    // 5. 最长回文子串
+    // string longestPalindrome(string s) {
+    //     // 与647题一样，dp和中心扩展皆可。
+    //     int max = 0;
+    //     int len;
+    //     string res;
+    //     vector<vector<int> > dp(s.size(), vector<int>(s.size(), 0));
+    //     for (int i = s.size()-1; i >= 0; i--) {
+    //         for (int j = i; j < s.size(); j++) {
+    //             if (s[i] == s[j]) {
+    //                 if (j - i <= 1) {
+    //                     dp[i][j] = 1;
+    //                 } else {
+    //                     if (dp[i+1][j-1] == 1) {
+    //                         dp[i][j] = 1;
+    //                     }
+    //                 }
+    //             }
+    //             if (dp[i][j] == 1) {
+    //                 len = j - i + 1;
+    //                 if (len > max) {
+    //                     max = len;
+    //                     res = s.substr(i, j - i + 1);
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 516. 最长回文子序列（又参考了(一点点）
+    // int longestPalindromeSubseq(string s) {
+    //     vector<vector<int> > dp(s.size(), vector<int>(s.size(), 0));
+    //     for (int i = 0; i < s.size(); i++) {
+    //         dp[i][i] = 1;
+    //     }
+    //     for (int i = s.size()-1; i >= 0; i--) {
+    //         for (int j = i+1; j < s.size(); j++) {
+    //             if (s[i] == s[j]) {
+    //                 dp[i][j] = dp[i+1][j-1] + 2;
+    //             } else {
+    //                 dp[i][j] = max(dp[i+1][j], dp[i][j-1]);
+    //             }
+    //         }
+    //     }
+    //     return dp[0][s.size()-1];
+    // }
 }
 ;
 
@@ -852,4 +900,12 @@ int main() {
     // 647. 回文子串
     // string s = "fdsklf";
     // cout<<solution.countSubstrings(s);
+
+    // 5. 最长回文子串
+    // string s = "a";
+    // cout<<solution.longestPalindrome(s);
+
+    // 516. 最长回文子序列（又参考了）
+    // string s = "aabaa";
+    // cout<<solution.longestPalindromeSubseq(s);
 }
