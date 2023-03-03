@@ -88,8 +88,8 @@ public:
 
     // 63. 不同路径 II
     // int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
-    //     vector<vector<int> > dp(obstacleGrid.size(), vector<int>(obstacleGrid[0].size(), 0));
     //     int m = obstacleGrid.size(), n = obstacleGrid[0].size();
+    //     vector<vector<int> > dp(m, vector<int>(n, 0));
     //     for (int i = 0; i < m; i++) {
     //         for (int j = 0; j < n; j++) {
     //             if (obstacleGrid[i][j] == 1) {
@@ -191,15 +191,15 @@ public:
     //     for (int a : nums) {
     //         sum += a;
     //     }
-    //     if (abs(target) > sum || (target+sum)%2) {
+    //     if (abs(target) > sum || (target + sum)%2) {
     //         return 0;
     //     }
-    //     int bag = (target+sum)/2;
-    //     vector<int> dp(bag+1, 0);
+    //     int bag = (target + sum) / 2;
+    //     vector<int> dp(bag + 1, 0);
     //     dp[0] = 1;
     //     for (int i = 0; i < nums.size(); i++) {
     //         for (int j = bag; j >= nums[i]; j--) {
-    //             dp[j] += dp[j- nums[i]];
+    //             dp[j] += dp[j - nums[i]];
     //         }
     //     }
     //     return dp[bag];
@@ -226,7 +226,7 @@ public:
     //     for (int i = 0; i < strs.size(); i++) {
     //         for (int j = m; j >= zero[i]; j--) {
     //             for (int k = n; k >= one[i]; k--) {
-    //                 dp[j][k] = max(dp[j][k], dp[j-zero[i]][k-one[i]]+1);
+    //                 dp[j][k] = max(dp[j][k], dp[j-zero[i]][k-one[i]] + 1);
     //             }
     //         }
     //     }
@@ -344,7 +344,7 @@ public:
     //     return dp[end];
     // }
 
-    // 337. 打家劫舍 III （树形dp）（一刷参考）
+    // 337. 打家劫舍 III (树形dp)(一刷参考)
     // int rob(TreeNode* root) {
     //     vector<int> dp = robDP(root);
     //     return max(dp[0], dp[1]);
@@ -557,6 +557,11 @@ public:
 
     // 1143. 最长公共子序列
     // int longestCommonSubsequence(string text1, string text2) {
+    //     /* 
+    //     这次定义的是dp[i][j]就是text1[0, i]和text2[0, j]公共子序列长度，所以需要很长的初始化。
+    //     如果定义dp[i][j]是text1[0, i-1]和text2[0, j-1]公共子序列长度的话，直接初始化为0就可以
+    //     但是要记得dp长度是size+1,循环遍历时要记得i, j <= size
+    //     */
     //     vector<vector<int> > dp(text1.size(), vector<int>(text2.size()));
     //     // 初始化
     //     dp[0][0] = (text1[0] == text2[0]);
@@ -638,7 +643,7 @@ public:
     //     return false;
     // }
 
-    // 115. 不同的子序列（参考题解）
+    // 115. 不同的子序列(参考题解)
     // int numDistinct(string s, string t) {
     //     // 32位会溢出
     //     // 这题如果不用unsigned long long的话，可以在中间算到超过32位时跳过，因为肯定是不满足题意，下一轮用不到的数据
@@ -715,29 +720,29 @@ public:
 
     // 647. 回文子串
     // int countSubstrings(string s) {
-        // 法一：dp
-        // int count = 0;
-        // vector<vector<int> > dp(s.size(), vector<int>(s.size()));
-        // for (int i = s.size()-1; i >= 0; i--) {
-        //     for (int j = i; j < s.size(); j++) {
-        //         if (i == j) {
-        //             dp[i][j] = 1;
-        //         } else {
-        //             if (j - i == 1) {
-        //                 dp[i][j] = (s[i] == s[j]);
-        //             } else {
-        //                 dp[i][j] = (dp[i+1][j-1] && (s[i] == s[j]));
-        //             }
-        //         }
-        //         if (dp[i][j] == 1) {
-        //             count++;
-        //         }
-        //     }
-        // }
-        // return count;
-        //
-        // 法二：中心扩展法（有参考）
-        // 分为中心只有一个数（奇数扩展）和中心有两个数（偶数扩展）
+    //     法一：dp
+    //     int count = 0;
+    //     vector<vector<int> > dp(s.size(), vector<int>(s.size()));
+    //     for (int i = s.size()-1; i >= 0; i--) {
+    //         for (int j = i; j < s.size(); j++) {
+    //             if (i == j) {
+    //                 dp[i][j] = 1;
+    //             } else {
+    //                 if (j - i == 1) {
+    //                     dp[i][j] = (s[i] == s[j]);
+    //                 } else {
+    //                     dp[i][j] = (dp[i+1][j-1] && (s[i] == s[j]));
+    //                 }
+    //             }
+    //             if (dp[i][j] == 1) {
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     return count;
+    //  
+    //     法二：中心扩展法（有参考）
+    //     分为中心只有一个数（奇数扩展）和中心有两个数（偶数扩展）
     //     int count = 0;
     //     for (int i = 0; i < s.size(); i++) {
     //         for (int j = 0; j <= 1; j++) {
