@@ -230,3 +230,6 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 链接：https://leetcode.cn/problems/maximum-subarray/solutions/228009/zui-da-zi-xu-he-by-leetcode-solution/
 
 25、股票类问题一般定义一个二维数组dp[i][j]，i表示第i天的状态，j = {0, 1}，分别表示第i天处于持有股票状态/不持有股票状态
+
+26、单调栈  
+通常是一维数组，要寻找任一个元素的右边或者左边第一个比自己大或者小的元素的位置，此时我们就要想到可以用单调栈了。
