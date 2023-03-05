@@ -57,6 +57,30 @@ public:
     //     }
     //     return res;
     // }
+
+    // 503. 下一个更大元素 II
+    // 一个更好的方案是不改变原数组，而是在遍历的时候走两遍，i%nums.size()
+    // vector<int> nextGreaterElements(vector<int>& nums) {
+    //     vector<int> new_nums(nums.size()*2);
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         new_nums[i] = nums[i];
+    //         new_nums[i + nums.size()] = nums[i];
+    //     }
+    //     vector<int> temp(new_nums.size(), -1);
+    //     stack<int> st;
+    //     for (int i = 0; i < new_nums.size(); i++) {
+    //         if (st.empty() || new_nums[i] <= new_nums[st.top()]) {
+    //             st.push(i);
+    //         } else {
+    //             while (!st.empty() && new_nums[i] > new_nums[st.top()]) {
+    //                 temp[st.top()] = new_nums[i];
+    //                 st.pop();
+    //             }
+    //             st.push(i);
+    //         }
+    //     }
+    //     return vector<int>(temp.begin(), temp.begin() + nums.size());
+    // }
 };
 
 int main() {
@@ -68,6 +92,13 @@ int main() {
     // 496. 下一个更大元素 I
     // vector<int> nums1 = {4,1,2}, nums2 = {1,3,4,2};
     // vector<int> res = solution.nextGreaterElement(nums1, nums2);
+    // for (int a : res) {
+    //     cout<<a<<" ";
+    // }
+
+    // 503. 下一个更大元素 II
+    // vector<int> nums = {1,2,1};
+    // vector<int> res = solution.nextGreaterElements(nums);
     // for (int a : res) {
     //     cout<<a<<" ";
     // }
