@@ -81,6 +81,36 @@ public:
     //     }
     //     return vector<int>(temp.begin(), temp.begin() + nums.size());
     // }
+
+    // 42. 接雨水
+    // int trap(vector<int>& height) {
+    //     // 单调栈
+    //     stack<int> st;
+    //     int sum = 0;
+    //     for (int i = 0; i < height.size(); i++) {
+    //         if (st.empty() || height[i] < height[st.top()]) {
+    //             st.push(i);
+    //         } else if (height[i] == height[st.top()]) {
+    //             st.pop();
+    //             st.push(i);
+    //         } else {
+    //             while (!st.empty() && height[i] > height[st.top()]) {
+    //                 int right = i;
+    //                 int bottom = st.top();
+    //                 st.pop();
+    //                 if (st.empty()) {
+    //                     st.push(i);
+    //                     break;
+    //                 }
+    //                 int left = st.top();
+    //                 sum += (min(height[left], height[right]) - height[bottom]) * (right - left - 1);
+    //             }
+    //             st.push(i);
+    //         }
+    //     }
+    //     return sum;
+    //     // 法二是双指针，算出每列左边最高和右边最高，取最小值，再减去自身，就是这一列（宽度为1）可以接的雨水
+    // }
 };
 
 int main() {
@@ -102,4 +132,8 @@ int main() {
     // for (int a : res) {
     //     cout<<a<<" ";
     // }
+
+    // 42. 接雨水
+    // vector<int> height = {0,1,0,2,1,0,1,3,2,1,2,1};
+    // cout<<solution.trap(height);
 }
