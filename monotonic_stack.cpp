@@ -111,6 +111,67 @@ public:
     //     return sum;
     //     // 法二是双指针，算出每列左边最高和右边最高，取最小值，再减去自身，就是这一列（宽度为1）可以接的雨水
     // }
+
+    // 84. 柱状图中最大的矩形
+    // // 法二：单调栈
+    // int largestRectangleArea(vector<int>& heights) {
+    //     stack<int> st;
+    //     int res = 0;
+    //     // 原数组头、尾部加0，这一点要注意
+    //     heights.insert(heights.begin(), 0);
+    //     heights.push_back(0);
+    //     for (int i = 0; i < heights.size(); i++) {
+    //         if (st.empty() || heights[i] > heights[st.top()]) {
+    //             st.push(i);
+    //         } else if (heights[i] == heights[st.top()]) {
+    //             st.pop();
+    //             st.push(i);
+    //         } else {
+    //             while (!st.empty() && heights[i] < heights[st.top()]) {
+    //                 int right = i;
+    //                 int highest = heights[st.top()];
+    //                 st.pop();
+    //                 if (!st.empty()) {
+    //                     int left = st.top();
+    //                     res = max(res, highest * (right - left -1));
+    //                 }
+    //             }
+    //             st.push(i);
+    //         }
+    //     }
+    //     return res;
+    // }
+    //
+    // int largestRectangleArea(vector<int>& heights) {
+    //     // 法一：双指针法。找到每一列左右比自己小的第一列 【有参考】
+    //     vector<int> minLeftIndex(heights.size());
+    //     vector<int> minRightIndex(heights.size());
+    //     int size = heights.size();
+    //
+    //     // 记录每个柱子 左边第一个小于该柱子的下标
+    //     minLeftIndex[0] = -1; // 注意这里初始化，防止下面while死循环
+    //     for (int i = 1; i < size; i++) {
+    //         int t = i - 1;
+    //         // 这里不是用if，而是不断向左寻找的过程
+    //         while (t >= 0 && heights[t] >= heights[i]) t = minLeftIndex[t];
+    //         minLeftIndex[i] = t;
+    //     }
+    //     // 记录每个柱子 右边第一个小于该柱子的下标
+    //     minRightIndex[size - 1] = size; // 注意这里初始化，防止下面while死循环
+    //     for (int i = size - 2; i >= 0; i--) {
+    //         int t = i + 1;
+    //         // 这里不是用if，而是不断向右寻找的过程
+    //         while (t < size && heights[t] >= heights[i]) t = minRightIndex[t];
+    //         minRightIndex[i] = t;
+    //     }
+    //     // 求和
+    //     int result = 0;
+    //     for (int i = 0; i < size; i++) {
+    //         int sum = heights[i] * (minRightIndex[i] - minLeftIndex[i] - 1);
+    //         result = max(sum, result);
+    //     }
+    //     return result;
+    // }
 };
 
 int main() {
@@ -136,4 +197,8 @@ int main() {
     // 42. 接雨水
     // vector<int> height = {0,1,0,2,1,0,1,3,2,1,2,1};
     // cout<<solution.trap(height);
+
+    // 84. 柱状图中最大的矩形
+    // vector<int> heights = {2,4};
+    // cout<<solution.largestRectangleArea(heights);
 }
