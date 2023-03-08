@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 
 using namespace std;
 
@@ -145,9 +146,19 @@ public:
     // }
 
     // 1365.有多少小于当前数字的数字
-    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-
-    }
+    // vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+    //     vector<int> vec = nums;
+    //     sort(vec.begin(), vec.end());
+    //     int hash[101];
+    //     for (int i = vec.size()-1; i >= 0; i--) {
+    //         hash[vec[i]] = i;
+    //     }
+    //     vector<int> res;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         res.push_back(hash[nums[i]]);
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {

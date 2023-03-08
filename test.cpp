@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    string s = "abc";
-    char a = s[0];
-    cout<<a;
+    string s = "abcdefg";
+    int n = 2;
+    cout<<s.substr(n);
 }

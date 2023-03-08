@@ -103,7 +103,7 @@ public:
     //     return s;
     // }
 
-    // 28. 实现strStr()（一刷有参考）
+    // 28. 实现strStr()（一刷有参考） (KMP)
     // // 构造 next 数组
     // void getNext(int* next, string s) {
     //     int j = -1;         // -1的情况
@@ -139,7 +139,7 @@ public:
     //     }
     //     return -1;
     // }
-
+    
     // 459. 重复的子字符串（一刷有参考）
     // void getNext(int *next, string s) {
     //     int j = -1;
@@ -212,9 +212,9 @@ int main() {
     // cout<<res;
 
     // 28. 实现strStr()
-    // string s1 = "aaaaa", s2 = "bba";
-    // int a = solution.strStr(s1, s2);
-    // cout<<a;
+    string s1 = "mississippi", s2 = "issip";
+    int a = solution.strStr(s1, s2);
+    cout<<a;
 
     // 459. 重复的子字符串
     // string s = "abab";
