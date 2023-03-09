@@ -212,9 +212,9 @@ int main() {
     // cout<<res;
 
     // 28. 实现strStr()
-    string s1 = "mississippi", s2 = "issip";
-    int a = solution.strStr(s1, s2);
-    cout<<a;
+    // string s1 = "mississippi", s2 = "issip";
+    // int a = solution.strStr(s1, s2);
+    // cout<<a;
 
     // 459. 重复的子字符串
     // string s = "abab";

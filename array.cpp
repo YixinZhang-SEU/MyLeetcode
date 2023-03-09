@@ -159,6 +159,44 @@ public:
     //     }
     //     return res;
     // }
+
+    // 941. 有效的山脉数组
+    // bool validMountainArray(vector<int>& arr) {
+    //     // 法一：从头到尾遍历法
+    //     int top;
+    //     for (int i = 0; i < arr.size()-1; i++) {
+    //         if (arr[i] == arr[i+1]) {
+    //             return false;
+    //         }
+    //         if (arr[i] > arr[i+1]) {
+    //             top = i;
+    //             break;
+    //         }
+    //     }
+    //     if (!(top == arr.size()-1) && !(top == 0)) {
+    //         for (int i = top; i < arr.size()-1; i++) {
+    //             if (arr[i] <= arr[i+1]) {
+    //                 return false;
+    //             }
+    //         }
+    //     } else {
+    //         return false;
+    //     }
+    //     return true;
+    //
+    //     // 法二：双指针法
+    //     int left = 0, right = arr.size() - 1;
+    //     while (left < arr.size() - 1 && arr[left] < arr[left + 1]) {
+    //         left++;
+    //     }
+    //     while (right > 0 && arr[right] < arr[right - 1]) {
+    //         right--;
+    //     }
+    //     if (left == right && left != 0 && right != arr.size() - 1) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 };
 
 int main() {
@@ -198,4 +236,8 @@ int main() {
     // }
 
     // 1365.有多少小于当前数字的数字
+
+    // 941. 有效的山脉数组
+    // vector<int> arr = {3,7,6,4,3,0,1,0};
+    // cout<<solution.validMountainArray(arr);
 }
