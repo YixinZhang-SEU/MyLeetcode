@@ -116,51 +116,73 @@ public:
             return lhs.second > rhs.second;
         }
     };
+
     // 20. 有效的括号
     // bool isValid(string s) {
-    //     if (s.size() == 0) {
-    //         return true;
+    //     // // 法一
+    //     // if (s.size() == 0) {
+    //     //     return true;
+    //     // }
+    //     // stack<char> st;
+    //     // for (int i = 0; i < s.size(); i++) {
+    //     //     switch(s[i]) {
+    //     //         case '(': case '[': case '{': {
+    //     //             st.push(s[i]);
+    //     //             break;
+    //     //         }
+    //     //         case ')': {
+    //     //             if (st.empty()) {
+    //     //                 return false;
+    //     //             }
+    //     //             char c = st.top();
+    //     //             if (c != '(') {
+    //     //                 return false;
+    //     //             } 
+    //     //             st.pop();
+    //     //             break;
+    //     //         }
+    //     //         case ']': {
+    //     //             if (st.empty()) {
+    //     //                 return false;
+    //     //             }
+    //     //             char c = st.top();
+    //     //             if (c != '[') {
+    //     //                 return false;
+    //     //             } 
+    //     //             st.pop();
+    //     //             break;
+    //     //         }
+    //     //         case '}': {
+    //     //             if (st.empty()) {
+    //     //                 return false;
+    //     //             }
+    //     //             char c = st.top();
+    //     //             if (c != '{') {
+    //     //                 return false;
+    //     //             } 
+    //     //             st.pop();
+    //     //             break;
+    //     //         }
+    //     //     }
+    //     // }
+    //     // return st.empty();
+    //     //
+    //     // 法二
+    //     if (s.size() % 2) {
+    //         return false;
     //     }
     //     stack<char> st;
     //     for (int i = 0; i < s.size(); i++) {
-    //         switch(s[i]) {
-    //             case '(': case '[': case '{': {
-    //                 st.push(s[i]);
-    //                 break;
-    //             }
-    //             case ')': {
-    //                 if (st.empty()) {
-    //                     return false;
-    //                 }
-    //                 char c = st.top();
-    //                 if (c != '(') {
-    //                     return false;
-    //                 } 
-    //                 st.pop();
-    //                 break;
-    //             }
-    //             case ']': {
-    //                 if (st.empty()) {
-    //                     return false;
-    //                 }
-    //                 char c = st.top();
-    //                 if (c != '[') {
-    //                     return false;
-    //                 } 
-    //                 st.pop();
-    //                 break;
-    //             }
-    //             case '}': {
-    //                 if (st.empty()) {
-    //                     return false;
-    //                 }
-    //                 char c = st.top();
-    //                 if (c != '{') {
-    //                     return false;
-    //                 } 
-    //                 st.pop();
-    //                 break;
-    //             }
+    //         if (s[i] == '(') {
+    //             st.push(')');
+    //         } else if (s[i] == '{') {
+    //             st.push('}');
+    //         } else if (s[i] == '[') {
+    //             st.push(']');
+    //         } else if (st.empty() || s[i] != st.top()) {
+    //             return false;
+    //         } else {
+    //             st.pop();
     //         }
     //     }
     //     return st.empty();
@@ -250,26 +272,26 @@ public:
     // }
 
     // 347. 前 K个高频元素 （优先级队列，一刷有参考）
-    // vector<int> topKFrequent(vector<int>& nums, int k) {
-    //     unordered_map<int, int> map;
-    //     for (int i = 0; i < nums.size(); i++) {
-    //         map[nums[i]]++;
-    //     }
-    //     // 定义一个大小为k的小顶堆
-    //     priority_queue<pair<int, int>, vector<pair<int, int> >, mycomparision > pri_que;
-    //     for (unordered_map<int, int>::iterator it = map.begin(); it != map.end(); it++) {
-    //         pri_que.push(*it);
-    //         if(pri_que.size() > k) {    // 如果小顶堆多于k个元素，就弹出最小的顶
-    //             pri_que.pop();
-    //         }
-    //     }
-    //     vector<int> res(k);
-    //     for (int i = k-1; i >= 0; i--) {
-    //         res[i] = pri_que.top().first;
-    //         pri_que.pop();
-    //     }
-    //     return res;
-    // }
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int, int> map;
+        for (int i = 0; i < nums.size(); i++) {
+            map[nums[i]]++;
+        }
+        // 定义一个大小为k的小顶堆
+        priority_queue<pair<int, int>, vector<pair<int, int> >, mycomparision > pri_que;
+        for (unordered_map<int, int>::iterator it = map.begin(); it != map.end(); it++) {
+            pri_que.push(*it);
+            if(pri_que.size() > k) {    // 如果小顶堆多于k个元素，就弹出最小的顶
+                pri_que.pop();
+            }
+        }
+        vector<int> res(k);
+        for (int i = k-1; i >= 0; i--) {
+            res[i] = pri_que.top().first;
+            pri_que.pop();
+        }
+        return res;
+    }
 };
 
 int main() {
@@ -315,10 +337,10 @@ int main() {
     // }
 
     // 347. 前 K个高频元素
-    // vector<int> nums = {1,1,1,2,2,3};
-    // int k = 2;
-    // vector<int> res = solution.topKFrequent(nums, k);
-    // for (int i = 0; i < k; i++) {
-    //     cout<<res[i]<<" ";
-    // }
+    vector<int> nums = {1,1,1,2,2,3};
+    int k = 2;
+    vector<int> res = solution.topKFrequent(nums, k);
+    for (int i = 0; i < k; i++) {
+        cout<<res[i]<<" ";
+    }
 }

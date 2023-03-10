@@ -1,6 +1,8 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<unordered_map>
+#include<unordered_set>
 
 using namespace std;
 
@@ -197,6 +199,37 @@ public:
     //     }
     //     return false;
     // }
+
+    // 1207. 独一无二的出现次数
+    // bool uniqueOccurrences(vector<int>& arr) {
+    //     unordered_map<int, int> freq;
+    //     unordered_set<int> freq_set;
+    //     for (int num : arr) {
+    //         freq[num]++;
+    //     }
+    //     for (unordered_map<int, int>::iterator it = freq.begin(); it != freq.end(); it++) {
+    //         if (freq_set.find(it->second) == freq_set.end()) {
+    //             freq_set.insert(it->second);
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+
+    // 283. 移动零
+    // void moveZeroes(vector<int>& nums) {
+    //     int fast = 0, slow = 0;
+    //     for (; fast < nums.size(); fast++) {
+    //         if (nums[fast] != 0) {
+    //             nums[slow++] = nums[fast];
+    //         }
+    //     }
+    //     for (int i = slow; i < nums.size(); i++) {
+    //         nums[i] = 0;
+    //     }
+    //     return;
+    // }
 };
 
 int main() {
@@ -240,4 +273,8 @@ int main() {
     // 941. 有效的山脉数组
     // vector<int> arr = {3,7,6,4,3,0,1,0};
     // cout<<solution.validMountainArray(arr);
+
+    // 283. 移动零
+    // vector<int> nums = {0,1,0,3,12};
+    // solution.moveZeroes(nums);
 }
