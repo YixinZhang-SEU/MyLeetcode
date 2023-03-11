@@ -230,6 +230,19 @@ public:
     //     }
     //     return;
     // }
+
+    // 189. 轮转数组
+    // void rotate(vector<int>& nums, int k) {
+    //     int len = nums.size();
+    //     k = k % len;
+    //     if (k == 0) {
+    //         return;
+    //     }
+    //     reverse(nums.begin(), nums.begin() + len - k);
+    //     reverse(nums.begin() + len - k, nums.end());
+    //     reverse(nums.begin(), nums.end());
+    //     return;
+    // }
 };
 
 int main() {
@@ -277,4 +290,12 @@ int main() {
     // 283. 移动零
     // vector<int> nums = {0,1,0,3,12};
     // solution.moveZeroes(nums);
+
+    // 189. 轮转数组
+    // vector<int> nums = {1, 2, 3};
+    // int k = 2;
+    // solution.rotate(nums, k);
+    // for (int a : nums) {
+    //     cout<<a<<" ";
+    // }
 }
