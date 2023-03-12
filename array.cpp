@@ -243,6 +243,24 @@ public:
     //     reverse(nums.begin(), nums.end());
     //     return;
     // }
+
+    // 724. 寻找数组的中心下标
+    // int pivotIndex(vector<int>& nums) {
+    //     // 这题关键是计算左右时，如果在下标0或size-1处没法计算。两边都可以加上自身
+    //     int sum = 0;
+    //     for (int num : nums) {
+    //         sum += num;
+    //     }
+    //     int left = 0, right = 0;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         left += nums[i];
+    //         right = sum - left + nums[i];
+    //         if (left == right) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
 };
 
 int main() {
