@@ -139,6 +139,7 @@ public:
     // }
 
     // 前中后序遍历：标记迭代法
+    // // 在已经访问但是暂时还没有写入数组的结点后添加null来标记
     // vector<int> inorderTraversal(TreeNode* root) {
     //     vector<int> res = {};
     //     stack<TreeNode*> st;
@@ -1189,17 +1190,17 @@ public:
     // }
 
     // 538. 把二叉搜索树转换为累加树
-    int sum = 0;
-    TreeNode* convertBST(TreeNode* root) {
-        if (root == nullptr) {
-            return root;
-        }
-        root->right = convertBST(root->right);
-        root->val += sum;
-        sum = root->val;
-        root->left = convertBST(root->left);
-        return root;
-    }
+    // int sum = 0;
+    // TreeNode* convertBST(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return root;
+    //     }
+    //     root->right = convertBST(root->right);
+    //     root->val += sum;
+    //     sum = root->val;
+    //     root->left = convertBST(root->left);
+    //     return root;
+    // }
 };
 
 int main() {

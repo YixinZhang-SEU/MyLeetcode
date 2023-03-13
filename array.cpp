@@ -261,6 +261,46 @@ public:
     //     }
     //     return -1;
     // }
+
+    // 34. 在排序数组中查找元素的第一个和最后一个位置
+    // // 本题要点：首先求出 >=target 的最左边数下标； 再求出 >=target + 1 的最左边数下标
+    // vector<int> searchRange(vector<int>& nums, int target) {
+    //     int left = binarySearch(nums, target);
+    //     int right = binarySearch(nums, target + 1);
+    //     if (left == nums.size() || nums[left] != target) {
+    //         return {-1, -1};
+    //     }
+    //     return {left, right - 1};
+    // }
+    // //
+    // int binarySearch(vector<int>& nums, int target) {
+    //     int left = 0, right = nums.size() - 1;
+    //     while (left <= right) {
+    //         int mid = left + ((right - left)/2);
+    //         if (nums[mid] >= target) {
+    //             right = mid - 1;
+    //         } else {
+    //             left = mid + 1;
+    //         }
+    //     }
+    //     return left;
+    // }
+
+    // 922. 按奇偶排序数组 II
+    // vector<int> sortArrayByParityII(vector<int>& nums) {
+    //     vector<int> res(nums.size());
+    //     int even = 0, odd = 1;
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         if (nums[i] % 2) {
+    //             res[odd] = nums[i];
+    //             odd += 2;
+    //         } else {
+    //             res[even] = nums[i];
+    //             even += 2;
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
@@ -316,4 +356,9 @@ int main() {
     // for (int a : nums) {
     //     cout<<a<<" ";
     // }
+
+    // 34. 在排序数组中查找元素的第一个和最后一个位置
+    // vector<int> nums = {5,7,7,8,8,10};
+    // int target = 8;
+    // cout<<solution.searchRange(nums, target)[0]<<" "<<solution.searchRange(nums, target)[1];
 }
