@@ -141,6 +141,75 @@ public:
     //     }
     //     return NULL;
     // }
+
+    // 234. 回文链表
+    // bool isPalindrome(ListNode* head) {
+    //     ListNode *dummyhead = new ListNode(0);
+    //     vector<int> vec;
+    //     dummyhead->next = head;
+    //     int count = 0;
+    //     ListNode *cur = dummyhead;
+    //     while (cur->next != nullptr) {
+    //         cur = cur->next;
+    //         count++;
+    //     }
+    //     int times = (count + 1) / 2;
+    //     cur = dummyhead;
+    //     while (times--) {
+    //         cur = cur->next;
+    //         vec.push_back(cur->val);
+    //     }
+    //     for (int i = count / 2 - 1; i >= 0 ; i--) {
+    //         cur = cur->next;
+    //         if (cur->val != vec[i]) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+
+    // 143. 重排链表
+    // void reorderList(ListNode* head) {
+    //     // 用快慢指针找到中间结点位置
+    //     ListNode* dummyhead = new ListNode(0);
+    //     dummyhead->next = head;
+    //     if (head->next == nullptr || head->next->next == nullptr) {
+    //         return;
+    //     }
+    //     ListNode *slow = dummyhead, *fast = dummyhead;
+    //     while (fast->next != nullptr && fast->next->next != nullptr) {
+    //         slow = slow->next;
+    //         fast = fast->next->next;
+    //     }
+    //     // 反转后半部分链表
+    //     ListNode* reversed = reverseList(slow->next);
+    //     slow->next = nullptr;
+    //     // 交叉输出
+    //     ListNode *cur1 = head, *cur2 = reversed;
+    //     ListNode *tmp1, *tmp2;
+    //     while (cur1 != nullptr) {
+    //         tmp1 = cur1->next;
+    //         tmp2 = cur2->next;
+    //         cur1->next = cur2;
+    //         if (tmp1 != nullptr) {
+    //             cur2->next = tmp1;
+    //         }
+    //         cur1 = tmp1;
+    //         cur2 = tmp2;
+    //     }
+    //     return;
+    // }
+    // // 反转链表
+    // ListNode* reverseList(ListNode* head) {
+    //     ListNode *pre = nullptr, *cur = head, *tmp;
+    //     while (cur != nullptr) {
+    //         tmp = cur->next;
+    //         cur->next = pre;
+    //         pre = cur;
+    //         cur = tmp;
+    //     }
+    //     return pre;
+    // }
 };
 
 
