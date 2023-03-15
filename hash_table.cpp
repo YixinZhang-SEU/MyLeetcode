@@ -194,6 +194,28 @@ public:
     //     }
     //     return res;
     // }
+
+    // 205. 同构字符串
+    // bool isIsomorphic(string s, string t) {
+    //     unordered_map<char, char> map;
+    //     unordered_set<char> set;
+    //     for (int i = 0; i < s.size(); i++) {
+    //         unordered_map<char, char>::iterator it;
+    //         it = map.find(s[i]);
+    //         if (it != map.end()) {
+    //             if (map[s[i]] != t[i]) {
+    //                 return false;
+    //             }
+    //         } else {
+    //             if (set.find(t[i]) != set.end()) {
+    //                 return false;
+    //             }
+    //             map.insert(pair<char, char>(s[i], t[i]));
+    //             set.insert(t[i]);
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
@@ -220,4 +242,8 @@ int main() {
     //     }
     //     cout<<endl;
     // }
+
+    // 205. 同构字符串
+    // string s = "badc", t = "baba";
+    // cout<<solution.isIsomorphic(s, t);
 }
