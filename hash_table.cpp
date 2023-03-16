@@ -216,6 +216,59 @@ public:
     //     }
     //     return true;
     // }
+
+    // 1002. 查找共用字符
+    // vector<string> commonChars(vector<string>& words) {
+    //     vector<int> hash(26, 0);
+    //     for (int i = 0; i < words[0].size(); i++) {
+    //         hash[words[0][i] - 'a']++;
+    //     }
+    //     for (int i = 1; i < words.size(); i++) {
+    //         vector<int> new_hash(26, 0);
+    //         for (int j = 0; j < words[i].size(); j++) {
+    //             new_hash[words[i][j] - 'a']++;
+    //         }
+    //         for (int k = 0; k < 26; k++) {
+    //             hash[k] = min(hash[k], new_hash[k]);
+    //         }
+    //     }
+    //     vector<string> res;
+    //     for (int i = 0; i < 26; i++) {
+    //         while (hash[i]--) {
+    //             string tmp;
+    //             tmp.push_back(i + 'a');
+    //             res.push_back(tmp);
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // 925. 长按键入
+    // bool isLongPressedName(string name, string typed) {
+    //     int i = 0, j = 0;
+    //     while (i < name.size()) {
+    //         if (name[i] == typed[j]) {
+    //             i++;
+    //             j++;
+    //         } else if (j > 0 && typed[j] == typed[j-1]) {
+    //             j++;
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    //     if (j == typed.size()) {
+    //         return true;
+    //     } else {
+    //         while (j < typed.size()) {
+    //             if (typed[j] == name[i - 1]) {
+    //                 j++;
+    //             } else {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;;
+    // }
 };
 
 int main() {
@@ -246,4 +299,9 @@ int main() {
     // 205. 同构字符串
     // string s = "badc", t = "baba";
     // cout<<solution.isIsomorphic(s, t);
+
+    // 925. 长按键入
+    // string name = "alex";
+    // string typed = "alexxr";
+    // cout<<solution.isLongPressedName(name, typed);
 }

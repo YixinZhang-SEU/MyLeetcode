@@ -8,6 +8,7 @@ using namespace std;
 
 int main() {
     string s = "abcdefg";
-    int n = 2;
-    cout<<s.substr(n);
+    string c;
+    c.push_back(s[0]);
+    cout<<c;
 }
