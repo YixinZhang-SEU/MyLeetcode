@@ -242,33 +242,6 @@ public:
     //     }
     //     return res;
     // }
-
-    // 925. 长按键入
-    // bool isLongPressedName(string name, string typed) {
-    //     int i = 0, j = 0;
-    //     while (i < name.size()) {
-    //         if (name[i] == typed[j]) {
-    //             i++;
-    //             j++;
-    //         } else if (j > 0 && typed[j] == typed[j-1]) {
-    //             j++;
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    //     if (j == typed.size()) {
-    //         return true;
-    //     } else {
-    //         while (j < typed.size()) {
-    //             if (typed[j] == name[i - 1]) {
-    //                 j++;
-    //             } else {
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    //     return true;;
-    // }
 };
 
 int main() {
@@ -299,9 +272,4 @@ int main() {
     // 205. 同构字符串
     // string s = "badc", t = "baba";
     // cout<<solution.isIsomorphic(s, t);
-
-    // 925. 长按键入
-    // string name = "alex";
-    // string typed = "alexxr";
-    // cout<<solution.isLongPressedName(name, typed);
 }

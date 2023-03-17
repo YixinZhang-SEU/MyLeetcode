@@ -759,6 +759,7 @@ public:
     // }
 
     // 106. 从中序与后序遍历序列构造二叉树
+    // 本题递归传递的参数是数组，每次都要创建数组很耗空间
     // TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
     //     if (inorder.size() == 0) {
     //         return nullptr;
@@ -805,6 +806,7 @@ public:
     // }
 
     // 105. 从前序与中序遍历序列构造二叉树
+    // 本题递归传递的参数是数组下标，优化了空间占用
     // unordered_map<int, int> map;
     // TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
     //     if (preorder.size() == 0) {
@@ -827,14 +829,14 @@ public:
     //     int idx = map[rootV];
     //     // 左
     //     int left_in_begin = in_begin;
-    //     int left_in_end = idx-1;
-    //     int left_pre_begin = pre_begin+1;
-    //     int left_pre_end = left_pre_begin+left_in_end-left_in_begin;
+    //     int left_in_end = idx - 1;
+    //     int left_pre_begin = pre_begin + 1;
+    //     int left_pre_end = left_pre_begin + left_in_end - left_in_begin;
     //     root->left = build(preorder, inorder, left_pre_begin, left_pre_end, left_in_begin, left_in_end);
     //     // 右
-    //     int right_in_begin = idx+1;
+    //     int right_in_begin = idx + 1;
     //     int right_in_end = in_end;
-    //     int right_pre_begin = left_pre_end+1;
+    //     int right_pre_begin = left_pre_end + 1;
     //     int right_pre_end = pre_end;
     //     root->right = build(preorder, inorder, right_pre_begin, right_pre_end, right_in_begin, right_in_end);
     //

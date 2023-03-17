@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include<algorithm>
+#include<stack>
 
 using namespace std;
 
@@ -179,6 +180,104 @@ public:
     //     // }
     //     // return false;
     // }
+
+    // 925. 长按键入
+    // bool isLongPressedName(string name, string typed) {
+    //     int i = 0, j = 0;
+    //     while (i < name.size()) {
+    //         if (name[i] == typed[j]) {
+    //             i++;
+    //             j++;
+    //         } else if (j > 0 && typed[j] == typed[j-1]) {
+    //             j++;
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    //     if (j == typed.size()) {
+    //         return true;
+    //     } else {
+    //         while (j < typed.size()) {
+    //             if (typed[j] == name[i - 1]) {
+    //                 j++;
+    //             } else {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;;
+    // }
+
+    // 844. 比较含退格的字符串
+    // // 法一：栈，写得比较傻
+    // bool backspaceCompare(string s, string t) {
+    //     stack<char> st_s, st_t;
+    //     for (char c_s : s) {
+    //         if (c_s != '#') {
+    //             st_s.push(c_s);
+    //         } else {
+    //             if (!st_s.empty()) {
+    //                 st_s.pop();
+    //             }
+    //         }
+    //     }
+    //     for (char c_t : t) {
+    //         if (c_t != '#') {
+    //             st_t.push(c_t);
+    //         } else {
+    //             if (!st_t.empty()) {
+    //                 st_t.pop();
+    //             }
+    //         }
+    //     }
+    //     int size_s = st_s.size(), size_t = st_t.size();
+    //     if (size_s != size_t) {
+    //         return false;
+    //     }
+    //     while (!st_s.empty()) {
+    //         char c_s = st_s.top();
+    //         char c_t = st_t.top();
+    //         if (c_s != c_t) {
+    //             return false;
+    //         }
+    //         st_s.pop();
+    //         st_t.pop();
+    //     }
+    //     return true;
+    // }
+    // // 
+    // // 法二：双指针，不占用额外空间 （一刷有参考）
+    // bool backspaceCompare(string S, string T) {
+    //     int sSkipNum = 0; // 记录S的#数量
+    //     int tSkipNum = 0; // 记录T的#数量
+    //     int i = S.size() - 1;
+    //     int j = T.size() - 1;
+    //     while (1) {
+    //         while (i >= 0) { // 从后向前，消除S的#
+    //             if (S[i] == '#') sSkipNum++;
+    //             else {
+    //                 if (sSkipNum > 0) sSkipNum--;
+    //                 else break;
+    //             }
+    //             i--;
+    //         }
+    //         while (j >= 0) { // 从后向前，消除T的#
+    //             if (T[j] == '#') tSkipNum++;
+    //             else {
+    //                 if (tSkipNum > 0) tSkipNum--;
+    //                 else break;
+    //             }
+    //             j--;
+    //         }
+    //         // 后半部分#消除完了，接下来比较S[i] != T[j]
+    //         if (i < 0 || j < 0) break; // S 或者T 遍历到头了
+    //         if (S[i] != T[j]) return false;
+    //         i--;j--;
+    //     }
+    //     // 说明S和T同时遍历完毕
+    //     if (i == -1 && j == -1) return true;
+    //     return false;
+    // }
 };
 
 int main() {
@@ -220,5 +319,14 @@ int main() {
     // string s = "abab";
     // bool res = solution.repeatedSubstringPattern(s);
     // cout<<res;
+
+    // 925. 长按键入
+    // string name = "alex";
+    // string typed = "alexxr";
+    // cout<<solution.isLongPressedName(name, typed);
+
+    // 844. 比较含退格的字符串
+    string s = "adf##dbd#c", t = "adbc";
+    cout<<solution.backspaceCompare(s, t);
 }
 
