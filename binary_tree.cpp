@@ -1203,6 +1203,30 @@ public:
     //     root->left = convertBST(root->left);
     //     return root;
     // }
+
+    // 129. 求根节点到叶节点数字之和
+    // int sumNumbers(TreeNode* root) {
+    //     int res = 0, sum = 0;
+    //     traversal(root, res, sum);
+    //     return res;
+    // }
+    // void traversal(TreeNode* root, int &res, int sum) {
+    //     if (root == nullptr) {
+    //         return;
+    //     }
+    //     sum = sum * 10 + root->val;
+    //     if (root->left == nullptr && root->right == nullptr) {
+    //         res += sum;
+    //         return;
+    //     }
+    //     if (root->left) {
+    //         traversal(root->left, res, sum);
+    //     }
+    //     if (root->right) {
+    //         traversal(root->right, res, sum);
+    //     }
+    //     return;
+    // }
 };
 
 int main() {
