@@ -1227,6 +1227,37 @@ public:
     //     }
     //     return;
     // }
+
+    // 1382. 将二叉搜索树变平衡
+    // TreeNode* balanceBST(TreeNode* root) {
+    //     vector<int> nums;
+    //     getVec(root, nums);
+    //     TreeNode* res = getNewBST(nums, 0, nums.size() - 1);
+    //     return res;
+    // }
+    // //
+    // // 得到BST的有序数组
+    // void getVec(TreeNode* root, vector<int>& nums) {
+    //     if (root == nullptr) {
+    //         return;
+    //     }
+    //     getVec(root->left, nums);
+    //     nums.push_back(root->val);
+    //     getVec(root->right, nums);
+    //     return;
+    // }
+    // //
+    // // 重新构造BST
+    // TreeNode* getNewBST(vector<int>& nums, int left, int right) {
+    //     if (left > right) {
+    //         return nullptr;
+    //     }
+    //     int mid = left + (right - left)/2;
+    //     TreeNode* root = new TreeNode(nums[mid]);
+    //     root->left = getNewBST(nums, left, mid - 1);
+    //     root->right = getNewBST(nums, mid + 1, right);
+    //     return root;
+    // }
 };
 
 int main() {
