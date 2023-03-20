@@ -344,6 +344,7 @@ public:
     // }
 
     // 116. 填充每个节点的下一个右侧节点指针  || 117. 填充每个节点的下一个右侧节点指针 II
+    // 法一：层序遍历迭代法
     // Node* connect(Node* root) {
     //     queue<Node*> q;
     //     Node* cur;
@@ -370,6 +371,32 @@ public:
     //         }
     //     }
     //     return root;
+    // }
+    // //
+    // // 法二：递归
+    // Node* connect(Node* root) {
+    //     if (root != nullptr) {
+    //         root->next = nullptr;
+    //     }
+    //     traversal(root);
+    //     return root;
+    // }
+    // void traversal(Node* cur) {
+    //     if (cur == nullptr) {
+    //         return;
+    //     }
+    //     if (cur->left) {
+    //         cur->left->next = cur->right; 
+    //     }
+    //     if (cur->right) {
+    //         if (cur->next) {
+    //             cur->right->next = cur->next->left;
+    //         } else {
+    //             cur->right->next = nullptr;
+    //         }
+    //     }
+    //     traversal(cur->left);
+    //     traversal(cur->right);
     // }
 
     // 104. 二叉树的最大深度
@@ -1257,6 +1284,19 @@ public:
     //     root->left = getNewBST(nums, left, mid - 1);
     //     root->right = getNewBST(nums, mid + 1, right);
     //     return root;
+    // }
+
+    // 100. 相同的树
+    // bool isSameTree(TreeNode* p, TreeNode* q) {
+    //     if (p == nullptr && q == nullptr) {
+    //         return true;
+    //     } else if (p == nullptr || q == nullptr) {
+    //         return false;
+    //     } else {
+    //         int val_p = p->val;
+    //         int val_q = q->val;
+    //         return (val_p == val_q) && isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
+    //     }
     // }
 };
 
