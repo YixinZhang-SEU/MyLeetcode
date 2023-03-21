@@ -223,6 +223,58 @@ public:
     //     }
     //     return false;
     // }
+
+    // 2. 两数相加
+    // ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    //     // 预处理
+    //     ListNode *cur1 = l1, *cur2 = l2;
+    //     int l1_len = 0, l2_len = 0;
+    //     while (cur1) {
+    //         l1_len++;
+    //         cur1 = cur1->next;
+    //     }
+    //     while (cur2) {
+    //         l2_len++;
+    //         cur2 = cur2->next;
+    //     }
+    //     if (l1_len > l2_len) {
+    //         int d_val = l1_len - l2_len;
+    //         l2 = addZero(l2, d_val);
+    //     }
+    //     if (l2_len > l1_len) {
+    //         int d_val = l2_len - l1_len;
+    //         l1 = addZero(l1, d_val);
+    //     }
+    //     // 开始计算（此时l1与l2长度相等）
+    //     cur1 = l1, cur2 = l2;
+    //     ListNode* pre;
+    //     int sum, carry = 0;
+    //     while(cur2) {
+    //         sum = cur1->val + cur2->val + carry;
+    //         carry = sum / 10;
+    //         sum %= 10;
+    //         cur1->val = sum;
+    //         pre = cur1;
+    //         cur1 = cur1->next;
+    //         cur2 = cur2->next;
+    //     }
+    //     if (carry) {
+    //         pre->next = new ListNode(carry);
+    //     }
+    //     return l1;
+    // }
+    // // 补零
+    // ListNode* addZero(ListNode* head, int count) {
+    //     ListNode* cur = head;
+    //     while (cur->next) {
+    //         cur = cur->next;
+    //     }
+    //     while (count--) {
+    //         cur->next = new ListNode(0);
+    //         cur = cur->next;
+    //     }
+    //     return head;
+    // }
 };
 
 
@@ -352,4 +404,20 @@ int main() {
     //     cout<<cur->val<<" ";
     //     cur = cur->next;
     // }
+
+    // 2. 两数相加
+    // vector<int> vec1 = {9,9,9,9,9,9,9};
+    // vector<int> vec2 = {9,9,9,9};
+    // ListNode* l1 = new ListNode(vec1[vec1.size()-1]);
+    // for (int i = vec1.size()-2; i >= 0; i--) {
+    //     ListNode* tmp = new ListNode(vec1[i], l1);
+    //     l1 = tmp;
+    // }
+    // ListNode* l2 = new ListNode(vec2[vec2.size()-1]);
+    // for (int i = vec2.size()-2; i >= 0; i--) {
+    //     ListNode* tmp = new ListNode(vec2[i], l2);
+    //     l2 = tmp;
+    // }
+    // ListNode* res = solution.addTwoNumbers(l1, l2);
+
 }
