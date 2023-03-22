@@ -242,6 +242,27 @@ public:
     //     }
     //     return res;
     // }
+
+    // 128. 最长连续序列 (一刷参考)
+    // int longestConsecutive(vector<int>& nums) {
+    //     unordered_set<int> set;
+    //     unordered_set<int>::iterator it;
+    //     for (int num : nums) {
+    //         set.insert(num);
+    //     }
+    //     int max_len = 0;
+    //     for (int num : nums) {
+    //         if (set.find(num - 1) == set.end()) {
+    //             int tail = num;
+    //             while (set.find(tail + 1) != set.end()) {
+    //                 tail++;
+    //             } 
+    //             int len = tail - num + 1;
+    //             max_len = max(max_len, len);
+    //         }
+    //     }
+    //     return max_len;
+    // }
 };
 
 int main() {
@@ -272,4 +293,8 @@ int main() {
     // 205. 同构字符串
     // string s = "badc", t = "baba";
     // cout<<solution.isIsomorphic(s, t);
+
+    // 128. 最长连续序列
+    // vector<int> nums = {100,4,200,1,3,2};
+    // cout<<solution.longestConsecutive(nums);
 }

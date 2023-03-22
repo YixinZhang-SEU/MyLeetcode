@@ -1298,6 +1298,45 @@ public:
     //         return (val_p == val_q) && isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
     //     }
     // }
+
+    // 114. 二叉树展开为链表
+    // 法一：常规做法
+    // void flatten(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return;
+    //     }
+    //     vector<int> nums;
+    //     traversal(root, nums);
+    //     TreeNode* cur;
+    //     cur = root;
+    //     cur->val = nums[0];
+    //     for (int i = 1; i < nums.size(); i++) {
+    //         cur->left = nullptr;
+    //         cur->right = new TreeNode(nums[i]);
+    //         cur = cur->right;
+    //     }
+    // }
+    // void traversal(TreeNode* node, vector<int>& nums) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     nums.push_back(node->val);
+    //     traversal(node->left, nums);
+    //     traversal(node->right, nums);
+    // }
+    // // 法二：递归
+    // TreeNode *pre = nullptr;
+    // void flatten(TreeNode* root) {
+    //     if (root == nullptr) {
+    //         return;
+    //     }
+    //     flatten(root->right);
+    //     flatten(root->left);
+    //     root->right = pre;
+    //     root->left = nullptr;
+    //     pre = root;
+    // }
+
 };
 
 int main() {
