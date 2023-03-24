@@ -275,6 +275,41 @@ public:
     //     }
     //     return head;
     // }
+
+    // 160. 相交链表
+    // ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    //     ListNode *curA = headA, *curB = headB;
+    //     int lenA = getLen(curA);
+    //     int lenB = getLen(curB);
+    //     // 交换，长的一个作为链表A
+    //     if (lenA < lenB) {
+    //         swap(headA, headB);
+    //         swap(lenA, lenB);
+    //     }
+    //     int skip = lenA - lenB;
+    //     curA = headA;
+    //     curB = headB;
+    //     while (skip--) {
+    //         curA = curA->next;
+    //     }
+    //     while (curA) {
+    //         if (curA == curB) {
+    //             return curA;
+    //         }
+    //         curA = curA->next;
+    //         curB = curB->next;
+    //     }
+    //     return nullptr;
+    // }
+    // // 得到链表长度
+    // int getLen(ListNode *head) {
+    //     int res = 0;
+    //     while (head) {
+    //         res++;
+    //         head = head->next;
+    //     }
+    //     return res;
+    // }
 };
 
 
