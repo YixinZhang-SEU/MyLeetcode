@@ -13,6 +13,17 @@ public:
     //     }
     //     return res;
     // }
+
+    // 461. 汉明距离
+    int hammingDistance(int x, int y) {
+        int num = x^y;
+        int count = 0;
+        while (num) {
+            count += num&1;
+            num>>=1;
+        }
+        return count;
+    }
 };
 
 int main() {
