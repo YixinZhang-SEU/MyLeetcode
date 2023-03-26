@@ -370,6 +370,27 @@ public:
     //     backtracking(nums, target, idx+1, sum+nums[idx]);
     //     backtracking(nums, target, idx+1, sum-nums[idx]);
     // }
+
+    // 22. 括号生成
+    // vector<string> generateParenthesis(int n) {
+    //     vector<string> res;
+    //     backtracking(res, "", n, n);
+    //     return res;
+    // }
+    // void backtracking(vector<string>& res, string tmp, int i, int j) {
+    //     if (i == 0 && j == 0) {
+    //         res.push_back(tmp);
+    //         return;
+    //     }
+    //     if (i == 0) {
+    //         backtracking(res, tmp + ")", i, j - 1);
+    //     } else if (i == j) {
+    //         backtracking(res, tmp + "(", i - 1, j);
+    //     } else if (i < j) {
+    //         backtracking(res, tmp + "(", i - 1, j);
+    //         backtracking(res, tmp + ")", i, j - 1);
+    //     }
+    // }
 }
 ;
 
