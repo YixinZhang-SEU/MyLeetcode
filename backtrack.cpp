@@ -4,6 +4,8 @@
 #include<algorithm>
 #include<string>
 #include<unordered_set>
+#include<map>
+#include<unordered_map>
 
 using namespace std;
 
@@ -391,8 +393,39 @@ public:
     //         backtracking(res, tmp + ")", i, j - 1);
     //     }
     // }
-}
-;
+
+    // 332. 重新安排行程
+    // unordered_map<string, map<string, int> > targets;
+    // vector<string> findItinerary(vector<vector<string>>& tickets) {
+    //     vector<string> res;
+    //     res.push_back("JFK");
+    //     // targets初始化
+    //     targets.clear();
+    //     for (const vector<string>& vec : tickets) {
+    //         targets[vec[0]][vec[1]]++;
+    //     }
+    //     // 回溯过程
+    //     backtracking(tickets.size() + 1, res);
+    //     return res;
+    // }
+    // bool backtracking(int targetNum, vector<string>& res) {
+    //     if (res.size() == targetNum) {
+    //         return true;
+    //     }
+    //     for(pair<const string, int>& target : targets[res[res.size() - 1]]) {
+    //         if (target.second > 0) {
+    //             res.push_back(target.first);
+    //             target.second--;
+    //             if (backtracking(targetNum, res)) {
+    //                 return true;
+    //             }
+    //             target.second++;
+    //             res.pop_back();
+    //         }
+    //     }
+    //     return false;
+    // }
+};
 
 int main() {
     Solution solution;
@@ -513,5 +546,12 @@ int main() {
     // vector<int> nums = {1,1,1,1,1};
     // int target = 3;
     // cout<<solution.findTargetSumWays(nums, target);
+
+    // 332. 重新安排行程
+    // vector<vector<string> > tickets = {{"JFK","SFO"}, {"JFK","ATL"}, {"SFO","ATL"}, {"ATL","JFK"}, {"ATL","SFO"}};
+    // vector<string> res = solution.findItinerary(tickets);
+    // for (string s : res) {
+    //     cout<<s<<" ";
+    // }
 }
 

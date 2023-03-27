@@ -301,6 +301,29 @@ public:
     //     }
     //     return res;
     // }
+
+    // 169. 多数元素
+    // // 法一：排序
+    // int majorityElement(vector<int>& nums) {
+    //     sort(nums.begin(), nums.end());
+    //     return nums[nums.size() / 2];
+    // }
+    // // 法二：摩尔投票法
+    // int majorityElement(vector<int>& nums) {
+    //     int res, count = 0;
+    //     for (int num : nums) {
+    //         if (count == 0) {
+    //             res = num;
+    //             count++;
+    //         } else if (num == res) {
+    //             count++;
+    //         } else {
+    //             count--;
+    //         }
+    //     }
+    //     return res;
+    // }
+
 };
 
 int main() {
