@@ -29,7 +29,7 @@ public:
 int main() {
     Solution solution;
 
-    // 136. 只出现一次的数字ran'h
+    // 136. 只出现一次的数字
     // vector<int> nums = {4, 1, 2, 1, 2};
     // cout<<solution.singleNumber(nums);
 }
