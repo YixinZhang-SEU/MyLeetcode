@@ -425,6 +425,50 @@ public:
     //     }
     //     return false;
     // }
+
+    // 51. N 皇后   52. N 皇后 II（计个数就行）
+    // vector<vector<string>> solveNQueens(int n) {
+    //     vector<vector<string> > res;
+    //     vector<string> temp(n, string(n, '.'));
+    //     backtracking(res, temp, 0, n);
+    //     return res;
+    // }
+    // void backtracking(vector<vector<string> >& res, vector<string>& temp, int col, int n) {
+    //     if (col == n) {
+    //         res.push_back(temp);
+    //         return;
+    //     }
+    //     for (int j = 0; j < n; j++) {
+    //         if (isValid(col, j, temp)) {
+    //             temp[col][j] = 'Q';
+    //             backtracking(res, temp, col + 1, n);
+    //             temp[col][j] = '.';
+    //         }
+    //     }
+    // }
+    // bool isValid(int i, int j, vector<string> vec) {
+    //     if (i == 0) {
+    //         return true;
+    //     }
+    //     for (int idx = i - 1; idx >= 0; idx--) {
+    //         int tmp1 = j - (i - idx);
+    //         int tmp2 = j + (i - idx);
+    //         if (vec[idx][j] == 'Q') {
+    //             return false;
+    //         }
+    //         if (tmp1 >= 0 ) {
+    //             if (vec[idx][tmp1] == 'Q') {
+    //                 return false;
+    //             }
+    //         }
+    //         if (tmp2 < vec.size()) {
+    //             if (vec[idx][tmp2] == 'Q') {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
@@ -553,5 +597,14 @@ int main() {
     // for (string s : res) {
     //     cout<<s<<" ";
     // }
-}
 
+    // 51. N 皇后
+    // int n = 4;
+    // vector<vector<string> > res = solution.solveNQueens(n);
+    // for (vector<string> vec : res) {
+    //     for (string s : vec) {
+    //         cout<<s<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+}
