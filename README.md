@@ -250,3 +250,6 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 | std::map           | 红黑树   | 有序     | 否         | O(logn)  | O(logn)  |
 | std::multimap      | 红黑树   | 有序     | 是         | O(logn)  | O(logn)  |
 | std::unordered_map | 哈希表   | 无序     | 否         | O(1)     | O(1)     |
+
+29、位运算
+num &(-num)：得到num最右侧不为0的位

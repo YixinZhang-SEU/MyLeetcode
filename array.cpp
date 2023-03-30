@@ -324,6 +324,15 @@ public:
     //     return res;
     // }
 
+    // 268. 丢失的数字
+    // int missingNumber(vector<int>& nums) {
+    //     int n = nums.size();
+    //     int sum = (1 + n) * n / 2;
+    //     for (int num : nums) {
+    //         sum -= num;
+    //     }
+    //     return sum;
+    // }
 };
 
 int main() {
