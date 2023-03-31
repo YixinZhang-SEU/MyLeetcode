@@ -852,6 +852,39 @@ public:
     //     }
     //     return res;
     // }
+
+    // 132. 分割回文串 II
+    // vector<vector<int>> is_palindrome;
+    // int minCut(string s) {
+    //     is_palindrome.resize(s.size(), vector<int>(s.size(), 0));
+    //     isPalindrome(s, is_palindrome);
+    //     vector<int> dp(s.size(), INT_MAX);
+    //     dp[0] = 0;
+    //     for (int i = 1; i < s.size(); i++) {
+    //         if (is_palindrome[0][i]) {
+    //             dp[i] = 0;
+    //             continue;
+    //         }
+    //         for (int j = 0; j < i; j++) {
+    //             if (is_palindrome[j + 1][i]) {
+    //                 dp[i] = min(dp[i], dp[j] + 1);
+    //             }
+    //         }
+    //     }
+    //     return dp[s.size() - 1];
+    // //
+    // }
+    // void isPalindrome(const string& s, vector<vector<int>> &is_palindrome) {
+    //     for (int i = s.size() - 1; i >= 0; i--) {
+    //         for (int j = i; j < s.size(); j++) {
+    //             if (s[i] == s[j]) {
+    //                 if (j - i <= 1 || is_palindrome[i + 1][j - 1]) {
+    //                     is_palindrome[i][j] = 1;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 ;
 
