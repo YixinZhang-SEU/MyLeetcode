@@ -15,7 +15,7 @@ vector<int> res;
 vector<int>::iterator it = res.begin();
 // 首部添加元素
 res.insert(res.begin(), element);
-
+// insert的第一个下标即需要插入的下标值是指在这个下标之前插入
 //p.s.循环时需要把迭代器放在循环内部，因为迭代器会随着insert或push操作而改变
 ```
 3、二维vector

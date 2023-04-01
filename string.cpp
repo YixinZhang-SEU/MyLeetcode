@@ -278,6 +278,60 @@ public:
     //     if (i == -1 && j == -1) return true;
     //     return false;
     // }
+
+    // 831. 隐藏个人信息
+    // string maskPII(string s) {
+    //     string res;
+    //     bool isEmail = false, isTel = true;
+    //     for (char c : s) {
+    //         if (c == '@') {
+    //             isEmail = true;
+    //             isTel = false;
+    //             break;
+    //         }
+    //     }
+    //     // 如果是邮件地址
+    //     if (isEmail) {
+    //         res = s;
+    //         int idx = 0;
+    //         for (; idx < s.size(); idx++) {
+    //             if (s[idx] == '@') {
+    //                 break;
+    //             }
+    //         }
+    //         if (idx == 2) {
+    //             res.insert(1, "*****");
+    //         } else {
+    //             res.replace(1, idx - 2, "*****");
+    //         }
+    //         for (int i = 0; i < res.size(); i++) {
+    //             if ('A' <= res[i] && res[i] <= 'Z') {
+    //                 res[i] = res[i] + ('a' - 'A');
+    //             }
+    //         } 
+    //     }
+    //     // 如果是电话号码
+    //     if (isTel) {
+    //         res.insert(0, "***-***-");
+    //         string nums = "";
+    //         for (char c : s) {
+    //             if (c >= '0' && c <= '9') {
+    //                 nums.push_back(c);
+    //             }
+    //         }
+    //         res += nums.substr(nums.size() - 4, 4);
+    //         if (nums.size() == 10) {
+    //             return res;
+    //         }
+    //         res.insert(0, "-");
+    //         int count = nums.size() - 10;
+    //         while (count--) {
+    //             res.insert(0, "*");
+    //         }
+    //         res.insert(0, "+");
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
@@ -326,7 +380,11 @@ int main() {
     // cout<<solution.isLongPressedName(name, typed);
 
     // 844. 比较含退格的字符串
-    string s = "adf##dbd#c", t = "adbc";
-    cout<<solution.backspaceCompare(s, t);
+    // string s = "adf##dbd#c", t = "adbc";
+    // cout<<solution.backspaceCompare(s, t);
+
+    // 831. 隐藏个人信息
+    // string s = "86-(10)12345678";
+    // cout<<solution.maskPII(s);
 }
 
