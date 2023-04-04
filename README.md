@@ -3,6 +3,7 @@
 ## 待解答疑问
 **1. poj中二叉树的输入问题？**
 **2.1 AVL树？   2.2 线段树？**
+**3. 马拉车算法？KMP？  https://www.cxyxiaowu.com/2665.html**
 
 ## 笔记
 1、注意数组的范围等边界条件，**容器可能为空**
@@ -253,3 +254,31 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 
 29、位运算
 num &(-num)：得到num最右侧不为0的位
+
+30、transform函数的作用是什么  
+`std::transform` 是 C++ STL 中的一个算法，它可以对一个区间中的元素进行指定操作，然后将操作后的结果写入到另一个区间中，它的定义如下：
+```c++
+template<class InputIt, class OutputIt, class UnaryOperation>
+OutputIt transform(InputIt first1, InputIt last1, OutputIt d_first, UnaryOperation unary_op);
+```
+其中：  
+`first1` 和 `last1` 定义了要进行操作的输入区间。  
+`d_first` 定义了操作后要输出的输出区间，注意输出区间的长度要小于等于输入区间长度。  
+`unary_op` 定义了对输入区间中的每个元素要进行的操作，它应该是一个接受一个输入参数的函数或函数对象，其返回值将被写入到输出区间中。  
+例如，以下代码将一个 vector 中的每个元素加 1 并将结果写入到另一个 vector 中：
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> v1{1, 2, 3, 4, 5};
+    std::vector<int> v2(v1.size());
+    std::transform(v1.begin(), v1.end(), v2.begin(), [](int x){ return x + 1; });
+    for (int x : v2) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+    return 0;
+}
+```

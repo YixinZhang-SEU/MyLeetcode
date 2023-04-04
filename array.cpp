@@ -333,6 +333,49 @@ public:
     //     }
     //     return sum;
     // }
+
+    // 1053. 交换一次的先前排列
+    // vector<int> prevPermOpt1(vector<int>& arr) {
+        // 复杂度高得要死
+        // int len = arr.size();
+        // vector<int> count(len, -1);
+        // for (int i = 0; i < len; i++) {
+        //     int flag = 0;
+        //     for (int j = len - 1; j > i; j--) {
+        //         if (arr[j] < arr[i]) {
+        //             if (!flag || arr[j] == arr[j + 1]) {
+        //                 count[i] = j;
+        //                 flag = 1;
+        //             } else {
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+        // for (int i = len - 1; i >= 0; i--) {
+        //     if (count[i] != -1) {
+        //         swap(arr[i], arr[count[i]]);
+        //         break;
+        //     }
+        // }
+        // return arr;
+        // // 另一种方法：从后往前找小于a[i]的最大的数a[j]，有多个相同的a[i]，就取最左边的
+    //     int len = arr.size();
+    //     for (int i = len - 2; i >= 0; i--) {
+    //         if (arr[i] > arr[i + 1]) {
+    //             int j = i + 1;
+    //             while (j + 1 < len && arr[j + 1] < arr[i]) {
+    //                 j++;
+    //             }
+    //             while (arr[j - 1] == arr[j]) {
+    //                 j--;
+    //             }
+    //             swap(arr[i], arr[j]);
+    //             return arr;
+    //         }
+    //     }
+    //     return arr;
+    // }
 };
 
 int main() {
@@ -393,4 +436,11 @@ int main() {
     // vector<int> nums = {5,7,7,8,8,10};
     // int target = 8;
     // cout<<solution.searchRange(nums, target)[0]<<" "<<solution.searchRange(nums, target)[1];
+
+    // 1053. 交换一次的先前排列
+    // vector<int> arr = {3,1,1,3};
+    // vector<int> res = solution.prevPermOpt1(arr);
+    // for (int a : res) {
+    //     cout<<a<<" ";
+    // }
 }

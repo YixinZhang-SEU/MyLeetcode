@@ -885,6 +885,87 @@ public:
     //         }
     //     }
     // }
+
+    // 1039. 多边形三角剖分的最低得分
+    // int minScoreTriangulation(vector<int>& values) {
+    //     int n = values.size();
+    //     vector<vector<int>> dp(n, vector<int>(n));
+    //     for (int i = n - 3; i >= 0; i--) {
+    //         for (int j = i + 2; j < n; j++) {
+    //             dp[i][j] = INT_MAX;
+    //             for (int k = i + 1; k <= j - 1; k++) {
+    //                 dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + values[i] * values[j] * values[k]);
+    //             }
+    //         }
+    //     }
+    //     return dp[0][n - 1];
+    // }
+
+    // 1000. 合并石头的最低成本
+    // // 贪心：不行！！！只是局部最优，没有做到全局最优
+    // int mergeStones(vector<int>& stones, int k) {
+    //     int n = stones.size();
+    //     if ((n + 1) % (k - 1) != 0) {
+    //         return -1;
+    //     }
+    //     int res = minCost(stones, n, k);
+    //     return res;
+    // }
+    // int minCost(vector<int>& stones, int len, int k) {
+    //     if (len < k) {
+    //         return 0;
+    //     }
+    //     vector<int> costs(len - k + 1, 0);
+    //     int flag = k;
+    //     int min_cost = INT_MAX;
+    //     int min_idx = -1;
+    //     for (int i = 0; i < costs.size(); i++) {
+    //         int idx = 0;
+    //         while (flag--) {
+    //             costs[i] += stones[i + idx];
+    //             idx++;
+    //         }
+    //         if (costs[i] < min_cost) {
+    //             min_cost = costs[i];
+    //             min_idx = i;
+    //         }
+    //         flag = k;
+    //     }
+    //     stones[min_idx] = min_cost;
+    //     for (int i = min_idx + 1; i + k - 1 < len; i++) {
+    //         stones[i] = stones[i + k - 1];
+    //     }
+    //     return (min_cost + minCost(stones, len - k + 1, k));
+    // }
+    //  //
+    // 动态规划 / 记忆化搜索 （参考）
+    // https://leetcode.cn/problems/minimum-cost-to-merge-stones/solutions/2207235/tu-jie-qu-jian-dpzhuang-tai-she-ji-yu-yo-ppv0/
+    // int mergeStones(vector<int>& stones, int k) {
+    //     int n = stones.size();
+    //     if ((n - 1) % (k - 1) != 0) {
+    //         return -1;
+    //     }
+    //     // 前缀和
+    //     int s[n + 1];
+    //     s[0] = 0;
+    //     for (int i = 0; i < n; i++) {
+    //         s[i + 1] = s[i] + stones[i];
+    //     }
+    //     // 区间DP模板题
+    //     int f[n][n];
+    //     for (int i = n - 1; i >= 0; --i) {
+    //         f[i][i] = 0;
+    //         for (int j = i + 1; j < n; ++j) {
+    //             f[i][j] = INT_MAX;
+    //             for (int m = i; m < j; m += k - 1)
+    //                 f[i][j] = min(f[i][j], f[i][m] + f[m + 1][j]);
+    //             if ((j - i) % (k - 1) == 0) // 可以合并成一堆
+    //                 f[i][j] += s[j + 1] - s[i];
+    //         }
+    //     }
+    //     return f[0][n - 1];    
+    // }
+
 }
 ;
 
@@ -999,4 +1080,13 @@ int main() {
     // 673. 最长递增子序列的个数
     // vector<int> nums = {1,3,5,4,7};
     // cout<<solution.findNumberOfLIS(nums);
+
+    // 1039. 多边形三角剖分的最低得分
+    // vector<int> values = {1,2,3};
+    // cout<<solution.minScoreTriangulation(values);
+
+    // 1000. 合并石头的最低成本
+    // vector<int> stones = {3,2,4,1};
+    // int k = 2;
+    // cout<<solution.mergeStones(stones, k);
 }
