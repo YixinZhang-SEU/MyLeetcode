@@ -3,6 +3,7 @@
 #include<algorithm>
 #include<unordered_map>
 #include<unordered_set>
+// #include<bits/stdc++.h>
 
 using namespace std;
 
@@ -375,6 +376,30 @@ public:
     //         }
     //     }
     //     return arr;
+    // }
+
+    // 2427. 公因子的数目
+    // int commonFactors(int a, int b) {
+    //     // 法一：暴力
+    //     int count = 0;
+    //     for (int i = 1; i <= (a > b ? b : a); i++) {
+    //         if (a%i == 0 && b%i == 0) {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    //     // 法二：枚举到最大公约数
+    //     int g = __gcd(a, b);
+    //     int count = 0;
+    //     for (int i = 1; i * i <= g; i++) {
+    //         if (g % i == 0) {
+    //             count++;
+    //             if (i * i != g) {
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     return count;
     // }
 };
 
