@@ -401,6 +401,26 @@ public:
     //     }
     //     return count;
     // }
+
+    // 1040. 移动石子直到连续 II （有参考）
+    // vector<int> numMovesStonesII(vector<int>& stones) {
+    //     int n = stones.size();
+    //     sort(stones.begin(), stones.end());
+    //     int num1 = stones[n - 1] - stones[1] - n + 2;
+    //     int num2 = stones[n - 2] - stones[0] - n + 2;
+    //     int max_move = max(num1, num2);
+    //     if (num1 == 0 || num2 == 0) {
+    //         return {min(2, max_move), max_move};
+    //     }
+    //     int count = 0, left = 0;
+    //     for (int right = 0; right < n; right++) {
+    //         while (stones[right] - stones[left] + 1 > n) {
+    //             left++;
+    //         }
+    //         count = max(count, right - left + 1);
+    //     }
+    //     return {n - count, max_move};
+    // }
 };
 
 int main() {

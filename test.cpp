@@ -7,8 +7,8 @@
 using namespace std;
 
 int main() {
-    string s = "abcdefg";
-    string c;
-    c.push_back(s[0]);
-    cout<<c;
+    int c = -3;
+    int shang = c / (-2);
+    int yu = c % (-2);
+    cout<<shang<<" "<<yu;
 }

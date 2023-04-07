@@ -57,6 +57,20 @@ public:
     //     }
     //     return{res1, res2};
     // }
+
+    // 1017. 负二进制转换
+    // string baseNeg2(int n) {
+    //     if (n == 0) {
+    //         return "0";
+    //     }
+    //     string res = "";
+    //     while (n) {
+    //         int remainder = abs(n % (-2));
+    //         res = (remainder == 0 ? '0' : '1') + res;
+    //         n = (n - remainder) / (-2);
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
