@@ -5,6 +5,14 @@
 
 using namespace std;
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 class Solution {
 public:
     // 739. 每日温度
@@ -171,6 +179,29 @@ public:
     //         result = max(sum, result);
     //     }
     //     return result;
+    // }
+
+    // 1019. 链表中的下一个更大节点
+    // vector<int> nextLargerNodes(ListNode* head) {
+    //     vector<int> nodes, res;
+    //     while(head) {
+    //         nodes.push_back(head->val);
+    //         head = head->next;
+    //     }
+    //     res.resize(nodes.size(), 0);
+    //     stack<int> st;
+    //     for (int i = 0; i < nodes.size(); i++) {
+    //         if (st.empty() || nodes[i] <= nodes[st.top()]) {
+    //             st.push(i);
+    //         } else {
+    //             while (!st.empty() && nodes[i] > nodes[st.top()]) {
+    //                 res[st.top()] = nodes[i];
+    //                 st.pop();
+    //             }
+    //             st.push(i);
+    //         }
+    //     }
+    //     return res;
     // }
 };
 

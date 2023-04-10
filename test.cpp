@@ -6,9 +6,14 @@
 
 using namespace std;
 
+class A {
+    static int a;
+    int b;
+};
+
 int main() {
-    int c = -3;
-    int shang = c / (-2);
-    int yu = c % (-2);
-    cout<<shang<<" "<<yu;
+    int temp = 0;
+    int i = 0;
+    temp |= (1<<i);
+    cout<<temp;
 }

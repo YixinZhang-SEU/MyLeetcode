@@ -4,6 +4,8 @@
 #include<algorithm>
 #include<stack>
 #include<regex>
+#include<unordered_set>
+#include<unordered_map>
 
 using namespace std;
 
@@ -345,6 +347,40 @@ public:
     //     s = regex_replace(s, regex("[^0-9]"), "");
     //     return country[s.size() - 10] + "***-***-" + s.substr(s.size() - 4);
     // }
+
+    // 3. 无重复字符的最长子串
+    // int lengthOfLongestSubstring(string s) {
+    //     if (s.size() == 0) {
+    //         return 0;
+    //     }
+    //     unordered_set<char> set;
+    //     set.clear();
+    //     int left = 0, res = 0;
+    //     for (int i = 0; i < s.size(); i++) {
+    //         while (set.find(s[i]) != set.end()) {
+    //             set.erase(s[left++]);
+    //         }
+    //         set.insert(s[i]);
+    //         res = max(res, i - left + 1);
+    //     }
+    //     return res;
+    // }
+
+    // 2399. 检查相同字母间的距离
+    // bool checkDistances(string s, vector<int>& distance) {
+    //     unordered_map<char, int> map;
+    //     for (int i = 0; i < s.size(); i++) {
+    //         if (map.find(s[i]) == map.end()) {
+    //             map[s[i]] = i;
+    //         } else {
+    //             int dist = i - map[s[i]] - 1;
+    //             if (distance[s[i] - 'a'] != dist) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
@@ -399,5 +435,9 @@ int main() {
     // 831. 隐藏个人信息
     // string s = "86-(10)12345678";
     // cout<<solution.maskPII(s);
+
+    // 3. 无重复字符的最长子串
+    // string s = "bbb";
+    // cout<<solution.lengthOfLongestSubstring(s);
 }
 

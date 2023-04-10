@@ -385,6 +385,25 @@ public:
     //     }
     //     return count;
     // }
+
+    // 11. 盛最多水的容器
+    // int maxArea(vector<int>& height) {
+    //     int res = 0;
+    //     int i = 0, j = height.size() - 1;
+    //     int h;
+    //     while (i < j) {
+    //         h = min(height[i], height[j]) * (j - i);
+    //         if (h > res) {
+    //             res = h;
+    //         }
+    //         if (height[i] > height[j]) {
+    //             j--;
+    //         } else {
+    //             i++;
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {

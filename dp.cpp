@@ -2,6 +2,7 @@
 #include<vector>
 #include<string>
 #include<unordered_set>
+#include<unordered_map>
 
 using namespace std;
 
@@ -966,6 +967,45 @@ public:
     //     return f[0][n - 1];    
     // }
 
+    // 1125. 最小的必要团队 (状压DP入门题) （不会！）
+    // 状态压缩，压缩成二进制数
+    // vector<int> smallestSufficientTeam(vector<string>& req_skills, vector<vector<string>>& people) {
+    //     // skills字符串与下标哈希映射
+    //     unordered_map<string, int> map;
+    //     const int skillCnt = req_skills.size();
+    //     for (int i = 0; i < skillCnt; i++) {
+    //         map[req_skills[i]] = i;
+    //     }
+    //     // 把people的技能用二进制表示
+    //     const int peopleCnt = people.size();
+    //     vector<int> skills(peopleCnt, 0);
+    //     for (int i = 0; i < people.size(); i++) {
+    //         for (string s : people[i]) {
+    //             skills[i] |= 1 << map[s];   // 将skills[i]的第map[s]位设置为1（最右是第0位）
+    //         }
+    //     }
+    //     // 计算
+    //     const int stateCnt = 1 << skillCnt;
+    //     vector<vector<int>> dp(stateCnt);       // 最终需要dp[(1 << skillCnt) - 1]，也就是dp[111...1]结果
+    //     int maxDPState = 0;
+    //     for (int i = 0; i < peopleCnt; i++) {
+    //         if (skills[i] == 0) {
+    //             continue;
+    //         }
+    //         for (int j = 0; j < maxDPState; j++) {
+    //             if (j && dp[j].empty()) {
+    //                 continue;
+    //             }
+    //             int combination = skills[i] | j;
+    //             if (dp[combination].empty() || dp[j].size() + 1 < dp[combination].size()){
+    //                 dp[combination] = dp[j];
+    //                 dp[combination].emplace_back(i);
+    //             }
+    //         }
+    //         maxDPState |= skills[i];
+    //     }
+    //     return dp[dp.size() - 1];
+    // }
 }
 ;
 
