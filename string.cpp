@@ -381,6 +381,35 @@ public:
     //     }
     //     return true;
     // }
+
+    // 1041. 困于环中的机器人
+    // bool isRobotBounded(string instructions) {
+    //     int d = 0;
+    //     int len = instructions.size();
+    //     vector<int> loc(2, 0);
+    //     for (int i = 0; i < len * 4; i++) {
+    //         char inst = instructions[i%len];
+    //         if (inst == 'L') {
+    //             d = (d + 1) % 4;
+    //         } else if (inst == 'R') {
+    //             d = (d + 3) % 4;
+    //         } else {
+    //             if (d == 0) {
+    //                 loc[1]++;
+    //             } else if (d == 1) {
+    //                 loc[0]--;
+    //             } else if (d == 2) {
+    //                 loc[1]--;
+    //             } else if (d == 3) {
+    //                 loc[0]++;
+    //             }
+    //         }
+    //         if (loc[0] == 0 && loc[1] == 0 && i%len == len - 1) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 };
 
 int main() {

@@ -12,8 +12,7 @@ class A {
 };
 
 int main() {
-    int temp = 0;
-    int i = 0;
-    temp |= (1<<i);
-    cout<<temp;
+    int d = 0;
+    int res = (d+3)%4;
+    cout<<res;
 }
