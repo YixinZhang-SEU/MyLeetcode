@@ -404,6 +404,25 @@ public:
     //     }
     //     return res;
     // }
+
+    // 1147. 段式回文
+    // int longestDecomposition(string text) {
+    //     int res = 0;
+    //     for (int i = 0, j = text.size() - 1; i <= j;) {
+    //         int len = 1;
+    //         while (text.substr(i, len) != text.substr(j - len + 1, len)) {
+    //             len++;
+    //         }
+    //         i += len;
+    //         j -= len;
+    //         if (i - 1 < j + 1) {
+    //             res += 2;
+    //         } else {
+    //             res += 1;
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
@@ -467,4 +486,8 @@ int main() {
     // for (int i = 0; i < res.size(); i++) {
     //     cout<<res[i]<<" ";
     // }
+
+    // 1147. 段式回文
+    string s = "zatpeza";
+    cout<<solution.longestDecomposition(s);
 }
