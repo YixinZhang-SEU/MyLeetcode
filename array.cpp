@@ -448,6 +448,37 @@ public:
     //     reverse(nums.begin(), nums.end());
     //     return;
     // }
+
+    // 2404. 出现最频繁的偶数元素
+    // int mostFrequentEven(vector<int>& nums) {
+    //     sort(nums.begin(), nums.end());
+    //     if (nums.size() == 0) {
+    //         return -1;
+    //     }
+    //     int maxeven = -1;
+    //     int maxcnt = 0;
+    //     int cnt = 0;
+    //     if (nums[0] % 2 == 0) {
+    //         cnt = 1;
+    //         maxcnt = 1;
+    //         maxeven = nums[0];
+    //     }
+    //     for (int i = 1; i < nums.size(); i++) {
+    //         if (nums[i] % 2 == 0) {
+    //             if (nums[i] == nums[i - 1]) {
+    //                 cnt++;
+    //             } else {
+    //                 cnt = 1;
+    //             }
+    //             //
+    //             if (cnt > maxcnt) {
+    //                 maxcnt = cnt;
+    //                 maxeven = nums[i];
+    //             }
+    //         }
+    //     }
+    //     return maxeven;
+    // }
 };
 
 int main() {
@@ -516,4 +547,7 @@ int main() {
     //     cout<<a<<" ";
     // }
 
+    // 2404. 出现最频繁的偶数元素
+    vector<int> nums = {8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290};
+    cout<<solution.mostFrequentEven(nums);
 }
