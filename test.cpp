@@ -12,7 +12,9 @@ class A {
 };
 
 int main() {
-    int d = 0;
-    int res = (d+3)%4;
-    cout<<res;
+    string s = "";
+    for (char c : s) {
+        cout<<"c:"<<c;
+    }
+    return 0;
 }

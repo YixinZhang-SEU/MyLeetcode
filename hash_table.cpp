@@ -263,6 +263,23 @@ public:
     //     }
     //     return max_len;
     // }
+
+    // 49. 字母异位词分组
+    // vector<vector<string>> groupAnagrams(vector<string>& strs) {
+    //     vector<vector<string>> res;
+    //     unordered_map<string, vector<string>> map;
+    //     for (string s : strs) {
+    //         string tmp = s;
+    //         sort(tmp.begin(), tmp.end());
+    //         map[tmp].push_back(s);
+    //     }
+    //     unordered_map<string, vector<string>>::iterator it = map.begin();
+    //     while (it != map.end()) {
+    //         res.push_back(it->second);
+    //         it++;
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {

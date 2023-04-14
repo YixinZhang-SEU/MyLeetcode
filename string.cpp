@@ -410,6 +410,35 @@ public:
     //     }
     //     return false;
     // }
+
+    // 1023. 驼峰式匹配
+    // vector<bool> camelMatch(vector<string>& queries, string pattern) {
+    //     vector<bool> res;
+    //     for (string qry : queries) {
+    //         res.push_back(match(qry, pattern));
+    //     }
+    //     return res;
+    // }
+    // //
+    // bool match(string qry, string pat) {
+    //     int idx = 0;
+    //     for (int i = 0; i < qry.size(); i++) {
+    //         if (qry[i] == pat[idx]) {
+    //             idx++;
+    //             qry.erase(qry.begin() + i);
+    //             i--;
+    //         }
+    //     }
+    //     if (idx != pat.size()) {
+    //         return false;
+    //     }
+    //     for (char c : qry) {
+    //         if (!(c >= 'a' && c <= 'z')) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 };
 
 int main() {
@@ -468,5 +497,13 @@ int main() {
     // 3. 无重复字符的最长子串
     // string s = "bbb";
     // cout<<solution.lengthOfLongestSubstring(s);
+
+    // 1023. 驼峰式匹配
+    // vector<string> queries = {"FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"};
+    // string pat = "FoBa";
+    // vector<bool> res= solution.camelMatch(queries, pat);
+    // for (bool b : res) {
+    //     cout<<b<<" ";
+    // }
 }
 
