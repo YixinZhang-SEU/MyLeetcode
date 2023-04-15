@@ -12,9 +12,6 @@ class A {
 };
 
 int main() {
-    string s = "";
-    for (char c : s) {
-        cout<<"c:"<<c;
-    }
-    return 0;
+    int n = 3;
+    cout<<n/-2<<" "<<n%2;
 }

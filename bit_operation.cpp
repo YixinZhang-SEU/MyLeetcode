@@ -65,6 +65,7 @@ public:
     //     }
     //     string res = "";
     //     while (n) {
+    //         int tmp = n % (-2);
     //         int remainder = abs(n % (-2));
     //         res = (remainder == 0 ? '0' : '1') + res;
     //         n = (n - remainder) / (-2);

@@ -479,6 +479,29 @@ public:
     //     }
     //     return maxeven;
     // }
+
+    // 1042. 不邻接植花
+    // vector<int> gardenNoAdj(int n, vector<vector<int>>& paths) {
+    //     vector<vector<int>> adj(n);
+    //     for (vector<int> vec : paths) {
+    //         adj[vec[0] - 1].push_back(vec[1] - 1);
+    //         adj[vec[1] - 1].push_back(vec[0] - 1);
+    //     }
+    //     vector<int> res(n, 0);
+    //     for (int i = 0; i < n; i++) {
+    //         vector<int> colored(5, false);
+    //         for (int a : adj[i]) {
+    //             colored[res[a]] = 1;
+    //         }
+    //         for (int j = 1; j <= 4; j++) {
+    //             if (colored[j] == 0) {
+    //                 res[i] = j;
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
