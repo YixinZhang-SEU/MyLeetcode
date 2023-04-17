@@ -439,6 +439,39 @@ public:
     //     }
     //     return true;
     // }
+
+    // 2409. 统计共同度过的日子数
+    // vector<int> months = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    // int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+    //     for (int i = 1; i <= 12; i++) {
+    //         months[i] += months[i - 1];
+    //     }
+    //     int aA = getDays(arriveAlice), lA = getDays(leaveAlice), aB = getDays(arriveBob), lB = getDays(leaveBob);
+    //     if (lA < aB || lB < aA) {
+    //         return 0;
+    //     }
+    //     if (aA <= aB) {
+    //         if (lA <= lB) {
+    //             return lA - aB + 1;
+    //         }
+    //         return lB - aB + 1;
+    //     }
+    //     if (aB <= aA) {
+    //         if (lB <= lA) {
+    //             return lB - aA + 1;
+    //         }
+    //     }
+    //     return lA - aA + 1;
+    // }
+    // //
+    // int getDays(string date) {
+    //     int month = 0, day = 0;
+    //     for (int i = 0; i < 2; i++) {
+    //         month = month * 10 + (date[i] - '0');
+    //         day = day * 10 + (date[i + 3] - '0');
+    //     }
+    //     return months[month - 1] + day;
+    // }
 };
 
 int main() {

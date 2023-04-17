@@ -229,7 +229,8 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 
 24、线段树？  
 这个分治方法类似于「线段树求解最长公共上升子序列问题」的 pushUp 操作。 也许读者还没有接触过线段树，没有关系，方法二的内容假设你没有任何线段树的基础。当然，如果读者有兴趣的话，推荐阅读线段树区间合并法解决多次询问的「区间最长连续上升序列问题」和「区间最大子段和问题」，还是非常有趣的。
-链接：https://leetcode.cn/problems/maximum-subarray/solutions/228009/zui-da-zi-xu-he-by-leetcode-solution/
+链接：https://leetcode.cn/problems/maximum-subarray/solutions/228009/zui-da-zi-xu-he-by-leetcode-solution/  
+线段树用于求解**区间统计问题**
 
 25、股票类问题一般定义一个二维数组dp[i][j]，i表示第i天的状态，j = {0, 1}，分别表示第i天处于持有股票状态/不持有股票状态
 

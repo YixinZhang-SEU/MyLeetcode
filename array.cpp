@@ -7,6 +7,112 @@
 
 using namespace std;
 
+// 1157. 子数组中占绝大多数的元素（线段树，有参考）
+// // 法一：暴力（超时）
+// class MajorityChecker {
+//     vector<int> vec;
+// public:
+//     MajorityChecker(vector<int>& arr) {
+//         vec = arr;
+//     }
+//     //
+//     int query(int left, int right, int threshold) {
+//         int ans, cnt = 0;
+//         for (int i = left; i <= right; i++) {
+//             if (cnt == 0) {
+//                 ans = vec[i];
+//                 cnt++;
+//             } else if (vec[i] == ans) {
+//                 cnt++;
+//             } else {
+//                 cnt--;
+//             }
+//         }
+//         cnt = 0;
+//         for (int i = left; i <= right; i++) {
+//             if (vec[i] == ans) {
+//                 cnt++;
+//             }
+//         }
+//         if (cnt >= threshold) {
+//             return ans;
+//         } else {
+//             return -1;
+//         }
+//     }
+// };
+// 法二：线段树
+// struct Node {
+//     int x, cnt;
+//     Node(int x = 0, int cnt = 0) : x(x), cnt(cnt) {}
+//     Node operator+=(const Node& that) {
+//         if (x == that.x) {
+//             cnt += that.cnt;
+//         } else if (cnt >= that.cnt) {
+//             cnt -= that.cnt;
+//         } else {
+//             x = that.x;
+//             cnt = that.cnt - cnt;
+//         }
+//         return *this;
+//     }
+// };
+// //
+// class MajorityChecker {
+// private:
+//     int n;
+//     vector<int> vec;
+//     unordered_map<int, vector<int>> loc;
+//     vector<Node> tree;
+//     //
+//     // 构造线段树
+//     void seg_build(int id, int l, int r) {
+//         if (l == r) {
+//             tree[id] = {vec[l], 1};
+//             return;
+//         }
+//         int mid = l + (r - l) / 2;
+//         seg_build(id * 2 + 1, l, mid);
+//         seg_build(id * 2 + 2, mid + 1, r);
+//         tree[id] += tree[id * 2 + 1];
+//         tree[id] += tree[id * 2 + 2];
+//     }
+//     // 查询
+//     void seg_query(int id, int l, int r, int ql, int qr, Node& ans) {
+//         if (l > qr || r < ql) {
+//             return;
+//         }
+//         // 待查询的区间包含了当前区间，就不需要继续拆分了，处理后直接返回
+//         if (ql <= l && r <= qr) {
+//             ans += tree[id];
+//             return;
+//         }
+//         int mid = l + (r - l) / 2;
+//         seg_query(id * 2 + 1, l, mid, ql, qr, ans);
+//         seg_query(id * 2 + 2, mid + 1, r, ql, qr, ans);
+//     }
+// //
+// public:
+//     MajorityChecker(vector<int> & arr) {
+//         vec = arr;
+//         n = vec.size();
+//         for (int i = 0; i < n; i++) {
+//             loc[vec[i]].push_back(i);
+//         }
+//         tree.resize(n * 4);
+//         seg_build(0, 0, n - 1);
+//     }
+//     //
+//     int query(int left, int right, int threshold) {
+//         Node ans;
+//         seg_query(0, 0, n - 1, left, right, ans);
+//         vector<int>& pos = loc[ans.x];
+//         int occ = upper_bound(pos.begin(), pos.end(), right) - lower_bound(pos.begin(), pos.end(), left);
+//         return (occ >= threshold ? ans.x : -1);
+//     }
+// };
+    
+
 class Solution {
 public:
     // 704.二分查找
