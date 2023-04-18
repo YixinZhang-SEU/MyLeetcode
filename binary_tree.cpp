@@ -1337,6 +1337,22 @@ public:
     //     pre = root;
     // }
 
+    // 1026. 节点与其祖先之间的最大差值
+    // int res = 0;
+    // int maxAncestorDiff(TreeNode* root) {
+    //     dfs(root, root->val, root->val);
+    //     return res;
+    // }
+    // void dfs(TreeNode* node, int mx, int mn) {
+    //     if (node == nullptr) {
+    //         return;
+    //     }
+    //     mx  = max(mx, node->val);
+    //     mn = min(mn, node->val);
+    //     res = max(res, max(mx - node->val, node->val - mn));
+    //     dfs(node->left, mx, mn);
+    //     dfs(node->right, mx, mn);
+    // }
 };
 
 int main() {
