@@ -1006,6 +1006,23 @@ public:
     //     }
     //     return dp[dp.size() - 1];
     // }
+
+    // 1043. 分隔数组以得到最大和
+    // int maxSumAfterPartitioning(vector<int>& arr, int k) {
+    //     int len = arr.size();
+    //     vector<int> dp(len + 1, 0);
+    //     dp[0] = 0;
+    //     for (int i = 1; i <= len; i++) {
+    //         int res = INT_MIN;
+    //         int thismax = INT_MIN;
+    //         for (int m = 1; m <= min(k, i); m++) {
+    //             thismax = max(thismax, arr[i - m]);
+    //             res = max(res, m * thismax + dp[i - m]);
+    //         }
+    //         dp[i] = res;
+    //     }
+    //     return dp[len];
+    // }
 }
 ;
 
