@@ -1023,6 +1023,46 @@ public:
     //     }
     //     return dp[len];
     // }
+
+    // 1027. 最长等差数列
+    // int longestArithSeqLength(vector<int>& nums) {
+    //     int res = 0, len = nums.size();
+    //     unordered_map<int, int> dp[len];
+    //     for (int i = 1; i < len; i++) {
+    //         for (int j = i - 1; j >= 0; j--) {
+    //             int diff = nums[i] - nums[j];
+    //             if (dp[i].find(diff) == dp[i].end()) {
+    //                 if (dp[j].find(diff) != dp[j].end()) {
+    //                     dp[i][diff] = dp[j][diff] + 1;
+    //                 } else {
+    //                     dp[i][diff] = 2;
+    //                 }
+    //                 res = max(res, dp[i][diff]);
+    //             }
+    //         }
+    //     } 
+    //     return res;
+    // }
+
+    // 1105. 填充书架
+    // int minHeightShelves(vector<vector<int>>& books, int shelfWidth) {
+    //     int len = books.size();
+    //     vector<int> dp(len + 1);
+    //     dp[0] = 0;
+    //     for (int i = 0; i < len; i++) {
+    //         dp[i + 1] = INT_MAX;
+    //         int maxH = 0, wLeft = shelfWidth;
+    //         for (int j = i; j >= 0; j--) {
+    //             wLeft -= books[j][0];
+    //             if (wLeft < 0) {
+    //                 break;
+    //             }
+    //             maxH = max(maxH, books[j][1]);
+    //             dp[i + 1] = min(dp[i + 1], dp[j] + maxH);
+    //         }
+    //     }
+    //     return dp[len];
+    // }
 }
 ;
 
@@ -1146,4 +1186,13 @@ int main() {
     // vector<int> stones = {3,2,4,1};
     // int k = 2;
     // cout<<solution.mergeStones(stones, k);
+
+    // 1027. 最长等差数列
+    // vector<int> nums = {3,6,9,12};
+    // cout<<solution.longestArithSeqLength(nums);
+
+    // 1105. 填充书架
+    // vector<vector<int>> books = {{1, 1}, {2, 3}, {2, 3}, {1, 1}, {1, 1}, {1, 1}, {1, 2}};
+    // int shelfWidth = 4;
+    // cout<<solution.minHeightShelves(books, shelfWidth);
 }
