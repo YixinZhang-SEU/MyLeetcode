@@ -608,6 +608,24 @@ public:
     //     }
     //     return res;
     // }
+
+    // 2418. 按身高排序
+    // vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+    //     int len = heights.size();
+    //     vector<int> idx(len);
+    //     vector<string> res(len);
+    //     for (int i = 0; i < len; i++) {
+    //         idx[i] = i;
+    //     }
+    //     // 排序方法
+    //     sort(idx.begin(), idx.end(), [&](int x, int y) {
+    //         return heights[x] > heights[y];
+    //     });
+    //     for (int i = 0; i < len; i++) {
+    //         res[i] = names[idx[i]];
+    //     }
+    //     return res;
+    // }
 };
 
 int main() {
@@ -679,4 +697,5 @@ int main() {
     // 2404. 出现最频繁的偶数元素
     // vector<int> nums = {8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290};
     // cout<<solution.mostFrequentEven(nums);
+
 }

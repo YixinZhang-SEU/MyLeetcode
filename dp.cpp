@@ -3,6 +3,8 @@
 #include<string>
 #include<unordered_set>
 #include<unordered_map>
+#include<algorithm>
+
 
 using namespace std;
 
@@ -1063,6 +1065,29 @@ public:
     //     }
     //     return dp[len];
     // }
+
+    // 1048. 最长字符串链
+    // int longestStrChain(vector<string>& words) {
+    //     sort(words.begin(), words.end(), myCmp);
+    //     unordered_map<string, int> dp;
+    //     int res = 0;
+    //     for (string s : words) {
+    //         int count = 0;
+    //         for (int i = 0; i < s.length(); i++) {
+    //             auto it = dp.find(s.substr(0, i) + s.substr(i + 1));
+    //             if (it != dp.end()) {
+    //                 count = max(count, it->second);
+    //             }
+    //         }
+    //         dp[s] = count + 1;
+    //         res = max(res, dp[s]);
+    //     }
+    //     return res;
+    // }
+    // // myCmp
+    // static bool myCmp(string a, string b) {
+    //     return a.size() < b.size();
+    // }
 }
 ;
 
@@ -1195,4 +1220,8 @@ int main() {
     // vector<vector<int>> books = {{1, 1}, {2, 3}, {2, 3}, {1, 1}, {1, 1}, {1, 1}, {1, 2}};
     // int shelfWidth = 4;
     // cout<<solution.minHeightShelves(books, shelfWidth);
+
+    // 1048. 最长字符串链
+    // vector<string> words = {"a","b","ba","bca","bda","bdca"};
+    // cout<<solution.longestStrChain(words);
 }
