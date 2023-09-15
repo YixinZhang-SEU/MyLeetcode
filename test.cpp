@@ -1,8 +1,4 @@
 #include<iostream>
-#include<string>
-#include<queue>
-#include<vector>
-#include<algorithm>
 
 using namespace std;
 
@@ -12,6 +8,7 @@ class A {
 };
 
 int main() {
-    int n = 3;
-    cout<<n/-2<<" "<<n%2;
+    cout << "sizeof(A):" << sizeof(A) << endl;
+    A a;
+    cout << "sizeof(a):" << sizeof(a) << endl;
 }
